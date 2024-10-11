@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 import SlideReveal from "@/components/ui/slidereveal";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 // Import Clash Display Font
 const clashDisplay = localFont({

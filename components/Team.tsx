@@ -1,8 +1,8 @@
 "use client";
-import React from 'react'
-import SlideReveal from './ui/slidereveal';
-import localFont from 'next/font/local';
-import TeamCard from './TeamCard';
+import React from "react";
+import SlideReveal from "./ui/slidereveal";
+import localFont from "next/font/local";
+import TeamCard from "./TeamCard";
 
 const clashDisplay = localFont({
   src: [
@@ -58,12 +58,13 @@ const Team = () => {
           <SlideReveal direction='up' duration={0.7}>
             <h1
               className={`text-white text-2xl sm:text-3xl md:text-4xl lg:text-[50px] font-bold py-2 sm:py-4 md:py-6 text-left ${clashDisplay.className} leading-tight sm:leading-[1.2]`}>
-              The experts behind <span className='text-[#FF8A00]'>Kulmi's</span>{" "}
-              exceptional results!
+              The experts behind{" "}
+              <span className='text-[#FF8A00]'>Kulmi&apos;s</span> exceptional
+              results!
             </h1>
             <p
               className={`${clashDisplay.className} text-gray-300 font-light text-sm sm:text-base md:text-lg mt-2 sm:mt-4 leading-relaxed`}>
-              We're a small team with big impact. Experts in tech infused
+              We&apos;re a small team with big impact. Experts in tech infused
               digital solutions including SEO, PPC, content marketing, email and
               social. Award-winning digital experts who passionately care about
               your brand.
@@ -84,6 +85,6 @@ const Team = () => {
       </div>
     </section>
   );
-}
+};
 
-export default Team
+export default Team;
