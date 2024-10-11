@@ -76,6 +76,8 @@ const Projects = () => {
                 <Image
                   src={project.image}
                   alt={project.title}
+                  width={1000}
+                  height={1000}
                   className='w-full h-48 sm:h-56 rounded-[20px] object-cover mb-4'
                 />
                 <span
