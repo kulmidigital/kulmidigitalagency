@@ -47,14 +47,6 @@ export const projects: ProjectData[] = [
     image: "/images/case_haeir.avif",
   },
   {
-    id: 7,
-    category: "Design & Print",
-    title: "BSH Cargo Brand Identity Design",
-    description:
-      "BSH Cargo provides hassle free shipping solutions through an integrated network of sea, road and air transport.",
-    image: "/images/case_bsh.webp",
-  },
-  {
     id: 8,
     category: "Design & Print",
     title: "Jehana Food Products Design & Print",

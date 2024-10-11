@@ -33,10 +33,8 @@ const logos = [
   "sombank.png",
   "kcb.png",
   "eyelink.png",
-  "lilacare.png",
   "haier.png",
   "omarmp.png",
-  "bshcargo.png",
   "banana.png",
   "tcl.png",
 ];
