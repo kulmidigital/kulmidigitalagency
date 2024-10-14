@@ -14,7 +14,7 @@ async function BlogPostPage({ params }: { params: { id: string } }) {
   const postData = await getPostData(params.id);
   
   if (!postData) {
-    notFound(); // This will show the 404 page
+    notFound(); 
   }
 
   return (
