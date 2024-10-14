@@ -93,7 +93,7 @@ const WordpressRates: React.FC = () => {
           <SlideReveal 
             key={pkg.name} 
             direction="up"
-            delay={0.5 * index}
+            delay={0.7}
             className="w-full h-full"
           >
             <Card 
