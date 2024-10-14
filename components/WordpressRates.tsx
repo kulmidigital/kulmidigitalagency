@@ -2,12 +2,9 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check } from "lucide-react";
-import { Plus_Jakarta_Sans } from 'next/font/google';
 import localFont from 'next/font/local';
 import { ScrambleText } from "@/components/ui/ScrambleText";
 import SlideReveal from "@/components/ui/slidereveal";
-
-const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-plus-jakarta" });
 
 const clashDisplay = localFont({
   src: [
