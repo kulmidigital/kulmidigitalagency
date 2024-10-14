@@ -24,6 +24,8 @@ const clashDisplay = localFont({
   display: "swap",
 });
 
+const currentYear = new Date().getFullYear();
+
 // Footer Component
 const Footer = () => {
   return (
@@ -49,17 +51,19 @@ const Footer = () => {
         {/* Middle Section: Navigation Links */}
         <div
           className={`${plusJakartaSans.className} flex flex-wrap justify-center space-x-4 text-[14px] sm:text-[15px] text-gray-700`}>
-          <Link href='/'>Home</Link>
-          <span>|</span>
           <Link href='/about'>About</Link>
           <span>|</span>
           <Link href='/our-work'>Our Work</Link>
+          <span>|</span>
+          <Link href='/blog'>Blog</Link>
+          <span>|</span>
+          <Link href='/contact'>Contact</Link>
         </div>
 
         {/* Right Section: Copyright */}
         <div
           className={`${plusJakartaSans.className} text-center text-gray-700 text-[12px] sm:text-[14px]`}>
-          Copyright © 2024 - All Right Reserved
+          Copyright © {currentYear} - All Right Reserved
         </div>
       </div>
     </section>
