@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 
 interface ScrambleTextProps {
@@ -16,7 +16,7 @@ export const ScrambleText: React.FC<ScrambleTextProps> = ({ text, className, isH
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const [displayText, setDisplayText] = useState(text);
 
-  const scramble = () => {
+  const scramble = useCallback(() => {
     let pos = 0;
 
     intervalRef.current = setInterval(() => {
@@ -40,12 +40,12 @@ export const ScrambleText: React.FC<ScrambleTextProps> = ({ text, className, isH
         stopScramble();
       }
     }, SHUFFLE_TIME);
-  };
+  }, [text]);
 
-  const stopScramble = () => {
+  const stopScramble = useCallback(() => {
     clearInterval(intervalRef.current || undefined);
     setDisplayText(text);
-  };
+  }, [text]);
 
   useEffect(() => {
     if (isHovered) {
@@ -56,7 +56,7 @@ export const ScrambleText: React.FC<ScrambleTextProps> = ({ text, className, isH
     return () => {
       clearInterval(intervalRef.current || undefined);
     };
-  }, [isHovered]);
+  }, [isHovered, scramble, stopScramble]);
 
   return (
     <motion.span
