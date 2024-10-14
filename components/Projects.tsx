@@ -5,6 +5,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import { projects } from "@/data/projectsData";
 import SlideReveal from "@/components/ui/slidereveal";
 import Image from "next/image";
+import Link from "next/link";
 
 // Fonts
 const clashDisplay = localFont({
@@ -92,19 +93,21 @@ const Projects = () => {
                   className={`${plusJakartaSans.className} text-gray-600 mt-2`}>
                   {project.description}
                 </p>
-                <a
-                  href='#'
-                  className={`${plusJakartaSans.className} mt-4 text-black hover:text-[#F56E0F] flex items-center space-x-2 underline`}>
-                  <span>View Case Study</span>
-                  <svg
-                    viewBox='0 0 1024 1024'
-                    xmlns='http://www.w3.org/2000/svg'
-                    fill='currentColor'
-                    className='w-4 sm:w-5 h-4 sm:h-5'>
-                    <path d='M768 256H353.6a32 32 0 1 1 0-64H800a32 32 0 0 1 32 32v448a32 32 0 0 1-64 0V256z'></path>
-                    <path d='M777.344 201.344a32 32 0 0 1 45.312 45.312l-544 544a32 32 0 0 1-45.312-45.312l544-544z'></path>
-                  </svg>
-                </a>
+                {project.caseStudyLink && (
+                  <Link
+                    href={project.caseStudyLink}
+                    className={`${plusJakartaSans.className} mt-4 text-black hover:text-[#F56E0F] flex items-center space-x-2 underline`}>
+                    <span>View Case Study</span>
+                    <svg
+                      viewBox='0 0 1024 1024'
+                      xmlns='http://www.w3.org/2000/svg'
+                      fill='currentColor'
+                      className='w-4 sm:w-5 h-4 sm:h-5'>
+                      <path d='M768 256H353.6a32 32 0 1 1 0-64H800a32 32 0 0 1 32 32v448a32 32 0 0 1-64 0V256z'></path>
+                      <path d='M777.344 201.344a32 32 0 0 1 45.312 45.312l-544 544a32 32 0 0 1-45.312-45.312l544-544z'></path>
+                    </svg>
+                  </Link>
+                )}
               </div>
             ))}
           </div>

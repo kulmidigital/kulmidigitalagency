@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react"; // Import useState to manage sheet visibility
 import Image from "next/image";
 import Link from "next/link";
 import localFont from "next/font/local";
@@ -25,6 +26,12 @@ const clashDisplay = localFont({
 });
 
 const Navbar = () => {
+  const [isSheetOpen, setIsSheetOpen] = useState(false); // Manage sheet state
+
+  const handleLinkClick = () => {
+    setIsSheetOpen(false); // Close the sheet when a link is clicked
+  };
+
   return (
     <nav className='flex justify-between items-center z-50 bg-white md:pt-6 md:pb-[22px] md:px-[76px] px-4 py-3 border-b-[1px] border-[#F56E0F] sticky top-0'>
       {/* Left Side: Logo and Brand */}
@@ -51,12 +58,13 @@ const Navbar = () => {
         <Link href='/'>Home</Link>
         <Link href='/about'>About</Link>
         <Link href='/our-work'>Our Work</Link>
+        <Link href='/blog'>Blog</Link>
         <Link href='/contact'>Contact</Link>
       </div>
 
       {/* Hamburger Menu: Mobile View */}
       <div className='md:hidden'>
-        <Sheet>
+        <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger asChild>
             <button>
               <Menu className='w-8 h-8' />
@@ -68,7 +76,7 @@ const Navbar = () => {
             {/* Logo and Flags */}
             <div className='flex justify-between items-center mb-6'>
               {/* Left Side: Logo */}
-              <Link href='/'>
+              <Link href='/' onClick={handleLinkClick}>
                 <div className='flex items-center'>
                   <Image src='/logo.svg' alt='Logo' width={40} height={40} />
                 </div>
@@ -111,16 +119,34 @@ const Navbar = () => {
 
             {/* Mobile Links */}
             <div className='flex flex-col items-start space-y-4'>
-              <Link href='/' className='text-lg font-bold'>
+              <Link
+                href='/'
+                className='text-lg font-bold'
+                onClick={handleLinkClick}>
                 Home
               </Link>
-              <Link href='/about' className='text-lg font-bold'>
+              <Link
+                href='/about'
+                className='text-lg font-bold'
+                onClick={handleLinkClick}>
                 About
               </Link>
-              <Link href='/our-work' className='text-lg font-bold'>
+              <Link
+                href='/our-work'
+                className='text-lg font-bold'
+                onClick={handleLinkClick}>
                 Our Work
               </Link>
-              <Link href='/contact' className='text-lg font-bold'>
+              <Link
+                href='/blog'
+                className='text-lg font-bold'
+                onClick={handleLinkClick}>
+                Blog
+              </Link>
+              <Link
+                href='/contact'
+                className='text-lg font-bold'
+                onClick={handleLinkClick}>
                 Contact
               </Link>
             </div>

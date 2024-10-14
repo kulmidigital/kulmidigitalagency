@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,6 +10,8 @@ import localFont from "next/font/local";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import emailjs from "@emailjs/browser";
 import SlideReveal from "@/components/ui/slidereveal";
+import { useToast } from "@/hooks/use-toast";
+import { ToastAction } from "@/components/ui/toast";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -74,25 +76,49 @@ const ContactOption: React.FC<ContactOptionProps> = ({
 // Contact Component
 const Contact: React.FC = () => {
   const form = useRef<HTMLFormElement | null>(null);
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
-    emailjs.init("-mNxF-9x0fBFz3_9J"); // Replace with your actual EmailJS public key
+    emailjs.init("dLJ8zVKXzkxUy4kwR");
   }, []);
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     if (form.current) {
-      emailjs
-        .sendForm("your_service_id", "your_template_id", form.current)
-        .then(
-          (result) => {
-            console.log("Message Sent Successfully:", result.text);
-          },
-          (error) => {
-            console.log("Error sending message:", error);
-          }
+      try {
+        const result = await emailjs.sendForm(
+          "service_q3hv2ob",
+          "template_4tomfg4",
+          form.current
         );
+        console.log("Message Sent Successfully:", result.text);
+        toast({
+          title: "Email Sent",
+          description: "Your message has been sent successfully!",
+          className: `${clashDisplay.className} bg-orange-500 text-white`,
+          action: (
+            <ToastAction altText="Close" className="text-white hover:text-orange-100">Close</ToastAction>
+          ),
+        });
+        if (form.current) {
+          form.current.reset();
+        }
+      } catch (error) {
+        console.error("Error sending message:", error);
+        toast({
+          title: "Error",
+          description: "There was an error sending your message. Please try again.",
+          className: `${clashDisplay.className} bg-red-500 text-white`,
+          action: (
+            <ToastAction altText="Try again" className="text-white hover:text-red-100">Try again</ToastAction>
+          ),
+        });
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -118,7 +144,7 @@ const Contact: React.FC = () => {
               iconPath='/icons/callus.svg'
               text='Call Us'
               buttonText='Request Call Back'
-              onClick={() => (window.location.href = "tel:+254725101001")}
+              onClick={() => (window.location.href = "tel:+254735101001")}
             />
           </SlideReveal>
           <SlideReveal direction='left' duration={0.7}>
@@ -138,7 +164,7 @@ const Contact: React.FC = () => {
               buttonText='Open Map'
               onClick={() =>
                 (window.location.href =
-                  "https://www.google.com/maps/place/TRV+Centre/@-1.2574872,36.8117552,15z/data=!4m6!3m5!1s0x182f17104f16e0b7:0xe61d00ec93dc2381!8m2!3d-1.2574872!4d36.8117552!16s%2Fg%2F11hcjzrvtk?entry=ttu&g_ep=EgoyMDI0MDkzMC4wIKXMDSoASAFQAw%3D%3D")
+                  "https://www.google.com/maps/place/TRV+Centre/")
               }
             />
           </SlideReveal>
@@ -161,7 +187,7 @@ const Contact: React.FC = () => {
             <div className='flex flex-col sm:flex-row gap-4'>
               <Input
                 type='text'
-                name='user_name'
+                name='from_name'
                 placeholder='Name'
                 className='bg-white border-transparent h-12 text-sm sm:text-base'
                 required
@@ -182,8 +208,9 @@ const Contact: React.FC = () => {
             />
             <Button
               type='submit'
-              className='w-full bg-orange-500 hover:bg-orange-600 text-white py-[15px] sm:py-[20px] text-sm sm:text-base rounded-[7px]'>
-              Submit Your Detail
+              className='w-full bg-orange-500 hover:bg-orange-600 text-white py-[15px] sm:py-[20px] text-sm sm:text-base rounded-[7px]'
+              disabled={isSubmitting}>
+              {isSubmitting ? 'Sending...' : 'Submit Your Detail'}
             </Button>
           </form>
         </SlideReveal>

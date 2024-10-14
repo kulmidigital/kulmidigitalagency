@@ -37,7 +37,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   return (
     <SlideReveal direction='up' duration={0.7}>
       <div className='flex flex-col text-left p-4 sm:p-6 space-y-6'>
-        {" "}
+        {' '}
         {/* Increased spacing between elements */}
         {/* Icon */}
         <div className='text-[#F56E0F] mb-4'>

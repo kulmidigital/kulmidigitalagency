@@ -4,6 +4,7 @@ export interface ProjectData {
   title: string;
   description: string;
   image: string;
+  caseStudyLink?: string; // Optional field for case study link
 }
 
 export const projects: ProjectData[] = [
@@ -14,6 +15,7 @@ export const projects: ProjectData[] = [
     description:
       "BananaPay is an international money transfer technology firm based in the United States of America enabling USA citizens send money affordably to over 14 countries globally.",
     image: "/images/case_banana.avif",
+    caseStudyLink: "/bananapay",
   },
   {
     id: 2,
@@ -22,6 +24,7 @@ export const projects: ProjectData[] = [
     description:
       "Dynamic Optical is a Kenyan optical company specializing in a wide range of spectacles & sunglasses.",
     image: "/images/case_dynamic.webp",
+    // caseStudyLink: "#",
   },
   {
     id: 3,
@@ -30,6 +33,7 @@ export const projects: ProjectData[] = [
     description:
       "Energizer Mobile is the Official Distributor of Energizer Mobile Products and Accessories in Kenya",
     image: "/images/case_energizer.webp",
+    // caseStudyLink: "#", 
   },
   {
     id: 5,
@@ -38,6 +42,7 @@ export const projects: ProjectData[] = [
     description:
       "Omaar Marketplace (www.oe.co.ke) is a Kenyan e-commerce platform offering quality products, fast delivery, and responsive customer service.",
     image: "/images/case_omaar.webp",
+    // caseStudyLink: "#",
   },
   {
     id: 6,
@@ -45,28 +50,32 @@ export const projects: ProjectData[] = [
     title: "Haier Kenya Out of Home Assets Design & Print ",
     description: " ",
     image: "/images/case_haeir.avif",
+    // caseStudyLink: "#",
   },
   {
-    id: 8,
+    id: 7,
     category: "Design & Print",
     title: "Jehana Food Products Design & Print",
     description: " ",
     image: "/images/case_jehana.avif",
+    // caseStudyLink: "#",
   },
   {
-    id: 9,
+    id: 8,
     category: "Marketing",
     title: "Rebune Full Marketing Management",
     description:
       "Rebune is an international homeappliance comapny with an extensive footprint across key African markets.",
     image: "/images/case_rebune.webp",
+    // caseStudyLink: "#",
   },
   {
-    id: 10,
+    id: 9,
     category: "Marketing",
     title: "Omaar Marketplace Full Marketing Management",
     description:
       "Omaar Marketplace (www.oe.co.ke) is a Kenyan e-commerce platform offering quality products, fast delivery, and responsive customer service.",
     image: "/images/case_omaarmkt.webp",
+    // caseStudyLink: "#",
   },
 ];
