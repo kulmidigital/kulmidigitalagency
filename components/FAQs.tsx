@@ -8,7 +8,6 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import SlideReveal from "@/components/ui/slidereveal";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 // Load custom fonts
