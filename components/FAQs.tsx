@@ -8,6 +8,8 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import SlideReveal from "@/components/ui/slidereveal";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 // Load custom fonts
 const clashDisplay = localFont({
@@ -109,13 +111,13 @@ const FAQs = () => {
               <h1 className='text-2xl sm:text-3xl lg:text-4xl text-black text-center'>
                 More <br /> Questions? <br /> Reach out to <br /> us
               </h1>
-              <button
-                className='mt-6 text-sm sm:text-[18px] lg:text-[20px] text-center text-white bg-[#F56E0F] border border-[#F56E0F] hover:bg-transparent hover:text-[#F56E0F] hover:border-[#F56E0F] w-[70%] p-4 rounded-[40px] flex items-center justify-center space-x-2'
+              <Link
+                className='mt-6 text-sm sm:text-[18px] lg:text-[20px] text-center w-[70%] p-4 rounded-[40px] flex items-center justify-center space-x-2 bg-[#F56E0F] text-white hover:bg-transparent border border-[#F56E0F]  hover:border-black hover:text-black'
+                href='/contact'
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}>
                 <span>Get Started</span>
                 {isHovered ? (
-                  // Next icon on hover
                   <svg
                     viewBox='0 0 24 24'
                     fill='none'
@@ -123,24 +125,23 @@ const FAQs = () => {
                     className='w-5 h-5'>
                     <path
                       d='M6 12H18M18 12L13 7M18 12L13 17'
-                      stroke='white'
+                      stroke='currentColor'
                       strokeWidth='2'
                       strokeLinecap='round'
                       strokeLinejoin='round'
                     />
                   </svg>
                 ) : (
-                  // Default up icon
                   <svg
                     viewBox='0 0 1024 1024'
                     xmlns='http://www.w3.org/2000/svg'
-                    fill='white'
+                    fill='currentColor'
                     className='w-5 h-5'>
                     <path d='M768 256H353.6a32 32 0 1 1 0-64H800a32 32 0 0 1 32 32v448a32 32 0 0 1-64 0V256z'></path>
                     <path d='M777.344 201.344a32 32 0 0 1 45.312 45.312l-544 544a32 32 0 0 1-45.312-45.312l544-544z'></path>
                   </svg>
                 )}
-              </button>
+              </Link>
             </div>
           </div>
         </section>
