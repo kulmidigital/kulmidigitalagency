@@ -5,7 +5,6 @@ import HomeAbout from "@/components/HomeAbout";
 import HomeTrust from "@/components/HomeTrust";
 import Services from "@/components/Services";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import WordpressRates from "@/components/WordpressRates";
 
 export default function Home() {
   return (
@@ -16,7 +15,6 @@ export default function Home() {
       <WhyChooseUs />
       <Discovery />
       <HomeTrust />
-      <WordpressRates />
       <FAQs />
     </div>
   );
