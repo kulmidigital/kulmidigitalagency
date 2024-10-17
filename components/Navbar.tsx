@@ -58,7 +58,6 @@ const Navbar = () => {
         <Link href='/'>Home</Link>
         <Link href='/about'>About</Link>
         <Link href='/our-work'>Our Work</Link>
-        <Link href='/blog'>Blog</Link>
         <Link href='/contact'>Contact</Link>
       </div>
 
@@ -136,12 +135,6 @@ const Navbar = () => {
                 className='text-lg font-bold'
                 onClick={handleLinkClick}>
                 Our Work
-              </Link>
-              <Link
-                href='/blog'
-                className='text-lg font-bold'
-                onClick={handleLinkClick}>
-                Blog
               </Link>
               <Link
                 href='/contact'

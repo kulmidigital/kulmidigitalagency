@@ -41,7 +41,7 @@ const AboutTop = () => {
         <SlideReveal direction='right' duration={0.7}>
           <div className='mb-12 text-left sm:text-right'>
             <Link
-              href='https://drive.google.com/file/d/1l5UoJKKJodB6N16aERzhsMDzyzhp69PH/view'
+              href='https://drive.google.com/file/d/12Cz_4vWDHX61lp7LMndRgqP27IGdB6Va/view?usp=sharing'
               passHref>
               <span
                 className={`inline-block text-[14px] sm:text-[16px] font-bold py-3 px-6 rounded-full transition-all duration-300 cursor-pointer ${

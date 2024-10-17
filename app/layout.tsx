@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
+import "@/styles/blog.css";
 
 // Google Font: Plus Jakarta Sans
 const plusJakartaSans = Plus_Jakarta_Sans({
