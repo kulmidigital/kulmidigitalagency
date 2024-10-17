@@ -54,6 +54,12 @@ export const services = [
       "Maximizing your brand’s visibility with advertising across retail media networks, ensuring you reach in-market shoppers.",
   },
   {
+    iconSrc: "/icons/video.svg",
+    title: "Video Production",
+    description:
+      "Creating high-quality videos for your brand to showcase your products and services.",
+  },
+  {
     iconSrc: "/icons/audience.svg",
     title: "Audience Monitoring",
     description:
