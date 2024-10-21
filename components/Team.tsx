@@ -24,6 +24,11 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
+    name: "Yussuf Omar Dakane",
+    title: "Managing Director",
+    imageSrc: "/images/yussuf.avif",
+  },
+  {
     name: "Roy Wati",
     title: "Senior Software Engineer | Core Banking",
     imageSrc: "/images/roy.avif",
@@ -42,6 +47,21 @@ const teamMembers: TeamMember[] = [
     name: "Guchu Kelvin",
     title: "Software Engineer",
     imageSrc: "/images/kelvin.avif",
+  },
+  {
+    name: "Abdilatif Bashir",
+    title: "Tech Lead",
+    imageSrc: "/images/abdilatif.avif",
+  },
+  {
+    name: "Magdalene Wanja",
+    title: "PR and Comms Lead",
+    imageSrc: "/images/magdalene.avif",
+  },
+  {
+    name: "Asimba Edward",
+    title: "Brand & Creative Partner",
+    imageSrc: "/images/asimba.avif",
   },
 ];
 
