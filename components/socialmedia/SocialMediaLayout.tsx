@@ -60,31 +60,33 @@ const SocialMediaLayout: React.FC<SocialMediaLayoutProps> = ({
                 href='/contact'
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}>
-                <span>Get Started</span>
-                {isHovered ? (
-                  <svg
-                    viewBox='0 0 24 24'
-                    fill='none'
-                    xmlns='http://www.w3.org/2000/svg'
-                    className='w-5 h-5'>
-                    <path
-                      d='M6 12H18M18 12L13 7M18 12L13 17'
-                      stroke='currentColor'
-                      strokeWidth='2'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    viewBox='0 0 1024 1024'
-                    xmlns='http://www.w3.org/2000/svg'
-                    fill='currentColor'
-                    className='w-5 h-5'>
-                    <path d='M768 256H353.6a32 32 0 1 1 0-64H800a32 32 0 0 1 32 32v448a32 32 0 0 1-64 0V256z'></path>
-                    <path d='M777.344 201.344a32 32 0 0 1 45.312 45.312l-544 544a32 32 0 0 1-45.312-45.312l544-544z'></path>
-                  </svg>
-                )}
+                <span className="flex items-center justify-center">
+                  <span className="mr-2">Get Started</span>
+                  {isHovered ? (
+                    <svg
+                      viewBox='0 0 24 24'
+                      fill='none'
+                      xmlns='http://www.w3.org/2000/svg'
+                      className='w-5 h-5 inline-block'>
+                      <path
+                        d='M6 12H18M18 12L13 7M18 12L13 17'
+                        stroke='currentColor'
+                        strokeWidth='2'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                      />
+                    </svg>
+                  ) : (
+                    <svg
+                      viewBox='0 0 1024 1024'
+                      xmlns='http://www.w3.org/2000/svg'
+                      fill='currentColor'
+                      className='w-5 h-5 inline-block'>
+                      <path d='M768 256H353.6a32 32 0 1 1 0-64H800a32 32 0 0 1 32 32v448a32 32 0 0 1-64 0V256z'></path>
+                      <path d='M777.344 201.344a32 32 0 0 1 45.312 45.312l-544 544a32 32 0 0 1-45.312-45.312l544-544z'></path>
+                    </svg>
+                  )}
+                </span>
               </Link>
             </div>
           </div>
