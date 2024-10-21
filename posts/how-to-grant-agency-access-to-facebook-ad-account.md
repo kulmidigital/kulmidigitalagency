@@ -16,7 +16,7 @@ Before diving into the steps, it's important to understand why giving access is 
 
 ### 1. Set Up Facebook Business Manager
 
-If you haven't already, create a Business Manager account. This is the central hub where you manage all your assets, including Pages, ad accounts, and pixels. Visit business.facebook.com to set up your account.
+If you haven't already, create a Business Manager account. This is the central hub where you manage all your assets, including Pages, ad accounts, and pixels. Visit [business.facebook.com](https://business.facebook.com) to set up your account.
 
 ### 2. Add Your Ad Account to Business Manager
 
