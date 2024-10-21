@@ -29,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={`${plusJakartaSans.variable}`}>
+      <body className={`${plusJakartaSans.variable} w-[100%]`}>
         <Navbar />
         {children}
         <Footer />
