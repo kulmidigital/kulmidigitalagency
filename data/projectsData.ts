@@ -15,7 +15,7 @@ export const projects: ProjectData[] = [
     description:
       "BananaPay is an international money transfer technology firm based in the United States of America enabling USA citizens send money affordably to over 14 countries globally.",
     image: "/images/case_banana.avif",
-    caseStudyLink: "/bananapay",
+    caseStudyLink: "/casestudies/bananapay",
   },
   {
     id: 2,

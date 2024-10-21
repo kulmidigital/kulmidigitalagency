@@ -38,26 +38,23 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     <SlideReveal direction='up' duration={0.7}>
       <div className='flex flex-col text-left p-4 sm:p-6 space-y-4'>
         {' '}
-        {/* Increased spacing between elements */}
-        {/* Icon */}
         <div className='text-[#F56E0F] mb-4'>
           <Image
             src={iconSrc}
             alt={title}
-            width={60} // Increased size
+            width={60} 
             height={60}
             className='sm:w-70 sm:h-70'
           />
         </div>
         {/* Title */}
         <h3
-          className={`${clashDisplay.className} text-[24px] sm:text-[26px] font-bold text-black mb-2`} // Increased font size
+          className={`${clashDisplay.className} text-[24px] sm:text-[26px] font-bold text-black mb-2`} 
         >
           {title}
         </h3>
-        {/* Description */}
         <p
-          className={`${plusJakartaSans.className} text-gray-600 text-[16px] sm:text-[18px] leading-relaxed`} // Added leading-relaxed for better line spacing
+          className={`${plusJakartaSans.className} text-gray-600 text-[16px] sm:text-[18px] leading-relaxed`}
         >
           {description}
         </p>

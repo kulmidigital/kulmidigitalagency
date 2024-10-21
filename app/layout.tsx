@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import "@/styles/blog.css";
 
 // Google Font: Plus Jakarta Sans
@@ -32,6 +33,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <WhatsAppButton />
         <Toaster />
       </body>
     </html>
