@@ -54,37 +54,39 @@ const SocialMediaLayout: React.FC<SocialMediaLayoutProps> = ({
           </h2>
           {whySection}
           <div className='mt-8 sm:mt-12'>
-            <Link
-              className='block w-full sm:w-auto sm:inline-block text-center px-6 py-3 rounded-full text-base sm:text-lg font-medium bg-[#F56E0F] text-white hover:bg-transparent border border-[#F56E0F] hover:border-black hover:text-black transition-colors duration-300'
-              href='/contact'
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}>
-              <span>Get Started</span>
-              {isHovered ? (
-                <svg
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                  className='w-5 h-5'>
-                  <path
-                    d='M6 12H18M18 12L13 7M18 12L13 17'
-                    stroke='currentColor'
-                    strokeWidth='2'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                  />
-                </svg>
-              ) : (
-                <svg
-                  viewBox='0 0 1024 1024'
-                  xmlns='http://www.w3.org/2000/svg'
-                  fill='currentColor'
-                  className='w-5 h-5'>
-                  <path d='M768 256H353.6a32 32 0 1 1 0-64H800a32 32 0 0 1 32 32v448a32 32 0 0 1-64 0V256z'></path>
-                  <path d='M777.344 201.344a32 32 0 0 1 45.312 45.312l-544 544a32 32 0 0 1-45.312-45.312l544-544z'></path>
-                </svg>
-              )}
-            </Link>
+            <div className='flex justify-center items-center'>
+              <Link
+                className='block w-full sm:w-auto sm:inline-block text-center px-6 py-3 rounded-full text-base sm:text-lg font-medium bg-[#F56E0F] text-white hover:bg-transparent border border-[#F56E0F] hover:border-black hover:text-black transition-colors duration-300'
+                href='/contact'
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}>
+                <span>Get Started</span>
+                {isHovered ? (
+                  <svg
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    xmlns='http://www.w3.org/2000/svg'
+                    className='w-5 h-5'>
+                    <path
+                      d='M6 12H18M18 12L13 7M18 12L13 17'
+                      stroke='currentColor'
+                      strokeWidth='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    viewBox='0 0 1024 1024'
+                    xmlns='http://www.w3.org/2000/svg'
+                    fill='currentColor'
+                    className='w-5 h-5'>
+                    <path d='M768 256H353.6a32 32 0 1 1 0-64H800a32 32 0 0 1 32 32v448a32 32 0 0 1-64 0V256z'></path>
+                    <path d='M777.344 201.344a32 32 0 0 1 45.312 45.312l-544 544a32 32 0 0 1-45.312-45.312l544-544z'></path>
+                  </svg>
+                )}
+              </Link>
+            </div>
           </div>
         </div>
       </div>

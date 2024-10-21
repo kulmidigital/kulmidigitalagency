@@ -218,14 +218,18 @@ const Navbar = () => {
               </Link>
               <div className='text-lg font-bold'>
                 Services
-                <div className='ml-4 mt-2 space-y-2'>
+                <div
+                  className={`${clashDisplay.className} ml-4 mt-2 space-y-2`}>
                   {services.map((service) => (
                     <Link
                       key={service.name}
                       href={service.href}
                       className='flex items-center'
                       onClick={handleLinkClick}>
-                      <service.icon className='w-4 h-4 mr-2' style={{ color: service.color }} />
+                      <service.icon
+                        className='w-4 h-4 mr-2'
+                        style={{ color: service.color }}
+                      />
                       <span>{service.name}</span>
                     </Link>
                   ))}
