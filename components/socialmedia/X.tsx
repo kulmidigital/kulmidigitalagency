@@ -145,7 +145,7 @@ const X = () => {
       }}
       benefitsSection={benefitsSection}
       whySection={whySection}
-      platform='Twitter'
+      platform='X'
     />
   );
 };
