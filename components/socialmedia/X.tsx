@@ -14,6 +14,7 @@ import {
   BarChart,
   Bell,
 } from "lucide-react";
+import Image from 'next/image';
 
 const X = () => {
   const benefitsSection = (
@@ -22,9 +23,9 @@ const X = () => {
       <div className='col-span-1 sm:col-span-2 row-span-2 rounded-3xl bg-white/50 p-6 sm:p-8 shadow-lg border border-white/60 transition-all duration-300 hover:bg-white/70 hover:scale-[1.02] cursor-pointer relative overflow-hidden group'>
         <div className='absolute inset-0 bg-gradient-to-br from-blue-400/20 to-blue-600/20 group-hover:opacity-30 transition-opacity duration-300'></div>
         <div className='relative z-10'>
-          <TwitterIcon className='w-16 h-16 text-blue-600 mb-6' />
+          <Image src='/icons/xl.svg' alt='X' width={50} height={50} />
           <h2 className='text-2xl sm:text-3xl font-bold text-gray-800 mb-4 font-clash-display'>
-            Twitter Marketing Experts
+            X Marketing Experts
           </h2>
           <p className='text-gray-700 text-base sm:text-lg'>
             Our Twitter specialists will help you create engaging content, grow your following, and leverage real-time conversations to boost your brand's presence.
@@ -75,7 +76,7 @@ const X = () => {
         <div className='absolute inset-0 bg-gradient-to-br from-red-200/20 to-blue-400/20 group-hover:opacity-30 transition-opacity duration-300'></div>
         <Zap className='w-12 h-12 text-red-500 mb-2 relative z-10' />
         <span className='text-sm font-semibold text-gray-800 relative z-10 font-clash-display text-center'>
-          Twitter Ads
+          X Ads
         </span>
       </div>
       <div className='rounded-3xl bg-white/50 p-6 flex flex-col items-center justify-center shadow-lg border border-white/60 transition-all duration-300 hover:bg-white/70 hover:scale-[1.02] cursor-pointer relative overflow-hidden group'>
@@ -110,7 +111,7 @@ const X = () => {
           Real-Time Engagement
         </h3>
         <p className='text-gray-700'>
-          Twitter's fast-paced nature allows for real-time engagement with your audience, perfect for timely updates and customer service.
+          X's fast-paced nature allows for real-time engagement with your audience, perfect for timely updates and customer service.
         </p>
       </div>
       <div className='bg-white rounded-lg shadow-lg p-6 sm:p-8 transition-all duration-300 hover:shadow-xl'>
@@ -119,7 +120,7 @@ const X = () => {
           Brand Visibility
         </h3>
         <p className='text-gray-700'>
-          Twitter's public nature and retweet feature can help your content go viral and increase your brand's visibility exponentially.
+          X's public nature and retweet feature can help your content go viral and increase your brand's visibility exponentially.
         </p>
       </div>
       <div className='bg-white rounded-lg shadow-lg p-6 sm:p-8 transition-all duration-300 hover:shadow-xl'>
@@ -128,7 +129,7 @@ const X = () => {
           Targeted Advertising
         </h3>
         <p className='text-gray-700'>
-          Twitter's advertising platform offers precise targeting options, allowing you to reach your ideal audience based on interests, behaviors, and more.
+          X's advertising platform offers precise targeting options, allowing you to reach your ideal audience based on interests, behaviors, and more.
         </p>
       </div>
     </div>
