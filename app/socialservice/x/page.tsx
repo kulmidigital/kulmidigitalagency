@@ -1,10 +1,10 @@
 import React from 'react'
-import Twitter from '@/components/socialmedia/Twitter'
+import X from '@/components/socialmedia/X'
 
 const TwitterPage = () => {
   return (
     <div>
-      <Twitter />
+      <X />
     </div>
   )
 }

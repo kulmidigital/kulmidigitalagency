@@ -47,38 +47,38 @@ const Navbar = () => {
       color: "#E1306C",
     },
     {
-      name: "Twitter Campaigns",
-      icon: Twitter,
-      href: "/socialservice/twitter",
+      name: "X Campaigns",
+      customIcon: '/icons/xl.svg',
+      href: "/socialservice/x",
       color: "#1DA1F2",
     },
     {
       name: "YouTube Advertising",
-      icon: Youtube,
+      customIcon: '/icons/youtube.svg',
       href: "/socialservice/youtube",
       color: "#FF0000",
     },
     {
       name: "TikTok Advertising",
-      icon: Music,
+      customIcon: '/icons/tiktok.svg',
       href: "/socialservice/tiktok",
       color: "#000000",
     },
     {
       name: "Snapchat Marketing",
-      icon: Camera,
+      customIcon: '/icons/snapchat.svg',
       href: "/socialservice/snapchat",
       color: "#FFFC00",
     },
     {
       name: "Google Advertising",
-      icon: Search, 
+      customIcon: '/icons/google.svg',
       href: "/socialservice/google",
       color: "#DB4437",
     },
     {
       name: "Pinterest Advertising",
-      icon: Hash,
+      customIcon: '/icons/pinterest.svg',
       href: "/socialservice/pinterest",
       color: "#E60023",
     },
@@ -123,10 +123,20 @@ const Navbar = () => {
                   <div
                     className='flex items-center justify-center w-10 h-10 rounded-full mr-3 transition-colors duration-200'
                     style={{ backgroundColor: service.color + "20" }}>
-                    <service.icon
-                      className='w-5 h-5 transition-colors duration-200'
-                      style={{ color: service.color }}
-                    />
+                    {service.customIcon ? (
+                      <Image
+                        src={service.customIcon}
+                        alt={service.name}
+                        width={20}
+                        height={20}
+                        className='transition-colors duration-200'
+                      />
+                    ) : (
+                      service.icon && <service.icon
+                        className='w-5 h-5 transition-colors duration-200'
+                        style={{ color: service.color }}
+                      />
+                    )}
                   </div>
                   <div>
                     <span className='font-medium text-sm group-hover:text-[#F56E0F] transition-colors duration-200'>
@@ -226,10 +236,20 @@ const Navbar = () => {
                       href={service.href}
                       className='flex items-center'
                       onClick={handleLinkClick}>
-                      <service.icon
-                        className='w-4 h-4 mr-2'
-                        style={{ color: service.color }}
-                      />
+                      {service.customIcon ? (
+                        <Image
+                          src={service.customIcon}
+                          alt={service.name}
+                          width={16}
+                          height={16}
+                          className='mr-2'
+                        />
+                      ) : (
+                        service.icon && <service.icon
+                          className='w-4 h-4 mr-2'
+                          style={{ color: service.color }}
+                        />
+                      )}
                       <span>{service.name}</span>
                     </Link>
                   ))}

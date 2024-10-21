@@ -15,7 +15,7 @@ import {
   Bell,
 } from "lucide-react";
 
-const Twitter = () => {
+const X = () => {
   const benefitsSection = (
     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto'>
       {/* Large card */}
@@ -137,16 +137,17 @@ const Twitter = () => {
   return (
     <SocialMediaLayout
       heroProps={{
-        gradientFrom: "#1DA1F2",
-        gradientTo: "#0C85D0",
-        title: "Amplify Your Twitter/X Presence",
-        description: "Engage in real-time conversations and boost your brand's visibility on this dynamic platform.",
+        gradientFrom: "#000000",
+        gradientTo: "#1A1A1A",
+        title: "Amplify Your X Presence",
+        description:
+          "Engage in real-time conversations and boost your brand's visibility on this dynamic platform.",
       }}
       benefitsSection={benefitsSection}
       whySection={whySection}
-      platform="Twitter"
+      platform='Twitter'
     />
   );
 };
 
-export default Twitter;
+export default X;

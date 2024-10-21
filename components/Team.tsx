@@ -46,7 +46,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Guchu Kelvin",
     title: "Software Engineer",
-    imageSrc: "/images/kelvin.avif",
+    imageSrc: "/images/kelvin.jpg",
   },
   {
     name: "Abdilatif Bashir",
