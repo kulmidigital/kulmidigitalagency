@@ -114,7 +114,7 @@ const DigitalAdvertisingCard = () => {
               <div ref={popoverRef}>
                 <Badge
                   variant='outline'
-                  className={`${clashDisplay.className} text-[10px] sm:text-[12px] w-[140px] bg-gradient-to-br from-green-300/20 to-yellow-400/20 cursor-pointer hover:bg-gray-100 shadow-lg`}>
+                  className={`${clashDisplay.className} text-[12px] sm:text-[12px] w-[140px] bg-gradient-to-br from-green-300/20 to-yellow-400/20 cursor-pointer hover:bg-gray-100 shadow-lg`}>
                   See digital services
                 </Badge>
               </div>
