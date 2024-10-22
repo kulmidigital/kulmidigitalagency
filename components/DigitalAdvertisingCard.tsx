@@ -78,6 +78,15 @@ const services = [
 
 const DigitalAdvertisingCard = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const popoverRef = React.useRef<HTMLDivElement>(null);
+  const [origin, setOrigin] = React.useState({ x: 0, y: 0 });
+
+  React.useEffect(() => {
+    if (popoverRef.current) {
+      const rect = popoverRef.current.getBoundingClientRect();
+      setOrigin({ x: rect.left, y: rect.top });
+    }
+  }, [isOpen]);
 
   return (
     <SlideReveal direction='up' duration={0.7}>
@@ -101,21 +110,24 @@ const DigitalAdvertisingCard = () => {
         </p>
         <div className="flex justify-start">
           <Popover open={isOpen} onOpenChange={setIsOpen}>
-            <PopoverTrigger>
-              <Badge
-                variant='outline'
-                className={`${clashDisplay.className} text-[10px] sm:text-[12px] w-[140px] bg-gradient-to-br from-green-300/20 to-yellow-400/20 cursor-pointer hover:bg-gray-100 shadow-lg`}>
-                See digital services
-              </Badge>
+            <PopoverTrigger asChild>
+              <div ref={popoverRef}>
+                <Badge
+                  variant='outline'
+                  className={`${clashDisplay.className} text-[10px] sm:text-[12px] w-[140px] bg-gradient-to-br from-green-300/20 to-yellow-400/20 cursor-pointer hover:bg-gray-100 shadow-lg`}>
+                  See digital services
+                </Badge>
+              </div>
             </PopoverTrigger>
             <AnimatePresence>
               {isOpen && (
                 <PopoverContent className='w-96 p-0 rounded-xl shadow-xl bg-gradient-to-br from-green-300 to-yellow-400' forceMount>
                   <motion.div
-                    initial={{ scale: 0.9, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    exit={{ scale: 0.9, opacity: 0 }}
+                    initial={{ scale: 0, opacity: 0, x: origin.x, y: origin.y }}
+                    animate={{ scale: 1, opacity: 1, x: 0, y: 0 }}
+                    exit={{ scale: 0, opacity: 0, x: origin.x, y: origin.y }}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    style={{ transformOrigin: 'top left' }}
                   >
                     <div className='grid grid-cols-1 gap-2 p-4'>
                       {services.map((service) => (
