@@ -121,7 +121,7 @@ const DigitalAdvertisingCard = () => {
             </PopoverTrigger>
             <AnimatePresence>
               {isOpen && (
-                <PopoverContent className='w-96 p-0 rounded-xl shadow-xl bg-gradient-to-br from-green-300 to-yellow-400' forceMount>
+                <PopoverContent className='w-80 ml-4 md:ml-0 md:w-96 p-0 rounded-xl shadow-xl bg-gradient-to-br from-green-300 to-yellow-400' forceMount>
                   <motion.div
                     initial={{ scale: 0, opacity: 0, x: origin.x, y: origin.y }}
                     animate={{ scale: 1, opacity: 1, x: 0, y: 0 }}
