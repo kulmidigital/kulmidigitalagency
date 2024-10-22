@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 html{
+       overflow-x: hidden;
        width: 100%;
-      overflow-x: hidden;
+       position: relative;
      }
-
 
 :root {
   --background: #ffffff;
