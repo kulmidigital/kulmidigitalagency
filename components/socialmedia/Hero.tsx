@@ -267,7 +267,7 @@ const Hero: React.FC<HeroProps> = ({ gradientFrom, gradientTo, title, descriptio
           <Card className='w-full lg:w-[40%] bg-white/10 backdrop-blur-md rounded-xl p-6 lg:p-8'>
             <SlideReveal direction='up' duration={0.7}>
               <h2
-                className={`${clashDisplay.className} text-xl sm:text-2xl mb-4 text-center`}>
+                className={`${clashDisplay.className} text-[19px] sm:text-2xl mb-4 text-center`}>
                 Get Your Free Social Media Audit
               </h2>
               <form
