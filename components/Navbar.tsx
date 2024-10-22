@@ -9,12 +9,15 @@ import {
   Menu,
   Facebook,
   Instagram,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
+import { motion, AnimatePresence } from "framer-motion";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -36,9 +39,15 @@ const clashDisplay = localFont({
 
 const Navbar = () => {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   const handleLinkClick = () => {
     setIsSheetOpen(false);
+    setIsServicesOpen(false);
+  };
+
+  const toggleServices = () => {
+    setIsServicesOpen(!isServicesOpen);
   };
 
   const services = [
@@ -236,36 +245,57 @@ const Navbar = () => {
                 onClick={handleLinkClick}>
                 About
               </Link>
-              <div className='text-lg font-bold'>
-                Services
-                <div
-                  className={`${clashDisplay.className} ml-4 mt-2 space-y-2`}>
-                  {services.map((service) => (
-                    <Link
-                      key={service.name}
-                      href={service.href}
-                      className='flex items-center'
-                      onClick={handleLinkClick}>
-                      {service.customIcon ? (
-                        <Image
-                          src={service.customIcon}
-                          alt={service.name}
-                          width={16}
-                          height={16}
-                          className='mr-2'
-                        />
-                      ) : (
-                        service.icon && (
-                          <service.icon
-                            className='w-4 h-4 mr-2'
-                            style={{ color: service.color }}
-                          />
-                        )
-                      )}
-                      <span>{service.name}</span>
-                    </Link>
-                  ))}
-                </div>
+              <div className='w-full'>
+                <button
+                  onClick={toggleServices}
+                  className='text-lg font-bold flex items-center justify-between w-full'>
+                  Digital Advertising
+                  <motion.div
+                    animate={{ rotate: isServicesOpen ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <ChevronDown className='ml-1 h-4 w-4' />
+                  </motion.div>
+                </button>
+                <AnimatePresence>
+                  {isServicesOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      style={{ overflow: "hidden" }}
+                    >
+                      <div className={`${clashDisplay.className} mt-2 ml-4 space-y-2`}>
+                        {services.map((service) => (
+                          <Link
+                            key={service.name}
+                            href={service.href}
+                            className='flex items-center py-1'
+                            onClick={handleLinkClick}>
+                            {service.customIcon ? (
+                              <Image
+                                src={service.customIcon}
+                                alt={service.name}
+                                width={16}
+                                height={16}
+                                className='mr-2'
+                              />
+                            ) : (
+                              service.icon && (
+                                <service.icon
+                                  className='w-4 h-4 mr-2'
+                                  style={{ color: service.color }}
+                                />
+                              )
+                            )}
+                            <span>{service.name}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
               <Link
                 href='/our-work'
