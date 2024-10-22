@@ -5,6 +5,7 @@ import SlideReveal from "@/components/ui/slidereveal";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import CalendlyButton from "@/components/CalendlyButton";
 
 // Import Clash Display Font
 const clashDisplay = localFont({
@@ -36,16 +37,20 @@ const Hero = () => {
               With consumers spending more time online than ever before, having
               a strong digital presence is essential for businesses to succeed.
             </p>
-            <Link href='/contact' passHref>
-              <Button 
-                variant="default" 
-                size="lg"
-                className="bg-[#F56E0F] text-white border border-[#F56E0F] rounded-full font-semibold hover:bg-transparent hover:border-white transition duration-300"
-              >
-                Get Started
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              <Link href='/contact' passHref>
+                <Button 
+                  variant="default" 
+                  size="lg"
+                  className="w-full sm:w-auto bg-[#F56E0F] text-white border border-[#F56E0F] rounded-full font-semibold hover:bg-transparent hover:border-white transition duration-300"
+                >
+                  Get Started
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              
+              <CalendlyButton className="w-full sm:w-auto bg-white text-[#F56E0F] border border-[#F56E0F] rounded-full font-semibold hover:bg-[#F56E0F] hover:text-white transition duration-300 py-3 px-6" />
+            </div>
           </div>
         </SlideReveal>
       </div>

@@ -15,6 +15,7 @@ import { motion, useAnimationFrame } from "framer-motion";
 import GradualSpacing from '../ui/gradual-spacing';
 import { cn } from "@/lib/utils";
 import { AnimatedList } from "@/components/ui/animated-list";
+import CalendlyButton from "@/components/CalendlyButton";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -243,6 +244,10 @@ const Hero: React.FC<HeroProps> = ({ gradientFrom, gradientTo, title, descriptio
                 {description}
               </p>
 
+              <div className="mb-6">
+                <CalendlyButton className='w-full sm:w-auto bg-white text-blue-600 hover:bg-blue-100 py-3 px-6 text-base sm:text-lg rounded-full' />
+              </div>
+
               {/* Animated List */}
               <div
                 className={cn(
@@ -261,7 +266,7 @@ const Hero: React.FC<HeroProps> = ({ gradientFrom, gradientTo, title, descriptio
           <Card className='w-full lg:w-[40%] bg-white/10 backdrop-blur-md rounded-xl p-6 lg:p-8'>
             <SlideReveal direction='up' duration={0.7}>
               <h2
-                className={`${clashDisplay.className} text-[18px] sm:text-2xl mb-4 text-center`}>
+                className={`${clashDisplay.className} text-xl sm:text-2xl mb-4 text-center`}>
                 Get Your Free Social Media Audit
               </h2>
               <form

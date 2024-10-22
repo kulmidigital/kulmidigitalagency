@@ -1,9 +1,9 @@
-// pages/Services.tsx
 import React from "react";
-import ServiceCard from "../components/ServiceCard";
+import ServiceCard from "./ServiceCard";
+import DigitalAdvertisingCard from "./DigitalAdvertisingCard";
 import localFont from "next/font/local";
 import SlideReveal from "@/components/ui/slidereveal";
-import { services } from "@/data/servicesData"; // Update the import statement
+import { services } from "@/data/servicesData";
 
 const clashDisplay = localFont({
   src: [
@@ -29,16 +29,19 @@ const Services: React.FC = () => {
         </h1>
       </SlideReveal>
       <div className='max-w-7xl mx-auto'>
-        {/* Grid is default for mobile */}
         <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
-          {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              iconSrc={service.iconSrc}
-              title={service.title}
-              description={service.description}
-            />
-          ))}
+          {services.map((service, index) => 
+            service.title === "Digital Advertising (PPC & SEM)" ? (
+              <DigitalAdvertisingCard key={index} />
+            ) : (
+              <ServiceCard
+                key={index}
+                iconSrc={service.iconSrc}
+                title={service.title}
+                description={service.description}
+              />
+            )
+          )}
         </div>
       </div>
     </section>

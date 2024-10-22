@@ -5,8 +5,16 @@ import Link from "next/link";
 import localFont from "next/font/local";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Facebook, Instagram, Twitter, Youtube, Camera, Music, Search, Hash } from "lucide-react";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+import {
+  Menu,
+  Facebook,
+  Instagram,
+} from "lucide-react";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -48,44 +56,44 @@ const Navbar = () => {
     },
     {
       name: "X Campaigns",
-      customIcon: '/icons/xl.svg',
+      customIcon: "/icons/xl.svg",
       href: "/socialservice/x",
       color: "#1DA1F2",
     },
     {
       name: "YouTube Advertising",
-      customIcon: '/icons/youtube.svg',
+      customIcon: "/icons/youtube.svg",
       href: "/socialservice/youtube",
       color: "#FF0000",
     },
     {
       name: "TikTok Advertising",
-      customIcon: '/icons/tiktok.svg',
+      customIcon: "/icons/tiktok.svg",
       href: "/socialservice/tiktok",
       color: "#000000",
     },
     {
       name: "Snapchat Marketing",
-      customIcon: '/icons/snapchat.svg',
+      customIcon: "/icons/snapchat.svg",
       href: "/socialservice/snapchat",
       color: "#FFFC00",
     },
     {
       name: "Google Advertising",
-      customIcon: '/icons/google.svg',
+      customIcon: "/icons/google.svg",
       href: "/socialservice/google",
       color: "#DB4437",
     },
     {
       name: "Pinterest Advertising",
-      customIcon: '/icons/pinterest.svg',
+      customIcon: "/icons/pinterest.svg",
       href: "/socialservice/pinterest",
       color: "#E60023",
     },
   ];
 
   return (
-    <nav className='flex justify-between items-center z-50 bg-white md:pt-6 md:pb-[22px] md:px-[76px] px-4 py-3 border-b-[1px] border-[#F56E0F] sticky top-0'>
+    <nav className='flex justify-between items-center z-[99999] bg-white md:pt-6 md:pb-[22px] md:px-[76px] px-4 py-3 border-b-[1px] border-[#F56E0F] fixed top-0 left-0 right-0 w-full'>
       {/* Left Side: Logo and Brand */}
       <Link href='/'>
         <div className='flex items-center'>
@@ -132,10 +140,12 @@ const Navbar = () => {
                         className='transition-colors duration-200'
                       />
                     ) : (
-                      service.icon && <service.icon
-                        className='w-5 h-5 transition-colors duration-200'
-                        style={{ color: service.color }}
-                      />
+                      service.icon && (
+                        <service.icon
+                          className='w-5 h-5 transition-colors duration-200'
+                          style={{ color: service.color }}
+                        />
+                      )
                     )}
                   </div>
                   <div>
@@ -245,10 +255,12 @@ const Navbar = () => {
                           className='mr-2'
                         />
                       ) : (
-                        service.icon && <service.icon
-                          className='w-4 h-4 mr-2'
-                          style={{ color: service.color }}
-                        />
+                        service.icon && (
+                          <service.icon
+                            className='w-4 h-4 mr-2'
+                            style={{ color: service.color }}
+                          />
+                        )
                       )}
                       <span>{service.name}</span>
                     </Link>
