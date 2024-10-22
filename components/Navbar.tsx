@@ -93,7 +93,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className='flex justify-between items-center z-[99999] bg-white md:pt-6 md:pb-[22px] md:px-[76px] px-4 py-3 border-b-[1px] border-[#F56E0F] fixed top-0 left-0 right-0 w-full'>
+    <nav className='flex justify-between items-center z-[99999] bg-white md:pt-6 md:pb-[22px] md:px-[76px] px-4 py-3 border-b-[1px] border-[#F56E0F] sticky top-0 left-0 right-0 w-full'>
       {/* Left Side: Logo and Brand */}
       <Link href='/'>
         <div className='flex items-center'>
