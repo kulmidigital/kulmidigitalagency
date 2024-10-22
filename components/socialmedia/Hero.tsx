@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from 'react';
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
@@ -16,6 +15,7 @@ import GradualSpacing from '../ui/gradual-spacing';
 import { cn } from "@/lib/utils";
 import { AnimatedList } from "@/components/ui/animated-list";
 import CalendlyButton from "@/components/CalendlyButton";
+import { Textarea } from "@/components/ui/textarea";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -240,11 +240,12 @@ const Hero: React.FC<HeroProps> = ({ gradientFrom, gradientTo, title, descriptio
                 className={`${clashDisplay.className} text-3xl sm:text-4xl lg:text-6xl font-bold mb-4`}>
                 {title}
               </h1>
-              <p className={`${plusJakartaSans.className} text-lg sm:text-xl mb-6`}>
+              <p
+                className={`${plusJakartaSans.className} text-lg sm:text-xl mb-6`}>
                 {description}
               </p>
 
-              <div className="mb-6">
+              <div className='mb-6'>
                 <CalendlyButton className='w-full sm:w-auto bg-white text-blue-600 hover:bg-blue-100 py-3 px-6 text-base sm:text-lg rounded-full' />
               </div>
 
@@ -287,11 +288,10 @@ const Hero: React.FC<HeroProps> = ({ gradientFrom, gradientTo, title, descriptio
                   className='bg-white/20 pl-6 border-transparent h-12 text-white placeholder-white/70 rounded-full'
                   required
                 />
-                <Input
-                  type='text'
-                  name='social_media_handle'
-                  placeholder='Your Social Media Handle'
-                  className='bg-white/20 pl-6 border-transparent h-12 text-white placeholder-white/70 rounded-full'
+                <Textarea
+                  name='message'
+                  placeholder='Your Social Media Handles'
+                  className='bg-white/20 pl-6 border-transparent h-12 text-white placeholder-white/70 rounded-[10px]'
                   required
                 />
                 <Button
