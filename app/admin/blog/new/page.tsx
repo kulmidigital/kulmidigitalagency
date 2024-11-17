@@ -223,19 +223,21 @@ export default function NewBlogPost() {
     try {
       const contentHtml = await processContent(content);
 
-      const id = await createPost({
+      // Only include image if imageUrl exists
+      const postData = {
         title,
         content,
         contentHtml,
         date: new Date().toISOString(),
-        image: imageUrl || undefined,
         categoryId: selectedCategory,
-      });
+        ...(imageUrl && { image: imageUrl }) // Conditionally add image field
+      };
 
+      const id = await createPost(postData);
       router.push(`/blog/${id}`);
     } catch (error) {
-      console.error("Error creating post:", error);
-      alert("Failed to create post");
+      console.error('Error creating post:', error);
+      alert('Failed to create post: ' + (error as Error).message);
     } finally {
       setLoading(false);
     }
@@ -255,31 +257,41 @@ export default function NewBlogPost() {
     try {
       setUploadingImage(true);
 
+      const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+      const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
+
+      if (!cloudName || !uploadPreset) {
+        throw new Error('Cloudinary configuration is missing');
+      }
+
       // Create form data
       const formData = new FormData();
-      formData.append("file", file);
-      formData.append(
-        "upload_preset",
-        process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET || ""
-      );
+      formData.append('file', file);
+      formData.append('upload_preset', uploadPreset);
 
       // Upload to Cloudinary
       const response = await fetch(
-        `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
+        `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
         {
-          method: "POST",
+          method: 'POST',
           body: formData,
         }
       );
+
+      if (!response.ok) {
+        throw new Error(`Upload failed: ${response.statusText}`);
+      }
 
       const data = await response.json();
 
       if (data.secure_url) {
         setImageUrl(data.secure_url);
+      } else {
+        throw new Error('No URL received from Cloudinary');
       }
     } catch (error) {
-      console.error("Error uploading image:", error);
-      alert("Failed to upload image");
+      console.error('Error uploading image:', error);
+      alert('Failed to upload image: ' + (error as Error).message);
     } finally {
       setUploadingImage(false);
     }
@@ -570,6 +582,7 @@ export default function NewBlogPost() {
                       fill
                       className='object-cover'
                       sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                      unoptimized
                     />
                   </div>
                 )}
