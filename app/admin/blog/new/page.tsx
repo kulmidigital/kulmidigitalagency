@@ -175,6 +175,7 @@ export default function NewBlogPost() {
   const [newCategory, setNewCategory] = useState("");
   const [showAddCategory, setShowAddCategory] = useState(false);
   const [categoryToDelete, setCategoryToDelete] = useState<string | null>(null);
+  const [uploadError, setUploadError] = useState<string | null>(null);
 
   useEffect(() => {
     const auth = getAuth(app);
@@ -255,13 +256,23 @@ export default function NewBlogPost() {
 
   const handleImageUpload = async (file: File) => {
     try {
+      setUploadError(null);
       setUploadingImage(true);
-
+      
       const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
       const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
 
+      console.log('Cloudinary config:', {
+        cloudName: cloudName ? 'exists' : 'missing',
+        uploadPreset: uploadPreset ? 'exists' : 'missing'
+      });
+
       if (!cloudName || !uploadPreset) {
-        throw new Error('Cloudinary configuration is missing');
+        throw new Error(
+          `Cloudinary configuration is missing: ${!cloudName ? 'CLOUD_NAME ' : ''}${
+            !uploadPreset ? 'UPLOAD_PRESET' : ''
+          }`
+        );
       }
 
       // Create form data
@@ -291,7 +302,8 @@ export default function NewBlogPost() {
       }
     } catch (error) {
       console.error('Error uploading image:', error);
-      alert('Failed to upload image: ' + (error as Error).message);
+      setUploadError((error as Error).message);
+      setImageUrl(''); // Clear any previous image
     } finally {
       setUploadingImage(false);
     }
@@ -584,6 +596,17 @@ export default function NewBlogPost() {
                       sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                       unoptimized
                     />
+                  </div>
+                )}
+                {uploadError && (
+                  <div className="mt-4 p-4 bg-red-50 text-red-600 rounded-2xl border border-red-100">
+                    <p className="text-sm">Failed to upload image: {uploadError}</p>
+                    <button 
+                      onClick={() => setUploadError(null)}
+                      className="text-sm underline mt-2"
+                    >
+                      Dismiss
+                    </button>
                   </div>
                 )}
               </div>

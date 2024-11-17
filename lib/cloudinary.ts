@@ -1,9 +1,11 @@
-import { v2 as cloudinary } from 'cloudinary';
+import { v2 as cloudinary } from "cloudinary";
 
-if (!process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME ||
-    !process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY ||
-    !process.env.CLOUDINARY_API_SECRET) {
-  throw new Error('Missing Cloudinary environment variables');
+if (
+  !process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME ||
+  !process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY ||
+  !process.env.CLOUDINARY_API_SECRET
+) {
+  throw new Error("Missing Cloudinary environment variables");
 }
 
 cloudinary.config({
@@ -12,4 +14,4 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-export default cloudinary; 
+export default cloudinary;
