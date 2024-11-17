@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import "@/styles/blog.css";
+import Providers from './providers'
 
 // Google Font: Plus Jakarta Sans
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -28,10 +29,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
-      <body className={`${plusJakartaSans.variable} w-[100%]`}>
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body className={`${plusJakartaSans.variable} w-[100%]`} suppressHydrationWarning>
         <Navbar />
-        {children}
+        <Providers>
+          {children}
+        </Providers>
         <Footer />
         <WhatsAppButton />
         <Toaster />

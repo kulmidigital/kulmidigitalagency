@@ -5,6 +5,8 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import SlideReveal from "@/components/ui/slidereveal";
 import Image from "next/image";
 import Link from "next/link";
+import { useQuery } from '@tanstack/react-query';
+import { getPostData } from '@/lib/blogService';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -24,8 +26,30 @@ const clashDisplay = localFont({
   display: "swap",
 });
 
-const BlogPost = ({ postData }: { postData: { title: string; date: string; contentHtml: string; image?: string } }) => {
+const BlogPost = ({ id }: { id: string }) => {
   const [isHovered, setIsHovered] = useState(false);
+
+  const { data: postData, isLoading, error } = useQuery({
+    queryKey: ['post', id],
+    queryFn: () => getPostData(id),
+  });
+
+  if (isLoading) {
+    return (
+      <div className="text-center py-8">
+        <p>Loading post...</p>
+      </div>
+    );
+  }
+
+  if (error || !postData) {
+    return (
+      <div className="text-center py-8">
+        <p>Error loading post. Please try again later.</p>
+      </div>
+    );
+  }
+
   return (
     <article className={`${clashDisplay.className}`}>
       {postData.image && (
@@ -34,6 +58,7 @@ const BlogPost = ({ postData }: { postData: { title: string; date: string; conte
             src={postData.image}
             alt={postData.title}
             fill
+            priority
             style={{ objectFit: "cover" }}
           />
           <div className='absolute inset-0 bg-black bg-opacity-50 flex items-end'>

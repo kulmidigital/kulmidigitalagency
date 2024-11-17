@@ -192,10 +192,10 @@ const Hero: React.FC<HeroProps> = ({ gradientFrom, gradientTo, title, descriptio
     if (form.current) {
       try {
         const result = await emailjs.sendForm(
-          "service_q3hv2ob",
-          "template_4tomfg4",
+          process.env.EMAILJS_SERVICE_ID || "",
+          process.env.EMAILJS_TEMPLATE_ID || "",
           form.current,
-          "dLJ8zVKXzkxUy4kwR"
+          process.env.EMAILJS_PUBLIC_KEY || ""
         );
         console.log("Message Sent Successfully:", result.text);
         toast({

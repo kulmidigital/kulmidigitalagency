@@ -80,7 +80,7 @@ const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
-    emailjs.init("dLJ8zVKXzkxUy4kwR");
+    emailjs.init(process.env.EMAILJS_PUBLIC_KEY || "");
   }, []);
 
   const handleFormSubmit = async (e: React.FormEvent) => {
@@ -90,8 +90,8 @@ const Contact: React.FC = () => {
     if (form.current) {
       try {
         const result = await emailjs.sendForm(
-          "service_q3hv2ob",
-          "template_4tomfg4",
+          process.env.EMAILJS_SERVICE_ID || "",
+          process.env.EMAILJS_TEMPLATE_ID || "",
           form.current
         );
         console.log("Message Sent Successfully:", result.text);
