@@ -1,10 +1,10 @@
 'use client';
 import { useQuery } from '@tanstack/react-query';
-import { getCategories } from '@/lib/blogService';
+import { getCategories, Category } from '@/lib/blogService';
 
 interface BlogCategoriesProps {
   selectedCategory: string;
-  onCategoryChange: (category: string) => void;
+  onCategoryChange: (categoryId: string) => void;
 }
 
 export default function BlogCategories({ selectedCategory, onCategoryChange }: BlogCategoriesProps) {
@@ -25,17 +25,17 @@ export default function BlogCategories({ selectedCategory, onCategoryChange }: B
       >
         All
       </button>
-      {categories.map((category) => (
+      {categories.map((category: Category) => (
         <button
-          key={category}
-          onClick={() => onCategoryChange(category)}
+          key={category.id}
+          onClick={() => onCategoryChange(category.id)}
           className={`px-4 py-2 rounded-full text-sm transition-colors duration-200 ${
-            selectedCategory === category
+            selectedCategory === category.id
               ? 'bg-[#F56E0F] text-white'
               : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
           }`}
         >
-          {category}
+          {category.name}
         </button>
       ))}
     </div>
