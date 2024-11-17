@@ -31,9 +31,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
-      <body className={`${plusJakartaSans.variable} w-[100%]`} suppressHydrationWarning>
+      <head>
         <GoogleAnalytics />
+      </head>
+      <body className={`${plusJakartaSans.variable} w-[100%]`} suppressHydrationWarning>
         <Navbar />
         <Providers>
           {children}
