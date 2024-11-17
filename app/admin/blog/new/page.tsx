@@ -40,6 +40,8 @@ import {
   doc,
 } from "firebase/firestore";
 import { db } from "@/lib/firebase";
+import { useToast } from "@/hooks/use-toast";
+import { ToastAction } from "@/components/ui/toast";
 
 const MDEditor = dynamic(
   () => import("@uiw/react-md-editor").then((mod) => mod.default),
@@ -176,6 +178,8 @@ export default function NewBlogPost() {
   const [showAddCategory, setShowAddCategory] = useState(false);
   const [categoryToDelete, setCategoryToDelete] = useState<string | null>(null);
   const [uploadError, setUploadError] = useState<string | null>(null);
+  const { toast } = useToast();
+  const [isAddingCategory, setIsAddingCategory] = useState(false);
 
   useEffect(() => {
     const auth = getAuth(app);
@@ -224,21 +228,41 @@ export default function NewBlogPost() {
     try {
       const contentHtml = await processContent(content);
 
-      // Only include image if imageUrl exists
       const postData = {
         title,
         content,
         contentHtml,
         date: new Date().toISOString(),
         categoryId: selectedCategory,
-        ...(imageUrl && { image: imageUrl }) // Conditionally add image field
+        ...(imageUrl && { image: imageUrl })
       };
 
       const id = await createPost(postData);
+      
+      toast({
+        title: "Success",
+        description: "Blog post published successfully!",
+        className: `${clashDisplay.className} bg-green-500 text-white`,
+        action: (
+          <ToastAction altText="View post" className="text-white hover:text-green-100">
+            View post
+          </ToastAction>
+        ),
+      });
+
       router.push(`/blog/${id}`);
     } catch (error) {
       console.error('Error creating post:', error);
-      alert('Failed to create post: ' + (error as Error).message);
+      toast({
+        title: "Error",
+        description: "Failed to publish post. Please try again.",
+        className: `${clashDisplay.className} bg-red-500 text-white`,
+        action: (
+          <ToastAction altText="Try again" className="text-white hover:text-red-100">
+            Try again
+          </ToastAction>
+        ),
+      });
     } finally {
       setLoading(false);
     }
@@ -261,11 +285,6 @@ export default function NewBlogPost() {
       
       const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
       const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
-
-      console.log('Cloudinary config:', {
-        cloudName: cloudName ? 'exists' : 'missing',
-        uploadPreset: uploadPreset ? 'exists' : 'missing'
-      });
 
       if (!cloudName || !uploadPreset) {
         throw new Error(
@@ -310,6 +329,9 @@ export default function NewBlogPost() {
   };
 
   const handleAddCategory = async () => {
+    if (!newCategory.trim()) return;
+    
+    setIsAddingCategory(true);
     try {
       const newCategoryId = await addCategory(newCategory);
       const updatedCategories = await getCategories();
@@ -317,9 +339,31 @@ export default function NewBlogPost() {
       setNewCategory("");
       setShowAddCategory(false);
       setSelectedCategory(newCategoryId);
+      
+      toast({
+        title: "Success",
+        description: "Category created successfully!",
+        className: `${clashDisplay.className} bg-green-500 text-white`,
+        action: (
+          <ToastAction altText="Close" className="text-white hover:text-green-100">
+            Close
+          </ToastAction>
+        ),
+      });
     } catch (error) {
       console.error("Error adding category:", error);
-      alert("Failed to add category");
+      toast({
+        title: "Error",
+        description: "Failed to create category. Please try again.",
+        className: `${clashDisplay.className} bg-red-500 text-white`,
+        action: (
+          <ToastAction altText="Try again" className="text-white hover:text-red-100">
+            Try again
+          </ToastAction>
+        ),
+      });
+    } finally {
+      setIsAddingCategory(false);
     }
   };
 
@@ -687,14 +731,39 @@ export default function NewBlogPost() {
               <button
                 type='button'
                 onClick={() => setShowAddCategory(false)}
-                className='px-6 py-3 text-gray-700 bg-gray-100 rounded-2xl hover:bg-gray-200 transition duration-200'>
+                className='px-6 py-3 text-gray-700 bg-gray-100 rounded-2xl hover:bg-gray-200 transition duration-200'
+                disabled={isAddingCategory}>
                 Cancel
               </button>
               <button
                 type='button'
                 onClick={handleAddCategory}
-                className='px-6 py-3 bg-[#F56E0F] text-white rounded-2xl hover:bg-[#E55D0E] transition duration-200'>
-                Add Category
+                disabled={isAddingCategory}
+                className='px-6 py-3 bg-[#F56E0F] text-white rounded-2xl hover:bg-[#E55D0E] transition duration-200 disabled:opacity-50 flex items-center gap-2'>
+                {isAddingCategory ? (
+                  <>
+                    <svg
+                      className="animate-spin h-5 w-5 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24">
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Adding...
+                  </>
+                ) : (
+                  'Add Category'
+                )}
               </button>
             </div>
           </div>

@@ -197,7 +197,6 @@ const Hero: React.FC<HeroProps> = ({ gradientFrom, gradientTo, title, descriptio
           form.current,
           process.env.EMAILJS_PUBLIC_KEY || ""
         );
-        console.log("Message Sent Successfully:", result.text);
         toast({
           title: "Request Sent",
           description: "We'll get back to you soon!",

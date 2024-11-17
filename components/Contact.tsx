@@ -94,7 +94,6 @@ const Contact: React.FC = () => {
           process.env.EMAILJS_TEMPLATE_ID || "",
           form.current
         );
-        console.log("Message Sent Successfully:", result.text);
         toast({
           title: "Email Sent",
           description: "Your message has been sent successfully!",
