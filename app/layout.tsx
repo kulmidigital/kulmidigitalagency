@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import "@/styles/blog.css";
 import Providers from './providers'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 // Google Font: Plus Jakarta Sans
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -32,6 +33,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head />
       <body className={`${plusJakartaSans.variable} w-[100%]`} suppressHydrationWarning>
+        <GoogleAnalytics />
         <Navbar />
         <Providers>
           {children}
