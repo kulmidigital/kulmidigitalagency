@@ -100,11 +100,6 @@ export default function BlogPost({ post }: { post: Post }) {
           className={`${plusJakartaSans.className} blog-content mx-2 md:mx-[15%]`}
           dangerouslySetInnerHTML={{ __html: post.contentHtml }}
         />
-
-        <div className='table-of-contents'>
-          <h2>Table of Contents</h2>
-          {/* Add your table of contents logic here */}
-        </div>
       </section>
 
       <div className='flex justify-center items-center mt-12 mb-16'>
