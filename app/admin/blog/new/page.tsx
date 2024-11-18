@@ -42,6 +42,7 @@ import {
 import { db } from "@/lib/firebase";
 import { useToast } from "@/hooks/use-toast";
 import { ToastAction } from "@/components/ui/toast";
+import BlogManagementSheet from "@/components/BlogManagementSheet";
 
 const MDEditor = dynamic(
   () => import("@uiw/react-md-editor").then((mod) => mod.default),
@@ -498,6 +499,7 @@ export default function NewBlogPost() {
               </p>
             </div>
             <div className='flex items-center gap-4'>
+              <BlogManagementSheet />
               <button
                 onClick={handleLogout}
                 className='p-2 hover:bg-gray-100 rounded-xl transition duration-200'

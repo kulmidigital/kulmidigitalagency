@@ -7,6 +7,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useQuery } from "@tanstack/react-query";
 import { getSortedPostsData } from "@/lib/blogService";
+import { slugify } from '@/lib/utils'
+import { Loader } from "@/components/ui/loader";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -50,15 +52,15 @@ const Blog = () => {
 
   if (isLoading) {
     return (
-      <div className="text-center py-8">
-        <p>Loading blog posts...</p>
+      <div className="min-h-[50vh] flex items-center justify-center">
+        <Loader />
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="text-center py-8">
+      <div className="min-h-[50vh] flex items-center justify-center text-gray-500">
         <p>Error loading blog posts. Please try again later.</p>
       </div>
     );
@@ -100,7 +102,7 @@ const Blog = () => {
                   )}
                 </div>
                 <Link 
-                  href={`/blog/${id}`} 
+                  href={`/blog/${slugify(title)}`} 
                   className="mt-auto inline-flex items-center text-[#F56E0F] hover:text-[#E55D0E] transition-colors duration-200"
                 >
                   <span>Read More</span>

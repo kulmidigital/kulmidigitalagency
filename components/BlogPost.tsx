@@ -5,8 +5,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import SlideReveal from "@/components/ui/slidereveal";
 import Image from "next/image";
 import Link from "next/link";
-import { useQuery } from '@tanstack/react-query';
-import { getPostData } from '@/lib/blogService';
+import '../styles/blog.css';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -26,37 +25,37 @@ const clashDisplay = localFont({
   display: "swap",
 });
 
-const BlogPost = ({ id }: { id: string }) => {
+interface Post {
+  id: string
+  title: string
+  content: string
+  contentHtml: string
+  date: string
+  image: string
+  categoryName: string
+  categoryId: string
+}
+
+export default function BlogPost({ post }: { post: Post }) {
   const [isHovered, setIsHovered] = useState(false);
 
-  const { data: postData, isLoading, error } = useQuery({
-    queryKey: ['post', id],
-    queryFn: () => getPostData(id),
-  });
-
-  if (isLoading) {
-    return (
-      <div className="text-center py-8">
-        <p>Loading post...</p>
-      </div>
-    );
+  if (!post) {
+    return <div>No post data available</div>
   }
 
-  if (error || !postData) {
-    return (
-      <div className="text-center py-8">
-        <p>Error loading post. Please try again later.</p>
-      </div>
-    );
-  }
+  const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
 
   return (
     <article className={`${clashDisplay.className}`}>
-      {postData.image && (
+      {post.image && (
         <div className='relative w-full h-[30vh] sm:h-[40vh] md:h-[50vh] mb-8'>
           <Image
-            src={postData.image}
-            alt={postData.title}
+            src={post.image}
+            alt={post.title}
             fill
             priority
             style={{ objectFit: "cover" }}
@@ -64,40 +63,53 @@ const BlogPost = ({ id }: { id: string }) => {
           <div className='absolute inset-0 bg-black bg-opacity-50 flex items-end'>
             <div className='p-4 sm:p-6 md:p-8 text-white'>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-light mb-4'>
-                {postData.title}
+                {post.title}
               </h1>
-              <span className={`${plusJakartaSans.className} text-sm`}>
-                {postData.date}
-              </span>
+              <div className="flex items-center gap-2">
+                <span className={`${plusJakartaSans.className} text-sm`}>
+                  {formattedDate}
+                </span>
+                <span className="text-gray-400">•</span>
+                <span className={`${plusJakartaSans.className} text-sm`}>
+                  {post.categoryName}
+                </span>
+              </div>
             </div>
           </div>
         </div>
       )}
 
       <section className='px-4 md:px-20'>
-        {!postData.image && (
+        {!post.image && (
           <>
             <SlideReveal direction='up' duration={0.7}>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-light mb-8'>
-                {postData.title}
+                {post.title}
               </h1>
             </SlideReveal>
 
             <div
               className={`${plusJakartaSans.className} flex justify-between items-center mb-8`}>
-              <span className='text-gray-500'>{postData.date}</span>
+              <span className='text-gray-500'>{formattedDate}</span>
+              <span className='text-gray-500'>{post.categoryName}</span>
             </div>
           </>
         )}
 
         <div
           className={`${plusJakartaSans.className} blog-content mx-2 md:mx-[15%]`}
-          dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
+          dangerouslySetInnerHTML={{ __html: post.contentHtml }}
         />
+
+        <div className='table-of-contents'>
+          <h2>Table of Contents</h2>
+          {/* Add your table of contents logic here */}
+        </div>
       </section>
-      <div className='flex justify-center items-center'>
+
+      <div className='flex justify-center items-center mt-12 mb-16'>
         <Link
-          className='my-4 md:my-0 mx-auto text-sm sm:text-[18px] lg:text-[20px] text-center w-[70%] p-4 rounded-[40px] flex items-center justify-center space-x-2 bg-[#F56E0F] text-white hover:bg-transparent border border-[#F56E0F]  hover:border-black hover:text-black'
+          className='my-4 md:my-0 mx-auto text-sm sm:text-[18px] lg:text-[20px] text-center w-[70%] p-4 rounded-[40px] flex items-center justify-center space-x-2 bg-[#F56E0F] text-white hover:bg-transparent border border-[#F56E0F] hover:border-black hover:text-black transition-all duration-300'
           href='/contact'
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}>
@@ -130,6 +142,4 @@ const BlogPost = ({ id }: { id: string }) => {
       </div>
     </article>
   );
-};
-
-export default BlogPost;
+}

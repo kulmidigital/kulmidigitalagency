@@ -1,5 +1,5 @@
 import { db } from './firebase';
-import { collection, getDocs, getDoc, doc, addDoc, query, orderBy, Timestamp, where } from 'firebase/firestore';
+import { collection, getDocs, getDoc, doc, addDoc, query, orderBy, Timestamp, where, deleteDoc, updateDoc, limit, startAfter } from 'firebase/firestore';
 
 export interface Category {
   id: string;
@@ -128,5 +128,55 @@ export async function getPostData(id: string): Promise<BlogPost | null> {
   } catch (error) {
     console.error('Error fetching post:', error);
     return null;
+  }
+}
+
+export async function deletePost(id: string): Promise<void> {
+  try {
+    await deleteDoc(doc(db, 'posts', id));
+  } catch (error) {
+    console.error('Error deleting post:', error);
+    throw error;
+  }
+}
+
+export async function updatePost(id: string, data: Partial<BlogPost>): Promise<void> {
+  try {
+    const postRef = doc(db, 'posts', id);
+    await updateDoc(postRef, data);
+  } catch (error) {
+    console.error('Error updating post:', error);
+    throw error;
+  }
+}
+
+export async function getPaginatedPosts(lastPost?: any, pageSize: number = 10): Promise<BlogPost[]> {
+  try {
+    let q;
+    if (lastPost) {
+      q = query(
+        collection(db, 'posts'),
+        orderBy('date', 'desc'),
+        startAfter(lastPost),
+        limit(pageSize)
+      );
+    } else {
+      q = query(
+        collection(db, 'posts'),
+        orderBy('date', 'desc'),
+        limit(pageSize)
+      );
+    }
+    
+    const querySnapshot = await getDocs(q);
+    
+    return querySnapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data(),
+      date: doc.data().date.toDate().toISOString().split('T')[0]
+    })) as BlogPost[];
+  } catch (error) {
+    console.error('Error fetching paginated posts:', error);
+    return [];
   }
 } 
