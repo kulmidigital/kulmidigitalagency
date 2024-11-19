@@ -32,11 +32,12 @@ const logos = [
   "visionplus.png",
   "sombank.png",
   "kcb.png",
-  "eyelink.png",
   "haier.png",
   "omarmp.png",
   "banana.png",
   "tcl.png",
+  "kfmedia.png",
+  "dawan.png",
 ];
 
 const HomeTrust: React.FC = () => {

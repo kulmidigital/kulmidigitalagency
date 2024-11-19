@@ -37,69 +37,92 @@ const clashDisplay = localFont({
   display: "swap",
 });
 
+const mainServices = [
+  {
+    name: "Digital Advertising",
+    subServices: [
+      {
+        name: "Facebook Advertising",
+        icon: Facebook,
+        href: "/socialservice/facebook",
+        color: "#1877F2",
+      },
+      {
+        name: "Instagram Marketing",
+        icon: Instagram,
+        href: "/socialservice/instagram",
+        color: "#E1306C",
+      },
+      {
+        name: "X Campaigns",
+        customIcon: "/icons/xl.svg",
+        href: "/socialservice/x",
+        color: "#1DA1F2",
+      },
+      {
+        name: "YouTube Advertising",
+        customIcon: "/icons/youtube.svg",
+        href: "/socialservice/youtube",
+        color: "#FF0000",
+      },
+      {
+        name: "TikTok Advertising",
+        customIcon: "/icons/tiktok.svg",
+        href: "/socialservice/tiktok",
+        color: "#000000",
+      },
+      {
+        name: "Snapchat Marketing",
+        customIcon: "/icons/snapchat.svg",
+        href: "/socialservice/snapchat",
+        color: "#FFFC00",
+      },
+      {
+        name: "Google Advertising",
+        customIcon: "/icons/google.svg",
+        href: "/socialservice/google",
+        color: "#DB4437",
+      },
+      {
+        name: "Pinterest Advertising",
+        customIcon: "/icons/pinterest.svg",
+        href: "/socialservice/pinterest",
+        color: "#E60023",
+      },
+    ],
+  },
+  {
+    name: "Web Development",
+    href: "/web-development",
+  },
+  {
+    name: "SEO",
+    href: "/seo",
+  },
+];
+
 const Navbar = () => {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isDigitalAdvertisingOpen, setIsDigitalAdvertisingOpen] =
+    useState(false);
 
   const handleLinkClick = () => {
     setIsSheetOpen(false);
     setIsServicesOpen(false);
+    setIsDigitalAdvertisingOpen(false);
   };
 
   const toggleServices = () => {
     setIsServicesOpen(!isServicesOpen);
+    if (!isServicesOpen) {
+      setIsDigitalAdvertisingOpen(false);
+    }
   };
 
-  const services = [
-    {
-      name: "Facebook Advertising",
-      icon: Facebook,
-      href: "/socialservice/facebook",
-      color: "#1877F2",
-    },
-    {
-      name: "Instagram Marketing",
-      icon: Instagram,
-      href: "/socialservice/instagram",
-      color: "#E1306C",
-    },
-    {
-      name: "X Campaigns",
-      customIcon: "/icons/xl.svg",
-      href: "/socialservice/x",
-      color: "#1DA1F2",
-    },
-    {
-      name: "YouTube Advertising",
-      customIcon: "/icons/youtube.svg",
-      href: "/socialservice/youtube",
-      color: "#FF0000",
-    },
-    {
-      name: "TikTok Advertising",
-      customIcon: "/icons/tiktok.svg",
-      href: "/socialservice/tiktok",
-      color: "#000000",
-    },
-    {
-      name: "Snapchat Marketing",
-      customIcon: "/icons/snapchat.svg",
-      href: "/socialservice/snapchat",
-      color: "#FFFC00",
-    },
-    {
-      name: "Google Advertising",
-      customIcon: "/icons/google.svg",
-      href: "/socialservice/google",
-      color: "#DB4437",
-    },
-    {
-      name: "Pinterest Advertising",
-      customIcon: "/icons/pinterest.svg",
-      href: "/socialservice/pinterest",
-      color: "#E60023",
-    },
-  ];
+  const toggleDigitalAdvertising = () => {
+    setIsDigitalAdvertisingOpen(!isDigitalAdvertisingOpen);
+  };
 
   return (
     <nav className='flex justify-between items-center z-[99999] bg-white md:pt-6 md:pb-[22px] md:px-[76px] px-4 py-3 border-b-[1px] border-[#F56E0F] sticky top-0 left-0 right-0 w-full'>
@@ -130,42 +153,83 @@ const Navbar = () => {
           <HoverCardTrigger className='cursor-pointer'>
             Services
           </HoverCardTrigger>
-          <HoverCardContent className='w-96 p-0 bg-white rounded-xl shadow-xl'>
+          <HoverCardContent className='w-96 p-0 bg-white rounded-xl shadow-xl max-h-[90vh] overflow-y-auto'>
             <div className='grid grid-cols-1 gap-2 p-4'>
-              {services.map((service) => (
-                <Link
-                  key={service.name}
-                  href={service.href}
-                  className={`${clashDisplay.className} flex items-center p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200 group`}>
-                  <div
-                    className='flex items-center justify-center w-10 h-10 rounded-full mr-3 transition-colors duration-200'
-                    style={{ backgroundColor: service.color + "20" }}>
-                    {service.customIcon ? (
-                      <Image
-                        src={service.customIcon}
-                        alt={service.name}
-                        width={20}
-                        height={20}
-                        className='transition-colors duration-200'
-                      />
-                    ) : (
-                      service.icon && (
-                        <service.icon
-                          className='w-5 h-5 transition-colors duration-200'
-                          style={{ color: service.color }}
-                        />
-                      )
-                    )}
+              {mainServices.map((service) => (
+                service.subServices ? (
+                  <div key={service.name} className="w-full">
+                    <button
+                      onClick={toggleDigitalAdvertising}
+                      className={`${clashDisplay.className} flex items-center justify-between w-full p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200 group sticky top-0 bg-white z-10`}
+                    >
+                      <span className='font-medium text-sm group-hover:text-[#F56E0F]'>{service.name}</span>
+                      <motion.div
+                        animate={{ rotate: isDigitalAdvertisingOpen ? 180 : 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <ChevronDown className='w-4 h-4' />
+                      </motion.div>
+                    </button>
+                    <AnimatePresence>
+                      {isDigitalAdvertisingOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          style={{ overflow: "hidden" }}
+                        >
+                          <div className="pl-4 space-y-2">
+                            {service.subServices.map((subService) => (
+                              <Link
+                                key={subService.name}
+                                href={subService.href}
+                                className={`${clashDisplay.className} flex items-center p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200 group`}
+                              >
+                                <div
+                                  className='flex items-center justify-center w-10 h-10 rounded-full mr-3'
+                                  style={{ backgroundColor: subService.color + "20" }}
+                                >
+                                  {subService.customIcon ? (
+                                    <Image
+                                      src={subService.customIcon}
+                                      alt={subService.name}
+                                      width={20}
+                                      height={20}
+                                    />
+                                  ) : (
+                                    subService.icon && (
+                                      <subService.icon
+                                        className='w-5 h-5'
+                                        style={{ color: subService.color }}
+                                      />
+                                    )
+                                  )}
+                                </div>
+                                <div>
+                                  <span className='font-medium text-sm group-hover:text-[#F56E0F]'>
+                                    {subService.name}
+                                  </span>
+                                  <p className='text-xs text-gray-500 mt-1'>
+                                    Boost your {subService.name.split(" ")[0]} presence
+                                  </p>
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
-                  <div>
-                    <span className='font-medium text-sm group-hover:text-[#F56E0F] transition-colors duration-200'>
-                      {service.name}
-                    </span>
-                    <p className='text-xs text-gray-500 mt-1'>
-                      Boost your {service.name.split(" ")[0]} presence
-                    </p>
-                  </div>
-                </Link>
+                ) : (
+                  <Link
+                    key={service.name}
+                    href={service.href}
+                    className={`${clashDisplay.className} flex items-center p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200 group`}
+                  >
+                    <span className='font-medium text-sm group-hover:text-[#F56E0F]'>{service.name}</span>
+                  </Link>
+                )
               ))}
             </div>
           </HoverCardContent>
@@ -248,12 +312,11 @@ const Navbar = () => {
               <div className='w-full'>
                 <button
                   onClick={toggleServices}
-                  className='text-lg font-bold flex items-center justify-between w-full'>
-                  Digital Advertising
+                  className='text-lg font-bold flex items-center justify-between w-full py-2'>
+                  Services
                   <motion.div
                     animate={{ rotate: isServicesOpen ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
+                    transition={{ duration: 0.3 }}>
                     <ChevronDown className='ml-1 h-4 w-4' />
                   </motion.div>
                 </button>
@@ -264,34 +327,78 @@ const Navbar = () => {
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
-                      style={{ overflow: "hidden" }}
-                    >
-                      <div className={`${clashDisplay.className} mt-2 ml-4 space-y-2`}>
-                        {services.map((service) => (
-                          <Link
-                            key={service.name}
-                            href={service.href}
-                            className='flex items-center py-1'
-                            onClick={handleLinkClick}>
-                            {service.customIcon ? (
-                              <Image
-                                src={service.customIcon}
-                                alt={service.name}
-                                width={16}
-                                height={16}
-                                className='mr-2'
-                              />
-                            ) : (
-                              service.icon && (
-                                <service.icon
-                                  className='w-4 h-4 mr-2'
-                                  style={{ color: service.color }}
-                                />
-                              )
-                            )}
-                            <span>{service.name}</span>
-                          </Link>
-                        ))}
+                      style={{ overflow: "hidden" }}>
+                      <div
+                        className={`${clashDisplay.className} mt-2 space-y-2`}>
+                        {mainServices.map((service) =>
+                          service.subServices ? (
+                            <div key={service.name} className='w-full'>
+                              <button
+                                onClick={toggleDigitalAdvertising}
+                                className='flex items-center justify-between w-full py-2 pl-4'>
+                                <span>{service.name}</span>
+                                <motion.div
+                                  animate={{
+                                    rotate: isDigitalAdvertisingOpen ? 180 : 0,
+                                  }}
+                                  transition={{ duration: 0.3 }}>
+                                  <ChevronDown className='ml-1 h-4 w-4' />
+                                </motion.div>
+                              </button>
+                              <AnimatePresence>
+                                {isDigitalAdvertisingOpen && (
+                                  <motion.div
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: "auto", opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    transition={{
+                                      duration: 0.3,
+                                      ease: "easeInOut",
+                                    }}
+                                    style={{ overflow: "hidden" }}>
+                                    <div className='pl-8 space-y-2'>
+                                      {service.subServices.map((subService) => (
+                                        <Link
+                                          key={subService.name}
+                                          href={subService.href}
+                                          className='flex items-center py-2'
+                                          onClick={handleLinkClick}>
+                                          {subService.customIcon ? (
+                                            <Image
+                                              src={subService.customIcon}
+                                              alt={subService.name}
+                                              width={16}
+                                              height={16}
+                                              className='mr-2'
+                                            />
+                                          ) : (
+                                            subService.icon && (
+                                              <subService.icon
+                                                className='w-4 h-4 mr-2'
+                                                style={{
+                                                  color: subService.color,
+                                                }}
+                                              />
+                                            )
+                                          )}
+                                          <span>{subService.name}</span>
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  </motion.div>
+                                )}
+                              </AnimatePresence>
+                            </div>
+                          ) : (
+                            <Link
+                              key={service.name}
+                              href={service.href}
+                              className='block py-2 pl-4'
+                              onClick={handleLinkClick}>
+                              {service.name}
+                            </Link>
+                          )
+                        )}
                       </div>
                     </motion.div>
                   )}
