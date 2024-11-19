@@ -182,7 +182,7 @@ const Pricing = () => {
               >
                 {plan.popular && (
                   <div className='absolute -top-3 sm:-top-4 right-4 sm:right-8'>
-                    <Badge className='bg-[#F56E0F] text-white text-xs sm:text-sm'>Popular</Badge>
+                    <Badge className='bg-[#F56E0F] text-white text-xs sm:text-sm hover:bg-[#E55D00]'>Popular</Badge>
                   </div>
                 )}
                 <div className="flex-grow">

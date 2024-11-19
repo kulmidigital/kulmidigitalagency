@@ -20,6 +20,7 @@ import {
   Calendar,
   LineChart
 } from 'lucide-react';
+import Link from 'next/link';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -264,6 +265,20 @@ const Features = () => {
                 </p>
               </div>
             </div>
+          </div>
+        </SlideReveal>
+
+        {/* Documentation Button - Added after the last section */}
+        <SlideReveal direction='up' duration={0.7}>
+          <div className='flex justify-center mt-8'>
+            <Link
+              href='https://estatebax.com/docs'
+              target="_blank"
+              rel="noopener noreferrer"
+              className='bg-white text-[#F56E0F] border-2 border-[#F56E0F] px-8 py-4 rounded-full text-lg font-medium hover:bg-[#F56E0F] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl'
+            >
+              View Documentation
+            </Link>
           </div>
         </SlideReveal>
       </div>
