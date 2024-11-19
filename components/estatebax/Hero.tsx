@@ -51,7 +51,7 @@ const Hero = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className='bg-[#F56E0F] text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-[#E55D00] transition-colors duration-300 text-center'>
-                  Get Started Free
+                  Get Started For Free
                 </Link>
               </div>
             </SlideReveal>
