@@ -5,54 +5,57 @@ import { slugify } from '@/lib/utils'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://kulmi.digital'
+  
+  // Get current date in ISO format
+  const currentDate = new Date().toISOString()
 
   // Add static routes
   const staticRoutes = [
     {
       url: `${baseUrl}`,
-      lastModified: new Date(),
+      lastModified: currentDate,
       changeFrequency: "daily",
       priority: 1,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date(),
+      lastModified: currentDate,
       changeFrequency: "daily",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/website-packages`,
-      lastModified: new Date(),
+      lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: new Date(),
+      lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date(),
+      lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/our-work`,
-      lastModified: new Date(),
+      lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/team`,
-      lastModified: new Date(),
+      lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/estatebax`,
-      lastModified: new Date(),
+      lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.8,
     },
@@ -65,9 +68,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     
     const blogRoutes = querySnapshot.docs.map(doc => {
       const data = doc.data()
+      // Ensure we have a valid date
+      let lastMod: string
+      try {
+        // Try to parse the date from the post
+        lastMod = new Date(data.date).toISOString()
+      } catch (e) {
+        // Fallback to current date if parsing fails
+        lastMod = currentDate
+      }
+
       return {
         url: `${baseUrl}/blog/${slugify(data.title)}`,
-        lastModified: new Date(data.date),
+        lastModified: lastMod,
         changeFrequency: 'monthly' as const,
         priority: 0.6
       }
