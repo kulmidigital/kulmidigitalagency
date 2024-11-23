@@ -1,7 +1,7 @@
 'use client'
 
 import { useSearchParams } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import Link from 'next/link'
 
 interface SearchResult {
@@ -13,7 +13,7 @@ interface SearchResult {
   date?: string
 }
 
-export default function SearchPage() {
+function SearchResults() {
   const searchParams = useSearchParams()
   const query = searchParams.get('q')
   const [results, setResults] = useState<SearchResult[]>([])
@@ -38,8 +38,16 @@ export default function SearchPage() {
     performSearch()
   }, [query])
 
+  if (!query) {
+    return (
+      <p className="text-center text-gray-600">
+        Enter a search term to begin
+      </p>
+    )
+  }
+
   return (
-    <div className="container mx-auto px-4 py-8">
+    <>
       <h1 className="text-3xl font-bold mb-6">
         Search Results for: {query}
       </h1>
@@ -72,6 +80,20 @@ export default function SearchPage() {
           No results found for "{query}"
         </p>
       )}
+    </>
+  )
+}
+
+export default function SearchPage() {
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <Suspense fallback={
+        <div className="flex justify-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
+        </div>
+      }>
+        <SearchResults />
+      </Suspense>
     </div>
   )
 } 
