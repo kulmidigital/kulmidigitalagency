@@ -7,6 +7,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import "@/styles/blog.css";
 import Providers from './providers'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+import { websiteStructuredData, organizationStructuredData } from '@/lib/structuredData'
 
 // Google Font: Plus Jakarta Sans
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -33,6 +34,18 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <GoogleAnalytics />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteStructuredData)
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationStructuredData)
+          }}
+        />
       </head>
       <body className={`${plusJakartaSans.variable} w-[100%]`} suppressHydrationWarning>
         <Navbar />

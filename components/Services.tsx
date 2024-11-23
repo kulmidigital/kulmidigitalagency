@@ -19,7 +19,7 @@ const clashDisplay = localFont({
 
 const Services: React.FC = () => {
   return (
-    <section className='bg-white py-8 px-4 sm:py-16 sm:px-6 md:px-12'>
+    <section id="services" className='bg-white py-8 px-4 sm:py-16 sm:px-6 md:px-12'>
       <SlideReveal direction='left' duration={0.7}>
         <h1
           className={`${clashDisplay.className} text-[28px] md:w-[60%] sm:text-[36px] md:text-[45px] font-bold text-left text-black pl-2 sm:pl-4 py-8 sm:py-12`}>
