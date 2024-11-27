@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 import SlideReveal from "@/components/ui/slidereveal";
-import localFont from 'next/font/local';
-import Image from 'next/image';
-import Link from 'next/link';
+import localFont from "next/font/local";
+import Image from "next/image";
+import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 
 const clashDisplay = localFont({
@@ -39,17 +39,17 @@ const Hero = () => {
             <SlideReveal direction='up' duration={0.7} delay={0.2}>
               <p className='mt-6 text-lg md:text-xl text-gray-200'>
                 Streamline your real estate business with our comprehensive CRM,
-                marketing tools, and free website builder - everything you need in
-                one place.
+                marketing tools, and free website builder - everything you need
+                in one place.
               </p>
             </SlideReveal>
 
             <SlideReveal direction='up' duration={0.7} delay={0.4}>
               <div className='mt-10 flex flex-col sm:flex-row gap-4'>
                 <Link
-                  href='https://estatebax.app/register'
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://estatebax.app/?ref=kulmidigital/register'
+                  target='_blank'
+                  rel='noopener noreferrer'
                   className='bg-[#F56E0F] text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-[#E55D00] transition-colors duration-300 text-center'>
                   Get Started For Free
                 </Link>
@@ -62,9 +62,11 @@ const Hero = () => {
                   ["1000+", "Active Users"],
                   ["50K+", "Properties Listed"],
                   ["98%", "Customer Satisfaction"],
-                  ["24/7", "Customer Support"]
+                  ["24/7", "Customer Support"],
                 ].map(([stat, label]) => (
-                  <div key={label} className='text-center md:text-left whitespace-nowrap'>
+                  <div
+                    key={label}
+                    className='text-center md:text-left whitespace-nowrap'>
                     <div className='text-3xl md:text-4xl font-bold text-[#F56E0F]'>
                       {stat}
                     </div>
