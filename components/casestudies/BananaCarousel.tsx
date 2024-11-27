@@ -11,10 +11,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { type CarouselApi } from "@/components/ui/carousel";
 
 const images: string[] = [
-  "/bananapay/slide1.avif",
-  "/bananapay/slide2.avif",
-  "/bananapay/slide3.avif",
-  "/bananapay/slide4.avif",
+  "/bananapay/slide1.jpeg",
+  "/bananapay/slide2.jpeg",
+  "/bananapay/slide3.jpeg",
+  "/bananapay/slide4.jpeg",
 ];
 
 export default function BananaPayCarousel(): JSX.Element {
@@ -81,9 +81,7 @@ export default function BananaPayCarousel(): JSX.Element {
                     <div
                       key={dotIndex}
                       className={`h-2 w-2 rounded-full ${
-                        dotIndex === currentIndex
-                          ? "bg-white"
-                          : "bg-white/50"
+                        dotIndex === currentIndex ? "bg-white" : "bg-white/50"
                       }`}
                     />
                   ))}

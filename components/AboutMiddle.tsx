@@ -19,7 +19,7 @@ const AboutMiddle = () => {
     <section className='flex flex-col lg:flex-row px-4 sm:px-6 lg:px-10 justify-between gap-6 lg:gap-10 py-10'>
       {/* First Image */}
       <SlideReveal direction='left' duration={0.7}>
-        <div className="bg-[url('/images/billboard.avif')] bg-cover bg-center w-full lg:w-[500px] h-[350px] sm:h-[450px] lg:h-[550px] rounded-3xl"></div>
+        <div className="bg-[url('/images/billboard.jpg')] bg-cover bg-center w-full lg:w-[500px] h-[350px] sm:h-[450px] lg:h-[550px] rounded-3xl"></div>
       </SlideReveal>
 
       <div className='flex flex-col w-full lg:w-[60%] gap-6'>

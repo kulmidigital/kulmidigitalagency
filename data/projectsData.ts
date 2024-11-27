@@ -14,7 +14,7 @@ export const projects: ProjectData[] = [
     title: "BananaPay Full Marketing Management",
     description:
       "BananaPay is an international money transfer technology firm based in the United States of America enabling USA citizens send money affordably to over 14 countries globally.",
-    image: "/images/case_banana.avif",
+    image: "/images/case_banana.jpg",
     caseStudyLink: "/casestudies/bananapay",
   },
   {
@@ -33,7 +33,7 @@ export const projects: ProjectData[] = [
     description:
       "Energizer Mobile is the Official Distributor of Energizer Mobile Products and Accessories in Kenya",
     image: "/images/case_energizer.webp",
-    // caseStudyLink: "#", 
+    // caseStudyLink: "#",
   },
   {
     id: 5,
@@ -49,7 +49,7 @@ export const projects: ProjectData[] = [
     category: "Design & Print",
     title: "Haier Kenya Out of Home Assets Design & Print ",
     description: " ",
-    image: "/images/case_haeir.avif",
+    image: "/images/case_haeir.jpg",
     // caseStudyLink: "#",
   },
   {
@@ -57,7 +57,7 @@ export const projects: ProjectData[] = [
     category: "Design & Print",
     title: "Jehana Food Products Design & Print",
     description: " ",
-    image: "/images/case_jehana.avif",
+    image: "/images/case_jehana.jpg",
     // caseStudyLink: "#",
   },
   {

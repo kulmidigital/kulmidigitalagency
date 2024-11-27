@@ -114,7 +114,7 @@ const TopDeckFooter = () => {
       </div>
 
       {/* Right Section: Image */}
-        <div className="bg-[url('/images/office_layout.avif')] bg-cover bg-center w-full mt-4 h-[400px] sm:h-[300px] lg:w-[600px] lg:h-[400px] rounded-3xl"></div>
+      <div className="bg-[url('/images/office_layout.jpg')] bg-cover bg-center w-full mt-4 h-[400px] sm:h-[300px] lg:w-[600px] lg:h-[400px] rounded-3xl"></div>
     </section>
   );
 };

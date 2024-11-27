@@ -26,22 +26,22 @@ const teamMembers: TeamMember[] = [
   {
     name: "Yussuf Omar Dakane",
     title: "Managing Director",
-    imageSrc: "/images/yussuf.avif",
+    imageSrc: "/images/yussuf.jpg",
   },
   {
     name: "Roy Wati",
     title: "Senior Software Engineer | Core Banking",
-    imageSrc: "/images/roy.avif",
+    imageSrc: "/images/roy.jpg",
   },
   {
     name: "Eugene Chweya",
     title: "Digital Payments System Designer",
-    imageSrc: "/images/eugene.avif",
+    imageSrc: "/images/eugene.jpg",
   },
   {
     name: "Francis Modi",
     title: "Media Buying Lead",
-    imageSrc: "/images/francis.avif",
+    imageSrc: "/images/francis.jpg",
   },
   {
     name: "Guchu Kelvin",
@@ -51,17 +51,17 @@ const teamMembers: TeamMember[] = [
   {
     name: "Abdilatif Bashir",
     title: "Tech Lead",
-    imageSrc: "/images/abdilatif.avif",
+    imageSrc: "/images/abdilatif.jpg",
   },
   {
     name: "Magdalene Wanja",
     title: "PR and Comms Lead",
-    imageSrc: "/images/magdalene.avif",
+    imageSrc: "/images/magdalene.jpg",
   },
   {
     name: "Asimba Edward",
     title: "Brand & Creative Partner",
-    imageSrc: "/images/asimba.avif",
+    imageSrc: "/images/asimba.jpg",
   },
 ];
 

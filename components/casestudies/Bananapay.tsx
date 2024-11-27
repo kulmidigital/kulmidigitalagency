@@ -1,6 +1,6 @@
-import React from 'react'
-import BananaCarousel from './BananaCarousel'
-import localFont from 'next/font/local'
+import React from "react";
+import BananaCarousel from "./BananaCarousel";
+import localFont from "next/font/local";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import SlideReveal from "@/components/ui/slidereveal";
 
@@ -106,11 +106,11 @@ const Bananapay = () => {
           </SlideReveal>
         </div>
       </div>
-      <div className="bg-[url('/bananapay/bananafb.avif')] bg-contain bg-no-repeat bg-center w-full h-[300px] sm:h-[450px] md:h-[70vh] lg:h-[100vh] rounded-3xl mt-8 md:mt-12"></div>
-      <div className="bg-[url('/bananapay/i1.avif')] bg-contain bg-no-repeat bg-center w-full h-[300px] sm:h-[450px] md:h-[70vh] lg:h-[100vh] rounded-3xl mt-8 md:mt-12"></div>
-      <div className="bg-[url('/bananapay/i2.avif')] bg-contain bg-no-repeat w-full h-[300px] sm:h-[450px] md:h-[70vh] lg:h-[100vh] rounded-3xl mt-8 md:mt-12"></div>
+      <div className="bg-[url('/bananapay/bananafb.jpeg')] bg-contain bg-no-repeat bg-center w-full h-[300px] sm:h-[450px] md:h-[70vh] lg:h-[100vh] rounded-3xl mt-8 md:mt-12"></div>
+      <div className="bg-[url('/bananapay/i1.jpeg')] bg-contain bg-no-repeat bg-center w-full h-[300px] sm:h-[450px] md:h-[70vh] lg:h-[100vh] rounded-3xl mt-8 md:mt-12"></div>
+      <div className="bg-[url('/bananapay/i2.jpeg')] bg-contain bg-no-repeat w-full h-[300px] sm:h-[450px] md:h-[70vh] lg:h-[100vh] rounded-3xl mt-8 md:mt-12"></div>
       <div className="bg-[url('/bananapay/advid.webp')] bg-cover bg-center w-full h-[50px] sm:h-[100px] md:h-[100px] lg:h-[100px] mt-8 md:mt-12"></div>
-      <div className="bg-[url('/bananapay/bananadiscount.avif')] bg-contain bg-no-repeat bg-center w-full h-[300px] sm:h-[450px] md:h-[70vh] lg:h-[100vh] rounded-3xl mt-8 md:mt-12"></div>
+      <div className="bg-[url('/bananapay/bananadiscount.jpeg')] bg-contain bg-no-repeat bg-center w-full h-[300px] sm:h-[450px] md:h-[70vh] lg:h-[100vh] rounded-3xl mt-8 md:mt-12"></div>
       <div className='relative w-full h-[300px] sm:h-[450px] md:h-[70vh] lg:h-[100vh] mt-8 md:mt-12 overflow-hidden rounded-3xl'>
         <video
           className='absolute top-0 left-0 w-full h-full object-cover'
@@ -124,6 +124,6 @@ const Bananapay = () => {
       </div>
     </section>
   );
-}
+};
 
-export default Bananapay
+export default Bananapay;
