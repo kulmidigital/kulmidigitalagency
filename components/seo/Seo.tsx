@@ -47,7 +47,7 @@ const Seo = () => {
                   <p className={`${clashDisplay.className} text-gray-600 mb-6`}>
                     Transform your website into a search engine magnet with our comprehensive on-page optimization.
                   </p>
-                  <div className='grid grid-cols-2 gap-4'>
+                  <div className='flex flex-col sm:grid sm:grid-cols-2 gap-3 sm:gap-4'>
                     <div className='flex items-center gap-2'>
                       <div className='w-2 h-2 bg-[#F56E0F] rounded-full'></div>
                        <span className={clashDisplay.className}>Keyword Strategy</span>
@@ -66,29 +66,23 @@ const Seo = () => {
                     </div>
                   </div>
                 </div>
-                <ul className='space-y-4 mb-6'>
-                  <li className='flex items-start gap-3'>
-                    <div className='w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1'>
-                      <div className='w-2 h-2 bg-green-500 rounded-full'></div>
-                    </div>
-                    <span className={clashDisplay.className}>
-                      AI-powered keyword research and competitor analysis
+                <ul className='space-y-3 mb-6'>
+                  <li className='flex items-center gap-2'>
+                    <div className='w-2 h-2 bg-[#F56E0F] rounded-full'></div>
+                    <span className={`${clashDisplay.className} text-sm sm:text-base`}>
+                      AI-powered keyword research
                     </span>
                   </li>
-                  <li className='flex items-start gap-3'>
-                    <div className='w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1'>
-                      <div className='w-2 h-2 bg-green-500 rounded-full'></div>
-                    </div>
-                    <span className={clashDisplay.className}>
-                      Content optimization for featured snippets
+                  <li className='flex items-center gap-2'>
+                    <div className='w-2 h-2 bg-[#F56E0F] rounded-full'></div>
+                    <span className={`${clashDisplay.className} text-sm sm:text-base`}>
+                      Content optimization for snippets
                     </span>
                   </li>
-                  <li className='flex items-start gap-3'>
-                    <div className='w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1'>
-                      <div className='w-2 h-2 bg-green-500 rounded-full'></div>
-                    </div>
-                    <span className={clashDisplay.className}>
-                      Advanced semantic SEO implementation
+                  <li className='flex items-center gap-2'>
+                    <div className='w-2 h-2 bg-[#F56E0F] rounded-full'></div>
+                    <span className={`${clashDisplay.className} text-sm sm:text-base`}>
+                      Semantic SEO implementation
                     </span>
                   </li>
                 </ul>
@@ -106,7 +100,7 @@ const Seo = () => {
                   <p className={`${clashDisplay.className} text-gray-600 mb-6`}>
                     Unlock your website's full potential with our advanced technical SEO solutions.
                   </p>
-                  <div className='grid grid-cols-2 gap-4'>
+                  <div className='flex flex-col sm:grid sm:grid-cols-2 gap-3 sm:gap-4'>
                     <div className='flex items-center gap-2'>
                       <div className='w-2 h-2 bg-[#F56E0F] rounded-full'></div>
                       <span className={clashDisplay.className}>Core Web Vitals</span>
@@ -125,29 +119,23 @@ const Seo = () => {
                     </div>
                   </div>
                 </div>
-                <ul className='space-y-4 mb-6'>
-                  <li className='flex items-start gap-3'>
-                    <div className='w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1'>
-                      <div className='w-2 h-2 bg-green-500 rounded-full'></div>
-                    </div>
-                    <span className={clashDisplay.className}>
-                      Performance optimization for Core Web Vitals
+                <ul className='space-y-3 mb-6'>
+                  <li className='flex items-center gap-2'>
+                    <div className='w-2 h-2 bg-[#F56E0F] rounded-full'></div>
+                    <span className={`${clashDisplay.className} text-sm sm:text-base`}>
+                      Core Web Vitals optimization
                     </span>
                   </li>
-                  <li className='flex items-start gap-3'>
-                    <div className='w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1'>
-                      <div className='w-2 h-2 bg-green-500 rounded-full'></div>
-                    </div>
-                    <span className={clashDisplay.className}>
-                      Advanced crawl optimization and indexing
+                  <li className='flex items-center gap-2'>
+                    <div className='w-2 h-2 bg-[#F56E0F] rounded-full'></div>
+                    <span className={`${clashDisplay.className} text-sm sm:text-base`}>
+                      Advanced crawl optimization
                     </span>
                   </li>
-                  <li className='flex items-start gap-3'>
-                    <div className='w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1'>
-                      <div className='w-2 h-2 bg-green-500 rounded-full'></div>
-                    </div>
-                    <span className={clashDisplay.className}>
-                      International SEO and hreflang implementation
+                  <li className='flex items-center gap-2'>
+                    <div className='w-2 h-2 bg-[#F56E0F] rounded-full'></div>
+                    <span className={`${clashDisplay.className} text-sm sm:text-base`}>
+                      International SEO setup
                     </span>
                   </li>
                 </ul>

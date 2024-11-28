@@ -47,7 +47,7 @@ const Web = () => {
                     Tailored solutions built from the ground up using modern
                     technologies and frameworks.
                   </p>
-                  <div className='grid grid-cols-2 gap-4'>
+                  <div className='flex flex-col sm:grid sm:grid-cols-2 gap-3 sm:gap-4'>
                     <div className='flex items-center gap-2'>
                       <div className='w-2 h-2 bg-[#F56E0F] rounded-full'></div>
                       <span className={clashDisplay.className}>React.js</span>
@@ -66,26 +66,24 @@ const Web = () => {
                     </div>
                   </div>
                 </div>
-                <ul className='space-y-4 mb-6'>
-                  <li className='flex items-start gap-3'>
-                    <div className='w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1'>
-                      <div className='w-2 h-2 bg-green-500 rounded-full'></div>
-                    </div>
-                    <span className={clashDisplay.className}>
-                      Complete control over functionality and features
+                <ul className='space-y-3 mb-6'>
+                  <li className='flex items-center gap-2'>
+                    <div className='w-2 h-2 bg-[#F56E0F] rounded-full'></div>
+                    <span className={`${clashDisplay.className} text-sm sm:text-base`}>
+                      Complete control over functionality
                     </span>
                   </li>
-                  <li className='flex items-start gap-3'>
-                    <div className='w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1'>
-                      <div className='w-2 h-2 bg-green-500 rounded-full'></div>
-                    </div>
-                    <span className={clashDisplay.className}>Optimized performance and loading speeds</span>
+                  <li className='flex items-center gap-2'>
+                    <div className='w-2 h-2 bg-[#F56E0F] rounded-full'></div>
+                    <span className={`${clashDisplay.className} text-sm sm:text-base`}>
+                      Optimized performance and speed
+                    </span>
                   </li>
-                  <li className='flex items-start gap-3'>
-                    <div className='w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1'>
-                      <div className='w-2 h-2 bg-green-500 rounded-full'></div>
-                    </div>
-                    <span className={clashDisplay.className}>Unique user experiences and interactions</span>
+                  <li className='flex items-center gap-2'>
+                    <div className='w-2 h-2 bg-[#F56E0F] rounded-full'></div>
+                    <span className={`${clashDisplay.className} text-sm sm:text-base`}>
+                      Unique user experiences
+                    </span>
                   </li>
                 </ul>
                 <div className="mt-auto">
@@ -96,8 +94,8 @@ const Web = () => {
 
             {/* CMS Development */}
             <SlideReveal direction='right' duration={0.7}>
-              <div className='bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all h-full flex flex-col'>
-                <div className='bg-gradient-to-br from-blue-100 to-purple-50 rounded-2xl p-6 mb-6'>
+              <div className='bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all h-full flex flex-col'>
+                <div className='bg-gradient-to-br from-blue-100 to-purple-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 mb-6'>
                   <h3 className={`${clashDisplay.className} text-2xl font-bold mb-4`}>
                     CMS Solutions
                   </h3>
@@ -105,7 +103,7 @@ const Web = () => {
                     Powerful content management systems for easy updates and
                     maintenance.
                   </p>
-                  <div className='grid grid-cols-2 gap-4'>
+                  <div className='flex flex-col sm:grid sm:grid-cols-2 gap-3 sm:gap-4'>
                     <div className='flex items-center gap-2'>
                       <div className='w-2 h-2 bg-[#F56E0F] rounded-full'></div>
                       <span className={clashDisplay.className}>WordPress</span>
@@ -124,24 +122,24 @@ const Web = () => {
                     </div>
                   </div>
                 </div>
-                <ul className='space-y-4 mb-6'>
-                  <li className='flex items-start gap-3'>
-                    <div className='w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1'>
-                      <div className='w-2 h-2 bg-green-500 rounded-full'></div>
-                    </div>
-                    <span className={clashDisplay.className}>Easy content management and updates</span>
+                <ul className='space-y-3 mb-6'>
+                  <li className='flex items-center gap-2'>
+                    <div className='w-2 h-2 bg-[#F56E0F] rounded-full'></div>
+                    <span className={`${clashDisplay.className} text-sm sm:text-base`}>
+                      Easy content management
+                    </span>
                   </li>
-                  <li className='flex items-start gap-3'>
-                    <div className='w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1'>
-                      <div className='w-2 h-2 bg-green-500 rounded-full'></div>
-                    </div>
-                    <span className={clashDisplay.className}>Cost-effective and quick to deploy</span>
+                  <li className='flex items-center gap-2'>
+                    <div className='w-2 h-2 bg-[#F56E0F] rounded-full'></div>
+                    <span className={`${clashDisplay.className} text-sm sm:text-base`}>
+                      Quick to deploy
+                    </span>
                   </li>
-                  <li className='flex items-start gap-3'>
-                    <div className='w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-1'>
-                      <div className='w-2 h-2 bg-green-500 rounded-full'></div>
-                    </div>
-                    <span className={clashDisplay.className}>Large ecosystem of plugins and themes</span>
+                  <li className='flex items-center gap-2'>
+                    <div className='w-2 h-2 bg-[#F56E0F] rounded-full'></div>
+                    <span className={`${clashDisplay.className} text-sm sm:text-base`}>
+                      Plugin ecosystem
+                    </span>
                   </li>
                 </ul>
                 <div className="mt-auto">
