@@ -38,4 +38,14 @@
 
 @keyframes l5-2 {
   100% {top:-0.1px}
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader:before {
+    animation: none;
+  }
+  
+  .loader {
+    opacity: 0.5;
+  }
 } 

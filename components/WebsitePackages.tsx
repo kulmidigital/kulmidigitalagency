@@ -218,9 +218,16 @@ export default function Component() {
               </tr>
               <tr>
                 <td className='border p-2'>
-                  Content Upload to Website (During Development)
+                  <label htmlFor="content-upload" className="sr-only">Content Upload to Website</label>
+                  <input
+                    type="checkbox"
+                    id="content-upload"
+                    checked
+                    disabled
+                    aria-label="Content Upload included"
+                  />
+                  Yes, Client to supply content
                 </td>
-                <td className='border p-2'>Yes, Client to supply content</td>
                 <td className='border p-2'>Yes, Client to supply content</td>
                 <td className='border p-2'>Yes, Client to supply content</td>
               </tr>

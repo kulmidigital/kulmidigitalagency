@@ -57,7 +57,7 @@
 
 /* Links styling */
 .blog-content a {
-  color: #F56E0F;
+  color: #D85600;
   text-decoration: underline;
   transition: color 0.2s ease;
 }
@@ -329,4 +329,10 @@
     border: 1pt solid #000;
     padding: 0.5cm;
   }
+}
+
+/* Add content-visibility for better mobile performance */
+.blog-content {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
 }

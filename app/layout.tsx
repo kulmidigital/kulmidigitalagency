@@ -1,9 +1,8 @@
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import dynamic from 'next/dynamic'
 import { Toaster } from "@/components/ui/toaster";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import "@/styles/blog.css";
 import Providers from './providers'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
@@ -14,7 +13,16 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-plus-jakarta",
+  display: 'swap',
+  preload: true,
+  adjustFontFallback: true
 });
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+};
 
 export const metadata = {
   title: "Kulmi Digital Agency",
@@ -23,7 +31,17 @@ export const metadata = {
   icons: {
     icon: "/logo.svg",
   },
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://kulmi.digital'),
 };
+
+const WhatsAppButton = dynamic(() => import('@/components/WhatsAppButton'), {
+  loading: () => null,
+  ssr: false
+})
+
+const Footer = dynamic(() => import('@/components/Footer'), {
+  loading: () => null
+})
 
 export default function RootLayout({
   children,
@@ -31,27 +49,35 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang='en' suppressHydrationWarning>
       <head>
+        <meta name='theme-color' content='#F56E0F' />
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link
+          rel='preconnect'
+          href='https://fonts.gstatic.com'
+          crossOrigin='anonymous'
+        />
+        <link rel='dns-prefetch' href='https://www.googletagmanager.com' />
         <GoogleAnalytics />
         <script
-          type="application/ld+json"
+          type='application/ld+json'
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteStructuredData)
+            __html: JSON.stringify(websiteStructuredData),
           }}
         />
         <script
-          type="application/ld+json"
+          type='application/ld+json'
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationStructuredData)
+            __html: JSON.stringify(organizationStructuredData),
           }}
         />
       </head>
-      <body className={`${plusJakartaSans.variable} w-[100%]`} suppressHydrationWarning>
+      <body
+        className={`${plusJakartaSans.variable} w-[100%]`}
+        suppressHydrationWarning>
         <Navbar />
-        <Providers>
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
         <Footer />
         <WhatsAppButton />
         <Toaster />

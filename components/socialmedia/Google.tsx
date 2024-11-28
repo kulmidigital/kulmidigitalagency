@@ -19,11 +19,11 @@ const Google = () => {
   const benefitsSection = (
     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto'>
       {/* Large card */}
-      <div className='col-span-1 sm:col-span-2 row-span-2 rounded-3xl bg-white/50 p-6 sm:p-8 shadow-lg border border-white/60 transition-all duration-300 hover:bg-white/70 hover:scale-[1.02] cursor-pointer relative overflow-hidden group'>
+      <div className='col-span-1 sm:col-span-2 row-span-2 rounded-3xl bg-white/50 p-6 sm:p-8 shadow-lg border border-white/60 transition-all duration-300 hover:bg-white/70 hover:scale-[1.02] cursor-pointer relative overflow-hidden group' role="article" aria-labelledby="section-title">
         <div className='absolute inset-0 bg-gradient-to-br from-blue-400/20 to-red-600/20 group-hover:opacity-30 transition-opacity duration-300'></div>
         <div className='relative z-10'>
           <Search className='w-16 h-16 text-blue-600 mb-6' />
-          <h2 className='text-2xl sm:text-3xl font-bold text-gray-800 mb-4 font-clash-display'>
+          <h2 id="section-title" className='text-2xl sm:text-3xl font-bold text-gray-800 mb-4 font-clash-display'>
             Google Ads Specialists
           </h2>
           <p className='text-gray-700 text-base sm:text-lg'>

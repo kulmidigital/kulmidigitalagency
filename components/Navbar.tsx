@@ -93,7 +93,7 @@ const mainServices = [
   },
   {
     name: "Web Development",
-    href: "/web-development",
+    href: "/webdevelopment",
   },
   {
     name: "SEO",

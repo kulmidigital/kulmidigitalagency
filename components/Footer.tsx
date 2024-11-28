@@ -32,8 +32,12 @@ const currentYear = new Date().getFullYear();
 const partners = [
   {
     name: "EstateBax",
-    href: "/estatebax"
-  }
+    href: "/estatebax",
+  },
+  {
+    name: "E-Warranty",
+    href: "https://ewarranty.io/",
+  },
 ];
 
 // Footer Component
