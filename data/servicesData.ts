@@ -18,12 +18,6 @@ export const services = [
       "We create impactful content such as Blog Posts, Newsletters, Case Studies, Infographics, and Digital Media Content like webinars and podcasts.",
   },
   {
-    iconSrc: "/icons/line-up.svg",
-    title: "Search Engine Optimization (SEO)",
-    description:
-      "Providing Local SEO, Link Building, SEO Audits, Technical SEO, and Keyword Tracking to enhance search visibility.",
-  },
-  {
     iconSrc: "/icons/certificate.svg",
     title: "Creative (Brand + Design)",
     description:
@@ -64,5 +58,17 @@ export const services = [
     title: "Audience Monitoring",
     description:
       "Tracking and analyzing audience behavior to provide insights and optimize campaigns for higher engagement.",
+  },
+  {
+    title: "Web Development",
+    iconSrc: "/icons/code.svg",
+    description:
+      "Custom websites and CMS solutions built with modern technologies.",
+  },
+  {
+    iconSrc: "/icons/line-up.svg",
+    title: "Search Engine Optimization (SEO)",
+    description:
+      "Providing Local SEO, Link Building, SEO Audits, Technical SEO, and Keyword Tracking to enhance search visibility.",
   },
 ];

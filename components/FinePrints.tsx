@@ -110,15 +110,15 @@ export default function FinePrints() {
             <motion.div
               ref={carouselRef}
               className='flex'
-              style={{ gap: "1rem" }} // Smaller gap for mobile, increases on larger screens
+              style={{ gap: "1rem" }} 
             >
               {[...logos, ...logos].map((logo, index) => (
                 <div
                   key={index}
                   className='flex items-center justify-center bg-center bg-no-repeat'
                   style={{
-                    minWidth: "120px", // Smaller size for mobile, larger on larger screens
-                    minHeight: "80px", // Smaller size for mobile, larger on larger screens
+                    minWidth: "120px", 
+                    minHeight: "80px", 
                     backgroundImage: `url(/logos/${logo})`,
                     backgroundSize: "contain",
                   }}></div>

@@ -1,6 +1,8 @@
 import React from "react";
 import ServiceCard from "./ServiceCard";
 import DigitalAdvertisingCard from "./DigitalAdvertisingCard";
+import SeoCard from "./SeoCard";
+import WebDevCard from "./WebDevCard";
 import localFont from "next/font/local";
 import SlideReveal from "@/components/ui/slidereveal";
 import { services } from "@/data/servicesData";
@@ -30,18 +32,25 @@ const Services: React.FC = () => {
       </SlideReveal>
       <div className='max-w-7xl mx-auto'>
         <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
-          {services.map((service, index) => 
-            service.title === "Digital Advertising (PPC & SEM)" ? (
-              <DigitalAdvertisingCard key={index} />
-            ) : (
+          {services.map((service, index) => {
+            if (service.title === "Digital Advertising (PPC & SEM)") {
+              return <DigitalAdvertisingCard key={index} />;
+            }
+            if (service.title === "Search Engine Optimization (SEO)") {
+              return <SeoCard key={index} />;
+            }
+            if (service.title === "Web Development") {
+              return <WebDevCard key={index} />;
+            }
+            return (
               <ServiceCard
                 key={index}
                 iconSrc={service.iconSrc}
                 title={service.title}
                 description={service.description}
               />
-            )
-          )}
+            );
+          })}
         </div>
       </div>
     </section>
