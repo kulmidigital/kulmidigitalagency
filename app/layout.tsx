@@ -58,6 +58,7 @@ export default function RootLayout({
           href='https://fonts.gstatic.com'
           crossOrigin='anonymous'
         />
+        <link rel='preconnect' href='https://www.googletagmanager.com' />
         <link rel='dns-prefetch' href='https://www.googletagmanager.com' />
         <GoogleAnalytics />
         <script
@@ -76,6 +77,14 @@ export default function RootLayout({
       <body
         className={`${plusJakartaSans.variable} w-[100%]`}
         suppressHydrationWarning>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-58V89S63"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         <Navbar />
         <Providers>{children}</Providers>
         <Footer />
