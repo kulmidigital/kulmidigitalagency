@@ -1,0 +1,19 @@
+{
+  "name": "Kulmi Digital Agency",
+  "short_name": "Kulmi",
+  "description": "Digital Specialists helping ambitious brands in Africa and globally",
+  "theme_color": "#F56E0F",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ]
+}

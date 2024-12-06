@@ -33,6 +33,7 @@ export const metadata = {
     icon: "/logo.svg",
   },
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://kulmi.digital'),
+  manifest: '/manifest.json',
 };
 
 const WhatsAppButton = dynamic(() => import('@/components/WhatsAppButton'), {
