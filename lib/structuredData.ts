@@ -22,7 +22,6 @@ export const organizationStructuredData = {
   "sameAs": [
     "https://twitter.com/kulmidigital",
     "https://www.linkedin.com/company/kulmidigital",
-    // Add other social media URLs
   ],
   "contactPoint": {
     "@type": "ContactPoint",

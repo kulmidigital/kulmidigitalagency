@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import Projects from "./Projects";
 import SlideReveal from "@/components/ui/slidereveal";
 
-// Import Clash Display Font
 const clashDisplay = localFont({
   src: [
     {

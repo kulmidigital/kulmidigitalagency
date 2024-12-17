@@ -120,10 +120,16 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Right Section: Copyright */}
-        <div
-          className={`${plusJakartaSans.className} text-center text-gray-700 text-[12px] sm:text-[14px]`}>
-          Copyright © {currentYear} - All Right Reserved
+        {/* Right Section: Copyright and Privacy Policy */}
+        <div className={`${plusJakartaSans.className} flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-gray-700 text-[12px] sm:text-[14px]`}>
+          <span>Copyright © {currentYear} - All Right Reserved</span>
+          <span className='hidden sm:inline'>|</span>
+          <Link 
+            href='/privacy' 
+            className='hover:text-[#F56E0F] transition-colors'
+          >
+            Privacy Policy
+          </Link>
         </div>
       </div>
     </section>
