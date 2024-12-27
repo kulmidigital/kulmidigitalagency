@@ -106,7 +106,7 @@ const mainServices = [
 ];
 
 const Navbar = () => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -135,8 +135,12 @@ const Navbar = () => {
   };
 
   const handleThemeToggle = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <nav className='flex justify-between items-center z-[99999] bg-white dark:bg-gray-900 md:pt-6 md:pb-[22px] md:px-[76px] px-4 py-3 border-b-[1px] border-[#F56E0F] sticky top-0 left-0 right-0 w-full'>
@@ -257,7 +261,7 @@ const Navbar = () => {
           <Sun className='h-4 w-4' />
           {mounted && (
             <Switch
-              checked={theme === "dark"}
+              checked={resolvedTheme === "dark"}
               onCheckedChange={handleThemeToggle}
               className='data-[state=checked]:bg-[#F56E0F]'
             />
@@ -458,7 +462,7 @@ const Navbar = () => {
                 <Sun className='h-4 w-4 dark:text-white' />
                 {mounted && (
                   <Switch
-                    checked={theme === "dark"}
+                    checked={resolvedTheme === "dark"}
                     onCheckedChange={handleThemeToggle}
                     className='data-[state=checked]:bg-[#F56E0F]'
                   />
