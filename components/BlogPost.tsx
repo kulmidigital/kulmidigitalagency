@@ -5,7 +5,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import SlideReveal from "@/components/ui/slidereveal";
 import Image from "next/image";
 import Link from "next/link";
-import '../styles/blog.css';
+import "../styles/blog.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -26,31 +26,31 @@ const clashDisplay = localFont({
 });
 
 interface Post {
-  id: string
-  title: string
-  content: string
-  contentHtml: string
-  date: string
-  image: string
-  categoryName: string
-  categoryId: string
+  id: string;
+  title: string;
+  content: string;
+  contentHtml: string;
+  date: string;
+  image: string;
+  categoryName: string;
+  categoryId: string;
 }
 
 export default function BlogPost({ post }: { post: Post }) {
   const [isHovered, setIsHovered] = useState(false);
 
   if (!post) {
-    return <div>No post data available</div>
+    return <div>No post data available</div>;
   }
 
-  const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
+  const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
   return (
-    <article className={`${clashDisplay.className}`}>
+    <article className={`${clashDisplay.className} dark:bg-gray-900`}>
       {post.image && (
         <div className='relative w-full h-[30vh] sm:h-[40vh] md:h-[50vh] mb-8'>
           <Image
@@ -65,11 +65,11 @@ export default function BlogPost({ post }: { post: Post }) {
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-light mb-4'>
                 {post.title}
               </h1>
-              <div className="flex items-center gap-2">
+              <div className='flex items-center gap-2'>
                 <span className={`${plusJakartaSans.className} text-sm`}>
                   {formattedDate}
                 </span>
-                <span className="text-gray-400">•</span>
+                <span className='text-gray-400'>•</span>
                 <span className={`${plusJakartaSans.className} text-sm`}>
                   {post.categoryName}
                 </span>
@@ -83,28 +83,32 @@ export default function BlogPost({ post }: { post: Post }) {
         {!post.image && (
           <>
             <SlideReveal direction='up' duration={0.7}>
-              <h1 className='text-3xl md:text-4xl lg:text-5xl font-light mb-8'>
+              <h1 className='text-3xl md:text-4xl lg:text-5xl font-light mb-8 dark:text-gray-100'>
                 {post.title}
               </h1>
             </SlideReveal>
 
             <div
               className={`${plusJakartaSans.className} flex justify-between items-center mb-8`}>
-              <span className='text-gray-500'>{formattedDate}</span>
-              <span className='text-gray-500'>{post.categoryName}</span>
+              <span className='text-gray-500 dark:text-gray-400'>
+                {formattedDate}
+              </span>
+              <span className='text-gray-500 dark:text-gray-400'>
+                {post.categoryName}
+              </span>
             </div>
           </>
         )}
 
         <div
-          className={`${plusJakartaSans.className} blog-content mx-2 md:mx-[15%]`}
+          className={`${plusJakartaSans.className} blog-content mx-2 md:mx-[15%] dark:text-gray-200`}
           dangerouslySetInnerHTML={{ __html: post.contentHtml }}
         />
       </section>
 
       <div className='flex justify-center items-center mt-12 mb-16'>
         <Link
-          className='my-4 md:my-0 mx-auto text-sm sm:text-[18px] lg:text-[20px] text-center w-[70%] p-4 rounded-[40px] flex items-center justify-center space-x-2 bg-[#F56E0F] text-white hover:bg-transparent border border-[#F56E0F] hover:border-black hover:text-black transition-all duration-300'
+          className='my-4 md:my-0 mx-auto text-sm sm:text-[18px] lg:text-[20px] text-center w-[70%] p-4 rounded-[40px] flex items-center justify-center space-x-2 bg-[#F56E0F] text-white hover:bg-transparent border border-[#F56E0F] hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white transition-all duration-300'
           href='/contact'
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}>

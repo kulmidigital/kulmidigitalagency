@@ -17,14 +17,14 @@ const clashDisplay = localFont({
 
 const OurWork = () => {
   return (
-    <section>
+    <section className='bg-white dark:bg-gray-900'>
       {/* Outer div with background image */}
-      <div className="relative w-full h-[30vh] sm:h-[40vh] md:h-[50vh] bg-[url('/images/workbanner.webp')] bg-cover bg-center flex items-end">
+      <div className="relative w-full h-[30vh] sm:h-[40vh] md:h-[50vh] bg-[url('/images/workbanner.webp')] bg-cover bg-center flex items-end dark:brightness-90">
         {/* Background overlay */}
-        <div className='absolute inset-0 bg-black/50 z-0'></div>
+        <div className='absolute inset-0 bg-black/50 dark:bg-black/60 z-0'></div>
 
         {/* Text container */}
-        <div className='relative z-10 bg-white/10 backdrop-blur-xl border rounded-[10px] sm:rounded-[20px] px-4 sm:px-8 py-2 sm:py-4 w-[85%] sm:w-[70%] mb-4 sm:mb-8 ml-4 sm:ml-8'>
+        <div className='relative z-10 bg-white/10 dark:bg-black/20 backdrop-blur-xl border border-white/20 rounded-[10px] sm:rounded-[20px] px-4 sm:px-8 py-2 sm:py-4 w-[85%] sm:w-[70%] mb-4 sm:mb-8 ml-4 sm:ml-8'>
           <SlideReveal direction='up' duration={0.7}>
             <h1
               className={`text-white text-3xl sm:text-4xl md:text-5xl font-bold py-4 sm:py-6 px-2 sm:px-4 text-left ${clashDisplay.className}`}>

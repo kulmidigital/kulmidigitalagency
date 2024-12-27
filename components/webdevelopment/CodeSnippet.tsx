@@ -44,24 +44,25 @@ export default function ProductCard({ product }) {
 
 const CodeSnippet = () => {
   return (
-    <div className="relative group">
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#F56E0F] to-purple-600 rounded-xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
-      <div className="relative bg-[#1E293B] rounded-xl overflow-hidden">
-        <div className="flex items-center gap-2 px-4 py-3 bg-[#0F172A]">
-          <div className="w-3 h-3 rounded-full bg-red-500"></div>
-          <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-          <div className="w-3 h-3 rounded-full bg-green-500"></div>
+    <div className='relative group'>
+      <div className='absolute -inset-0.5 bg-gradient-to-r from-[#F56E0F] to-purple-600 rounded-xl blur opacity-30 group-hover:opacity-50 transition duration-1000'></div>
+      <div className='relative bg-[#1E293B] dark:bg-[#0F172A] rounded-xl overflow-hidden'>
+        <div className='flex items-center gap-2 px-4 py-3 bg-[#0F172A] dark:bg-black'>
+          <div className='w-3 h-3 rounded-full bg-red-500'></div>
+          <div className='w-3 h-3 rounded-full bg-yellow-500'></div>
+          <div className='w-3 h-3 rounded-full bg-green-500'></div>
         </div>
         <Highlight
           theme={themes.nightOwl}
           code={exampleCode.trim()}
-          language="tsx"
-        >
+          language='tsx'>
           {({ className, style, tokens, getLineProps, getTokenProps }) => (
-            <pre className="p-4 overflow-auto" style={style}>
+            <pre className='p-4 overflow-auto' style={style}>
               {tokens.map((line, i) => (
                 <div key={i} {...getLineProps({ line })}>
-                  <span className="text-gray-500 mr-4">{i + 1}</span>
+                  <span className='text-gray-500 dark:text-gray-400 mr-4'>
+                    {i + 1}
+                  </span>
                   {line.map((token, key) => (
                     <span key={key} {...getTokenProps({ token })} />
                   ))}
@@ -75,4 +76,4 @@ const CodeSnippet = () => {
   );
 };
 
-export default CodeSnippet; 
+export default CodeSnippet;

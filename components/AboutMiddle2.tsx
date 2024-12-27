@@ -16,12 +16,13 @@ const clashDisplay = localFont({
 
 const AboutMiddle2 = () => {
   return (
-    <section className='bg-slate-100 py-10 sm:py-16 px-4 sm:px-8 lg:px-12 mt-6 lg:mt-[80px]'>
+    <section className='bg-slate-100 dark:bg-gray-800 py-10 sm:py-16 px-4 sm:px-8 lg:px-12 mt-6 lg:mt-[80px]'>
       {/* Title */}
       <SlideReveal direction='left' duration={0.7}>
         <h2
-          className={`${clashDisplay.className} text-left text-[28px] sm:text-[36px] lg:text-5xl font-bold text-black`}>
-          What we <span className='text-[#F56E0F]'>do?</span>
+          className={`${clashDisplay.className} text-left text-[28px] sm:text-[36px] lg:text-5xl font-bold text-black dark:text-white`}>
+          What we{" "}
+          <span className='text-[#F56E0F] dark:text-[#FF7A1F]'>do?</span>
         </h2>
       </SlideReveal>
 
@@ -31,16 +32,23 @@ const AboutMiddle2 = () => {
           {/* Left Column */}
           <div className='lg:w-1/2'>
             <h3
-              className={`${clashDisplay.className} text-left text-[22px] sm:text-3xl lg:text-4xl font-bold text-black`}>
-              At <span className='text-[#F56E0F]'>Kulmi Digital</span>, we
-              aren&apos;t just another agency; we&apos;re the architects of
-              digital <span className='text-[#F56E0F]'>success stories</span>.
+              className={`${clashDisplay.className} text-left text-[22px] sm:text-3xl lg:text-4xl font-bold text-black dark:text-white`}>
+              At{" "}
+              <span className='text-[#F56E0F] dark:text-[#FF7A1F]'>
+                Kulmi Digital
+              </span>
+              , we aren&apos;t just another agency; we&apos;re the architects of
+              digital{" "}
+              <span className='text-[#F56E0F] dark:text-[#FF7A1F]'>
+                success stories
+              </span>
+              .
             </h3>
           </div>
 
           {/* Right Column */}
           <div className='lg:w-1/2'>
-            <p className='text-gray-600 text-[16px] sm:text-lg leading-relaxed'>
+            <p className='text-gray-600 dark:text-gray-300 text-[16px] sm:text-lg leading-relaxed'>
               Our journey is one of relentless innovation, fueled by a passion
               for transforming ideas into impactful online experiences. From
               pioneering strategies that redefine digital landscapes to crafting

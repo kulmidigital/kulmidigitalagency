@@ -39,29 +39,29 @@ const SocialMediaLayout: React.FC<SocialMediaLayoutProps> = ({
   return (
     <div className={`${clashDisplay.className} font-sans`}>
       <Hero {...heroProps} />
-      <div className='py-8 sm:py-12 bg-white'>
+      <div className='py-8 sm:py-12 bg-white dark:bg-gray-900'>
         <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
-          <h2 className='text-3xl sm:text-4xl font-bold text-gray-800 mb-8 sm:mb-12 font-clash-display text-center'>
+          <h2 className='text-3xl sm:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-8 sm:mb-12 font-clash-display text-center'>
             Benefits of Our {platform} Marketing Services
           </h2>
           {benefitsSection}
         </div>
       </div>
-      <div className='py-12 sm:py-16 bg-gray-100'>
+      <div className='py-12 sm:py-16 bg-gray-100 dark:bg-gray-800'>
         <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
-          <h2 className='text-3xl sm:text-4xl font-bold text-gray-800 mb-8 sm:mb-12 font-clash-display text-center'>
+          <h2 className='text-3xl sm:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-8 sm:mb-12 font-clash-display text-center'>
             Why {platform} Adverts?
           </h2>
           {whySection}
           <div className='mt-8 sm:mt-12'>
             <div className='flex justify-center items-center'>
               <Link
-                className='block w-full sm:w-auto sm:inline-block text-center px-6 py-3 rounded-full text-base sm:text-lg font-medium bg-[#F56E0F] text-white hover:bg-transparent border border-[#F56E0F] hover:border-black hover:text-black transition-colors duration-300'
+                className='block w-full sm:w-auto sm:inline-block text-center px-6 py-3 rounded-full text-base sm:text-lg font-medium bg-[#F56E0F] text-white hover:bg-transparent border border-[#F56E0F] hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white transition-colors duration-300'
                 href='/contact'
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}>
-                <span className="flex items-center justify-center">
-                  <span className="mr-2">Get Started</span>
+                <span className='flex items-center justify-center'>
+                  <span className='mr-2'>Get Started</span>
                   {isHovered ? (
                     <svg
                       viewBox='0 0 24 24'
@@ -92,14 +92,14 @@ const SocialMediaLayout: React.FC<SocialMediaLayoutProps> = ({
           </div>
         </div>
       </div>
-      <div className='py-8 sm:py-12 bg-white'>
-        <h1 className='text-3xl sm:text-4xl font-bold text-gray-800 font-clash-display text-center mb-8'>
+      <div className='py-8 sm:py-12 bg-white dark:bg-gray-900'>
+        <h1 className='text-3xl sm:text-4xl font-bold text-gray-800 dark:text-gray-100 font-clash-display text-center mb-8'>
           What Our Clients Say
         </h1>
         <TestimonialCarousel />
       </div>
-      <div className='py-8 sm:py-12 bg-white'>
-        <h1 className='text-3xl sm:text-4xl font-bold text-gray-800 font-clash-display text-center mb-8'>
+      <div className='py-8 sm:py-12 bg-white dark:bg-gray-900'>
+        <h1 className='text-3xl sm:text-4xl font-bold text-gray-800 dark:text-gray-100 font-clash-display text-center mb-8'>
           Still Not Convinced? See Our Work
         </h1>
         <Projects />

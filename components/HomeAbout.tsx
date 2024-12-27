@@ -26,18 +26,21 @@ const clashDisplay = localFont({
 
 const HomeAbout = () => {
   return (
-    <section className='flex flex-col px-6 py-10 bg-slate-100 sm:px-8 sm:py-12 lg:px-14 lg:py-16 mt-[60px]'>
+    <section className='flex flex-col px-6 py-10 bg-slate-100 dark:bg-gray-900 sm:px-8 sm:py-12 lg:px-14 lg:py-16 '>
       {/* Main Header */}
       <div className='text-left'>
         <SlideReveal direction='left' duration={0.7}>
           <h1
-            className={`${clashDisplay.className} text-[32px] sm:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6`}>
-            About <span className='text-[#F56E0F]'>Kulmi Digital</span>
+            className={`${clashDisplay.className} text-[32px] sm:text-4xl lg:text-5xl font-bold text-black dark:text-white mb-4 sm:mb-6`}>
+            About{" "}
+            <span className='text-[#F56E0F] dark:text-[#FF7A1F]'>
+              Kulmi Digital
+            </span>
           </h1>
         </SlideReveal>
         <SlideReveal direction='up' duration={0.7}>
           <p
-            className={`${plusJakartaSans.className} text-gray-600 text-[18px] sm:text-[18px] lg:text-[20px] leading-relaxed`}>
+            className={`${plusJakartaSans.className} text-gray-600 dark:text-gray-300 text-[18px] sm:text-[18px] lg:text-[20px] leading-relaxed`}>
             At Kulmi Digital, we understand the crucial role that a well-crafted
             online brand plays in today&apos;s digital landscape. With consumers
             spending more time online than ever before, having a strong digital
@@ -61,7 +64,7 @@ const HomeAbout = () => {
           <div className='text-left mb-8 lg:mb-12'>
             <SlideReveal direction='up' duration={0.7}>
               <h2
-                className={`${clashDisplay.className} text-[24px] sm:text-3xl font-semibold text-[#F56E0F] mb-4`}>
+                className={`${clashDisplay.className} text-[24px] sm:text-3xl font-semibold text-[#F56E0F] dark:text-[#FF7A1F] mb-4`}>
                 Our presence:
               </h2>
             </SlideReveal>
@@ -70,7 +73,7 @@ const HomeAbout = () => {
               {/* Physical Locations */}
               <div>
                 <h3
-                  className={`${clashDisplay.className} text-[18px] sm:text-2xl font-bold text-black mb-2`}>
+                  className={`${clashDisplay.className} text-[18px] sm:text-2xl font-bold text-black dark:text-white mb-2`}>
                   Physical:
                 </h3>
                 <SlideReveal direction='left' duration={0.7}>
@@ -87,11 +90,11 @@ const HomeAbout = () => {
                         <Image
                           src={location.flag}
                           alt={location.name}
-                          width={30} // Increased size for mobile
+                          width={30} 
                           height={30}
                           className='rounded-full'
                         />
-                        <span className='ml-2 text-[20px] sm:text-[18px]'>
+                        <span className='ml-2 text-[20px] sm:text-[18px] dark:text-gray-200'>
                           {location.name}
                         </span>
                       </div>
@@ -103,7 +106,7 @@ const HomeAbout = () => {
               {/* Remote Locations */}
               <div>
                 <h3
-                  className={`${clashDisplay.className} text-[22px] sm:text-2xl font-bold text-black mb-2`}>
+                  className={`${clashDisplay.className} text-[22px] sm:text-2xl font-bold text-black dark:text-white mb-2`}>
                   Remote:
                 </h3>
                 <SlideReveal direction='left' duration={0.7}>
@@ -120,7 +123,7 @@ const HomeAbout = () => {
                           height={30}
                           className='rounded-full'
                         />
-                        <span className='ml-2 text-[20px] sm:text-[18px]'>
+                        <span className='ml-2 text-[20px] sm:text-[18px] dark:text-gray-200'>
                           {location.name}
                         </span>
                       </div>
@@ -133,14 +136,14 @@ const HomeAbout = () => {
                   <div className='mt-4'>
                     <Link href='/about'>
                       <span
-                        className={`${plusJakartaSans.className} inline-flex items-center border-black border-b-[1px] text-[16px] sm:text-[18px]`}>
+                        className={`${plusJakartaSans.className} inline-flex items-center border-black dark:border-white border-b-[1px] text-[16px] sm:text-[18px] dark:text-white`}>
                         Learn More
                         <Image
                           src='/icons/up.svg'
                           alt='Arrow Right'
                           width={28} // Increased size for mobile
                           height={28}
-                          className='ml-2'
+                          className='ml-2 dark:invert'
                         />
                       </span>
                     </Link>

@@ -25,14 +25,16 @@ const clashDisplay = localFont({
 export default function PrivacyPolicy() {
   return (
     <div
-      className={`${plusJakartaSans.className} max-w-4xl mx-auto px-4 py-12`}>
+      className={`${plusJakartaSans.className} max-w-4xl mx-auto px-4 py-12 dark:bg-gray-900`}>
       <h1
-        className={`${clashDisplay.className} text-4xl md:text-5xl font-bold mb-8 text-black`}>
+        className={`${clashDisplay.className} text-4xl md:text-5xl font-bold mb-8 text-black dark:text-white`}>
         Privacy Policy
       </h1>
-      <p className='text-gray-600 mb-4'>Last updated: December 17, 2024</p>
+      <p className='text-gray-600 dark:text-gray-400 mb-4'>
+        Last updated: December 17, 2024
+      </p>
 
-      <div className='prose prose-lg max-w-none text-gray-700'>
+      <div className='prose prose-lg max-w-none text-gray-700 dark:text-gray-300 dark:prose-headings:text-gray-100 dark:prose-strong:text-gray-100 dark:prose-a:text-[#F56E0F]'>
         <p className='mb-6'>
           This Privacy Policy describes Our policies and procedures on the
           collection, use and disclosure of Your information when You use the
@@ -41,7 +43,7 @@ export default function PrivacyPolicy() {
         </p>
 
         <h2
-          className={`${clashDisplay.className} text-2xl md:text-3xl font-bold mt-8 mb-4 text-black`}>
+          className={`${clashDisplay.className} text-2xl md:text-3xl font-bold mt-8 mb-4 text-black dark:text-white`}>
           Interpretation and Definitions
         </h2>
         <p>
@@ -51,130 +53,143 @@ export default function PrivacyPolicy() {
           created with the help of the{" "}
           <a
             href='https://www.termsfeed.com/privacy-policy-generator/'
-            target='_blank'>
+            target='_blank'
+            className='text-[#F56E0F] hover:text-[#E55D00] transition-colors'>
             Privacy Policy Generator
           </a>
           .
         </p>
-        <h2>Interpretation and Definitions</h2>
-        <h3>Interpretation</h3>
+        <h2 className='dark:text-gray-100'>Interpretation and Definitions</h2>
+        <h3 className='dark:text-gray-100'>Interpretation</h3>
         <p>
           The words of which the initial letter is capitalized have meanings
           defined under the following conditions. The following definitions
           shall have the same meaning regardless of whether they appear in
           singular or in plural.
         </p>
-        <h3>Definitions</h3>
+        <h3 className='dark:text-gray-100'>Definitions</h3>
         <p>For the purposes of this Privacy Policy:</p>
-        <ul>
+        <ul className='dark:text-gray-300'>
           <li>
             <p>
-              <strong>Account</strong> means a unique account created for You to
-              access our Service or parts of our Service.
+              <strong className='dark:text-gray-100'>Account</strong> means a
+              unique account created for You to access our Service or parts of
+              our Service.
             </p>
           </li>
           <li>
             <p>
-              <strong>Affiliate</strong> means an entity that controls, is
-              controlled by or is under common control with a party, where
-              &quot;control&quot; means ownership of 50% or more of the shares,
-              equity interest or other securities entitled to vote for election
-              of directors or other managing authority.
+              <strong className='dark:text-gray-100'>Affiliate</strong> means an
+              entity that controls, is controlled by or is under common control
+              with a party, where &quot;control&quot; means ownership of 50% or
+              more of the shares, equity interest or other securities entitled
+              to vote for election of directors or other managing authority.
             </p>
           </li>
           <li>
             <p>
-              <strong>Company</strong> (referred to as either &quot;the
-              Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot;
-              in this Agreement) refers to Kulmi Digital Agency, TRV Center,
-              UpperHill, Nairobi.
+              <strong className='dark:text-gray-100'>Company</strong> (referred
+              to as either &quot;the Company&quot;, &quot;We&quot;,
+              &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to
+              Kulmi Digital Agency, TRV Center, UpperHill, Nairobi.
             </p>
           </li>
           <li>
             <p>
-              <strong>Cookies</strong> are small files that are placed on Your
-              computer, mobile device or any other device by a website,
-              containing the details of Your browsing history on that website
-              among its many uses.
+              <strong className='dark:text-gray-100'>Cookies</strong> are small
+              files that are placed on Your computer, mobile device or any other
+              device by a website, containing the details of Your browsing
+              history on that website among its many uses.
             </p>
           </li>
           <li>
             <p>
-              <strong>Country</strong> refers to: Kenya
+              <strong className='dark:text-gray-100'>Country</strong> refers to:
+              Kenya
             </p>
           </li>
           <li>
             <p>
-              <strong>Device</strong> means any device that can access the
-              Service such as a computer, a cellphone or a digital tablet.
+              <strong className='dark:text-gray-100'>Device</strong> means any
+              device that can access the Service such as a computer, a cellphone
+              or a digital tablet.
             </p>
           </li>
           <li>
             <p>
-              <strong>Personal Data</strong> is any information that relates to
-              an identified or identifiable individual.
+              <strong className='dark:text-gray-100'>Personal Data</strong> is
+              any information that relates to an identified or identifiable
+              individual.
             </p>
           </li>
           <li>
             <p>
-              <strong>Service</strong> refers to the Website.
+              <strong className='dark:text-gray-100'>Service</strong> refers to
+              the Website.
             </p>
           </li>
           <li>
             <p>
-              <strong>Service Provider</strong> means any natural or legal
-              person who processes the data on behalf of the Company. It refers
-              to third-party companies or individuals employed by the Company to
-              facilitate the Service, to provide the Service on behalf of the
-              Company, to perform services related to the Service or to assist
-              the Company in analyzing how the Service is used.
+              <strong className='dark:text-gray-100'>Service Provider</strong>{" "}
+              means any natural or legal person who processes the data on behalf
+              of the Company. It refers to third-party companies or individuals
+              employed by the Company to facilitate the Service, to provide the
+              Service on behalf of the Company, to perform services related to
+              the Service or to assist the Company in analyzing how the Service
+              is used.
             </p>
           </li>
           <li>
             <p>
-              <strong>Third-party Social Media Service</strong> refers to any
-              website or any social network website through which a User can log
-              in or create an account to use the Service.
+              <strong className='dark:text-gray-100'>
+                Third-party Social Media Service
+              </strong>{" "}
+              refers to any website or any social network website through which
+              a User can log in or create an account to use the Service.
             </p>
           </li>
           <li>
             <p>
-              <strong>Usage Data</strong> refers to data collected
-              automatically, either generated by the use of the Service or from
-              the Service infrastructure itself (for example, the duration of a
-              page visit).
+              <strong className='dark:text-gray-100'>Usage Data</strong> refers
+              to data collected automatically, either generated by the use of
+              the Service or from the Service infrastructure itself (for
+              example, the duration of a page visit).
             </p>
           </li>
           <li>
             <p>
-              <strong>Website</strong> refers to Kulmi Digital Agency,
-              accessible from{" "}
+              <strong className='dark:text-gray-100'>Website</strong> refers to
+              Kulmi Digital Agency, accessible from{" "}
               <a
                 href='https://kulmi.digital/'
                 rel='external nofollow noopener'
-                target='_blank'>
+                target='_blank'
+                className='text-[#F56E0F] hover:text-[#E55D00] transition-colors'>
                 https://kulmi.digital/
               </a>
             </p>
           </li>
           <li>
             <p>
-              <strong>You</strong> means the individual accessing or using the
-              Service, or the company, or other legal entity on behalf of which
-              such individual is accessing or using the Service, as applicable.
+              <strong className='dark:text-gray-100'>You</strong> means the
+              individual accessing or using the Service, or the company, or
+              other legal entity on behalf of which such individual is accessing
+              or using the Service, as applicable.
             </p>
           </li>
         </ul>
-        <h2>Collecting and Using Your Personal Data</h2>
-        <h3>Types of Data Collected</h3>
-        <h4>Personal Data</h4>
+        <h2 className='dark:text-gray-100'>
+          Collecting and Using Your Personal Data
+        </h2>
+        <h3 className='dark:text-gray-100'>Types of Data Collected</h3>
+        <h4 className='dark:text-gray-100'>Personal Data</h4>
         <p>
           While using Our Service, We may ask You to provide Us with certain
           personally identifiable information that can be used to contact or
           identify You. Personally identifiable information may include, but is
           not limited to:
         </p>
-        <ul>
+        <ul className='dark:text-gray-300'>
           <li>
             <p>Email address</p>
           </li>
@@ -191,7 +206,7 @@ export default function PrivacyPolicy() {
             <p>Usage Data</p>
           </li>
         </ul>
-        <h4>Usage Data</h4>
+        <h4 className='dark:text-gray-100'>Usage Data</h4>
         <p>Usage Data is collected automatically when using the Service.</p>
         <p>
           Usage Data may include information such as Your Device's Internet
@@ -213,12 +228,14 @@ export default function PrivacyPolicy() {
           visit our Service or when You access the Service by or through a
           mobile device.
         </p>
-        <h4>Information from Third-Party Social Media Services</h4>
+        <h4 className='dark:text-gray-100'>
+          Information from Third-Party Social Media Services
+        </h4>
         <p>
           The Company allows You to create an account and log in to use the
           Service through the following Third-party Social Media Services:
         </p>
-        <ul>
+        <ul className='dark:text-gray-300'>
           <li>Google</li>
           <li>Facebook</li>
           <li>Instagram</li>
@@ -240,7 +257,9 @@ export default function PrivacyPolicy() {
           use, share, and store it in a manner consistent with this Privacy
           Policy.
         </p>
-        <h4>Tracking Technologies and Cookies</h4>
+        <h4 className='dark:text-gray-100'>
+          Tracking Technologies and Cookies
+        </h4>
         <p>
           We use Cookies and similar tracking technologies to track the activity
           on Our Service and store certain information. Tracking technologies
@@ -248,23 +267,27 @@ export default function PrivacyPolicy() {
           and to improve and analyze Our Service. The technologies We use may
           include:
         </p>
-        <ul>
+        <ul className='dark:text-gray-300'>
           <li>
-            <strong>Cookies or Browser Cookies.</strong> A cookie is a small
-            file placed on Your Device. You can instruct Your browser to refuse
-            all Cookies or to indicate when a Cookie is being sent. However, if
-            You do not accept Cookies, You may not be able to use some parts of
-            our Service. Unless you have adjusted Your browser setting so that
-            it will refuse Cookies, our Service may use Cookies.
+            <strong className='dark:text-gray-100'>
+              Cookies or Browser Cookies.
+            </strong>{" "}
+            A cookie is a small file placed on Your Device. You can instruct
+            Your browser to refuse all Cookies or to indicate when a Cookie is
+            being sent. However, if You do not accept Cookies, You may not be
+            able to use some parts of our Service. Unless you have adjusted Your
+            browser setting so that it will refuse Cookies, our Service may use
+            Cookies.
           </li>
           <li>
-            <strong>Web Beacons.</strong> Certain sections of our Service and
-            our emails may contain small electronic files known as web beacons
-            (also referred to as clear gifs, pixel tags, and single-pixel gifs)
-            that permit the Company, for example, to count users who have
-            visited those pages or opened an email and for other related website
-            statistics (for example, recording the popularity of a certain
-            section and verifying system and server integrity).
+            <strong className='dark:text-gray-100'>Web Beacons.</strong> Certain
+            sections of our Service and our emails may contain small electronic
+            files known as web beacons (also referred to as clear gifs, pixel
+            tags, and single-pixel gifs) that permit the Company, for example,
+            to count users who have visited those pages or opened an email and
+            for other related website statistics (for example, recording the
+            popularity of a certain section and verifying system and server
+            integrity).
           </li>
         </ul>
         <p>
@@ -274,7 +297,8 @@ export default function PrivacyPolicy() {
           close Your web browser. You can learn more about cookies on{" "}
           <a
             href='https://www.termsfeed.com/blog/cookies/#What_Are_Cookies'
-            target='_blank'>
+            target='_blank'
+            className='text-[#F56E0F] hover:text-[#E55D00] transition-colors'>
             TermsFeed website
           </a>{" "}
           article.
@@ -283,10 +307,12 @@ export default function PrivacyPolicy() {
           We use both Session and Persistent Cookies for the purposes set out
           below:
         </p>
-        <ul>
+        <ul className='dark:text-gray-300'>
           <li>
             <p>
-              <strong>Necessary / Essential Cookies</strong>
+              <strong className='dark:text-gray-100'>
+                Necessary / Essential Cookies
+              </strong>
             </p>
             <p>Type: Session Cookies</p>
             <p>Administered by: Us</p>
@@ -301,7 +327,9 @@ export default function PrivacyPolicy() {
           </li>
           <li>
             <p>
-              <strong>Cookies Policy / Notice Acceptance Cookies</strong>
+              <strong className='dark:text-gray-100'>
+                Cookies Policy / Notice Acceptance Cookies
+              </strong>
             </p>
             <p>Type: Persistent Cookies</p>
             <p>Administered by: Us</p>
@@ -312,7 +340,9 @@ export default function PrivacyPolicy() {
           </li>
           <li>
             <p>
-              <strong>Functionality Cookies</strong>
+              <strong className='dark:text-gray-100'>
+                Functionality Cookies
+              </strong>
             </p>
             <p>Type: Persistent Cookies</p>
             <p>Administered by: Us</p>
@@ -330,122 +360,141 @@ export default function PrivacyPolicy() {
           regarding cookies, please visit our Cookies Policy or the Cookies
           section of our Privacy Policy.
         </p>
-        <h3>Use of Your Personal Data</h3>
+        <h3 className='dark:text-gray-100'>Use of Your Personal Data</h3>
         <p>The Company may use Personal Data for the following purposes:</p>
-        <ul>
+        <ul className='dark:text-gray-300'>
           <li>
             <p>
-              <strong>To provide and maintain our Service</strong>, including to
-              monitor the usage of our Service.
+              <strong className='dark:text-gray-100'>
+                To provide and maintain our Service
+              </strong>
+              , including to monitor the usage of our Service.
             </p>
           </li>
           <li>
             <p>
-              <strong>To manage Your Account:</strong> to manage Your
-              registration as a user of the Service. The Personal Data You
-              provide can give You access to different functionalities of the
-              Service that are available to You as a registered user.
+              <strong className='dark:text-gray-100'>
+                To manage Your Account:
+              </strong>{" "}
+              to manage Your registration as a user of the Service. The Personal
+              Data You provide can give You access to different functionalities
+              of the Service that are available to You as a registered user.
             </p>
           </li>
           <li>
             <p>
-              <strong>For the performance of a contract:</strong> the
-              development, compliance and undertaking of the purchase contract
-              for the products, items or services You have purchased or of any
-              other contract with Us through the Service.
+              <strong className='dark:text-gray-100'>
+                For the performance of a contract:
+              </strong>{" "}
+              the development, compliance and undertaking of the purchase
+              contract for the products, items or services You have purchased or
+              of any other contract with Us through the Service.
             </p>
           </li>
           <li>
             <p>
-              <strong>To contact You:</strong> To contact You by email,
-              telephone calls, SMS, or other equivalent forms of electronic
-              communication, such as a mobile application's push notifications
-              regarding updates or informative communications related to the
-              functionalities, products or contracted services, including the
-              security updates, when necessary or reasonable for their
-              implementation.
+              <strong className='dark:text-gray-100'>To contact You:</strong> To
+              contact You by email, telephone calls, SMS, or other equivalent
+              forms of electronic communication, such as a mobile application's
+              push notifications regarding updates or informative communications
+              related to the functionalities, products or contracted services,
+              including the security updates, when necessary or reasonable for
+              their implementation.
             </p>
           </li>
           <li>
             <p>
-              <strong>To provide You</strong> with news, special offers and
-              general information about other goods, services and events which
-              we offer that are similar to those that you have already purchased
-              or enquired about unless You have opted not to receive such
-              information.
+              <strong className='dark:text-gray-100'>To provide You</strong>{" "}
+              with news, special offers and general information about other
+              goods, services and events which we offer that are similar to
+              those that you have already purchased or enquired about unless You
+              have opted not to receive such information.
             </p>
           </li>
           <li>
             <p>
-              <strong>To manage Your requests:</strong> To attend and manage
-              Your requests to Us.
+              <strong className='dark:text-gray-100'>
+                To manage Your requests:
+              </strong>{" "}
+              To attend and manage Your requests to Us.
             </p>
           </li>
           <li>
             <p>
-              <strong>For business transfers:</strong> We may use Your
-              information to evaluate or conduct a merger, divestiture,
-              restructuring, reorganization, dissolution, or other sale or
-              transfer of some or all of Our assets, whether as a going concern
-              or as part of bankruptcy, liquidation, or similar proceeding, in
-              which Personal Data held by Us about our Service users is among
-              the assets transferred.
+              <strong className='dark:text-gray-100'>
+                For business transfers:
+              </strong>{" "}
+              We may use Your information to evaluate or conduct a merger,
+              divestiture, restructuring, reorganization, dissolution, or other
+              sale or transfer of some or all of Our assets, whether as a going
+              concern or as part of bankruptcy, liquidation, or similar
+              proceeding, in which Personal Data held by Us about our Service
+              users is among the assets transferred.
             </p>
           </li>
           <li>
             <p>
-              <strong>For other purposes</strong>: We may use Your information
-              for other purposes, such as data analysis, identifying usage
-              trends, determining the effectiveness of our promotional campaigns
-              and to evaluate and improve our Service, products, services,
-              marketing and your experience.
+              <strong className='dark:text-gray-100'>For other purposes</strong>
+              : We may use Your information for other purposes, such as data
+              analysis, identifying usage trends, determining the effectiveness
+              of our promotional campaigns and to evaluate and improve our
+              Service, products, services, marketing and your experience.
             </p>
           </li>
         </ul>
         <p>
           We may share Your personal information in the following situations:
         </p>
-        <ul>
+        <ul className='dark:text-gray-300'>
           <li>
-            <strong>With Service Providers:</strong> We may share Your personal
-            information with Service Providers to monitor and analyze the use of
-            our Service, to contact You.
+            <strong className='dark:text-gray-100'>
+              With Service Providers:
+            </strong>{" "}
+            We may share Your personal information with Service Providers to
+            monitor and analyze the use of our Service, to contact You.
           </li>
           <li>
-            <strong>For business transfers:</strong> We may share or transfer
-            Your personal information in connection with, or during negotiations
-            of, any merger, sale of Company assets, financing, or acquisition of
-            all or a portion of Our business to another company.
+            <strong className='dark:text-gray-100'>
+              For business transfers:
+            </strong>{" "}
+            We may share or transfer Your personal information in connection
+            with, or during negotiations of, any merger, sale of Company assets,
+            financing, or acquisition of all or a portion of Our business to
+            another company.
           </li>
           <li>
-            <strong>With Affiliates:</strong> We may share Your information with
-            Our affiliates, in which case we will require those affiliates to
-            honor this Privacy Policy. Affiliates include Our parent company and
-            any other subsidiaries, joint venture partners or other companies
-            that We control or that are under common control with Us.
+            <strong className='dark:text-gray-100'>With Affiliates:</strong> We
+            may share Your information with Our affiliates, in which case we
+            will require those affiliates to honor this Privacy Policy.
+            Affiliates include Our parent company and any other subsidiaries,
+            joint venture partners or other companies that We control or that
+            are under common control with Us.
           </li>
           <li>
-            <strong>With business partners:</strong> We may share Your
-            information with Our business partners to offer You certain
-            products, services or promotions.
+            <strong className='dark:text-gray-100'>
+              With business partners:
+            </strong>{" "}
+            We may share Your information with Our business partners to offer
+            You certain products, services or promotions.
           </li>
           <li>
-            <strong>With other users:</strong> when You share personal
-            information or otherwise interact in the public areas with other
-            users, such information may be viewed by all users and may be
-            publicly distributed outside. If You interact with other users or
-            register through a Third-Party Social Media Service, Your contacts
-            on the Third-Party Social Media Service may see Your name, profile,
-            pictures and description of Your activity. Similarly, other users
-            will be able to view descriptions of Your activity, communicate with
-            You and view Your profile.
+            <strong className='dark:text-gray-100'>With other users:</strong>{" "}
+            when You share personal information or otherwise interact in the
+            public areas with other users, such information may be viewed by all
+            users and may be publicly distributed outside. If You interact with
+            other users or register through a Third-Party Social Media Service,
+            Your contacts on the Third-Party Social Media Service may see Your
+            name, profile, pictures and description of Your activity. Similarly,
+            other users will be able to view descriptions of Your activity,
+            communicate with You and view Your profile.
           </li>
           <li>
-            <strong>With Your consent</strong>: We may disclose Your personal
-            information for any other purpose with Your consent.
+            <strong className='dark:text-gray-100'>With Your consent</strong>:
+            We may disclose Your personal information for any other purpose with
+            Your consent.
           </li>
         </ul>
-        <h3>Retention of Your Personal Data</h3>
+        <h3 className='dark:text-gray-100'>Retention of Your Personal Data</h3>
         <p>
           The Company will retain Your Personal Data only for as long as is
           necessary for the purposes set out in this Privacy Policy. We will
@@ -461,7 +510,7 @@ export default function PrivacyPolicy() {
           improve the functionality of Our Service, or We are legally obligated
           to retain this data for longer time periods.
         </p>
-        <h3>Transfer of Your Personal Data</h3>
+        <h3 className='dark:text-gray-100'>Transfer of Your Personal Data</h3>
         <p>
           Your information, including Personal Data, is processed at the
           Company's operating offices and in any other places where the parties
@@ -482,7 +531,7 @@ export default function PrivacyPolicy() {
           organization or a country unless there are adequate controls in place
           including the security of Your data and other personal information.
         </p>
-        <h3>Delete Your Personal Data</h3>
+        <h3 className='dark:text-gray-100'>Delete Your Personal Data</h3>
         <p>
           You have the right to delete or request that We assist in deleting the
           Personal Data that We have collected about You.
@@ -502,26 +551,26 @@ export default function PrivacyPolicy() {
           Please note, however, that We may need to retain certain information
           when we have a legal obligation or lawful basis to do so.
         </p>
-        <h3>Disclosure of Your Personal Data</h3>
-        <h4>Business Transactions</h4>
+        <h3 className='dark:text-gray-100'>Disclosure of Your Personal Data</h3>
+        <h4 className='dark:text-gray-100'>Business Transactions</h4>
         <p>
           If the Company is involved in a merger, acquisition or asset sale,
           Your Personal Data may be transferred. We will provide notice before
           Your Personal Data is transferred and becomes subject to a different
           Privacy Policy.
         </p>
-        <h4>Law enforcement</h4>
+        <h4 className='dark:text-gray-100'>Law enforcement</h4>
         <p>
           Under certain circumstances, the Company may be required to disclose
           Your Personal Data if required to do so by law or in response to valid
           requests by public authorities (e.g. a court or a government agency).
         </p>
-        <h4>Other legal requirements</h4>
+        <h4 className='dark:text-gray-100'>Other legal requirements</h4>
         <p>
           The Company may disclose Your Personal Data in the good faith belief
           that such action is necessary to:
         </p>
-        <ul>
+        <ul className='dark:text-gray-300'>
           <li>Comply with a legal obligation</li>
           <li>Protect and defend the rights or property of the Company</li>
           <li>
@@ -533,7 +582,7 @@ export default function PrivacyPolicy() {
           </li>
           <li>Protect against legal liability</li>
         </ul>
-        <h3>Security of Your Personal Data</h3>
+        <h3 className='dark:text-gray-100'>Security of Your Personal Data</h3>
         <p>
           The security of Your Personal Data is important to Us, but remember
           that no method of transmission over the Internet, or method of
@@ -541,7 +590,7 @@ export default function PrivacyPolicy() {
           acceptable means to protect Your Personal Data, We cannot guarantee
           its absolute security.
         </p>
-        <h2>Children's Privacy</h2>
+        <h2 className='dark:text-gray-100'>Children's Privacy</h2>
         <p>
           Our Service does not address anyone under the age of 13. We do not
           knowingly collect personally identifiable information from anyone
@@ -557,7 +606,7 @@ export default function PrivacyPolicy() {
           require Your parent's consent before We collect and use that
           information.
         </p>
-        <h2>Links to Other Websites</h2>
+        <h2 className='dark:text-gray-100'>Links to Other Websites</h2>
         <p>
           Our Service may contain links to other websites that are not operated
           by Us. If You click on a third party link, You will be directed to
@@ -568,7 +617,7 @@ export default function PrivacyPolicy() {
           We have no control over and assume no responsibility for the content,
           privacy policies or practices of any third party sites or services.
         </p>
-        <h2>Changes to this Privacy Policy</h2>
+        <h2 className='dark:text-gray-100'>Changes to this Privacy Policy</h2>
         <p>
           We may update Our Privacy Policy from time to time. We will notify You
           of any changes by posting the new Privacy Policy on this page.
@@ -584,7 +633,7 @@ export default function PrivacyPolicy() {
           posted on this page.
         </p>
         <h3
-          className={`${clashDisplay.className} text-xl md:text-2xl font-bold mt-6 mb-3 text-black`}>
+          className={`${clashDisplay.className} text-xl md:text-2xl font-bold mt-6 mb-3 text-black dark:text-white`}>
           Contact Us
         </h3>
         <p className='mb-4'>

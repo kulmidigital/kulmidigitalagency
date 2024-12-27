@@ -26,7 +26,7 @@ const Hero = () => {
       {/* Simplified Background */}
       <div className='absolute inset-0 w-full h-full'>
         <div className='absolute inset-0 bg-gradient-to-br from-purple-900 via-orange-500 to-green-500 opacity-50' />
-        
+
         {/* Grain Effect */}
         <div
           className='absolute inset-0 opacity-20 mix-blend-overlay'
@@ -40,7 +40,7 @@ const Hero = () => {
       <div className='relative z-10 w-full'>
         <div className='max-w-4xl mx-auto text-center'>
           <SlideReveal direction='up' duration={0.7}>
-            <div className='inline-block px-3 py-1 sm:px-4 sm:py-1.5 bg-black/20 backdrop-blur-lg rounded-full mb-4 sm:mb-6  mt-0 sm:mt-4'>
+            <div className='inline-block px-3 py-1 sm:px-4 sm:py-1.5 bg-black/20 backdrop-blur-lg rounded-full mb-4 sm:mb-6 mt-0 sm:mt-4'>
               <span
                 className={`${clashDisplay.className} text-white font-semibold tracking-wider text-[10px] sm:text-xs`}>
                 SEARCH ENGINE OPTIMIZATION
@@ -71,7 +71,7 @@ const Hero = () => {
             <div className='flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 px-2'>
               <Link href='/contact' className='w-full sm:w-auto'>
                 <Button
-                  className={`${clashDisplay.className} w-full sm:w-auto bg-white text-black px-6 sm:px-8 py-4 sm:py-6 rounded-xl text-sm sm:text-base hover:bg-white/90 transition-all duration-300 shadow-lg group`}>
+                  className={`${clashDisplay.className} w-full sm:w-auto bg-white text-black dark:bg-gray-100 dark:text-gray-900 px-6 sm:px-8 py-4 sm:py-6 rounded-xl text-sm sm:text-base hover:bg-white/90 dark:hover:bg-gray-200 transition-all duration-300 shadow-lg group`}>
                   Free SEO Audit
                   <ArrowRight className='ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform' />
                 </Button>
@@ -137,4 +137,4 @@ const Hero = () => {
   );
 };
 
-export default Hero; 
+export default Hero;

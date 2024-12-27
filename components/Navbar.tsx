@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import localFont from "next/font/local";
@@ -11,6 +11,8 @@ import {
   Instagram,
   ChevronDown,
   ChevronUp,
+  Sun,
+  Moon,
 } from "lucide-react";
 import {
   HoverCard,
@@ -18,6 +20,8 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "next-themes";
+import { Switch } from "@/components/ui/switch";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -102,10 +106,16 @@ const mainServices = [
 ];
 
 const Navbar = () => {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isDigitalAdvertisingOpen, setIsDigitalAdvertisingOpen] =
     useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleLinkClick = () => {
     setIsSheetOpen(false);
@@ -124,8 +134,12 @@ const Navbar = () => {
     setIsDigitalAdvertisingOpen(!isDigitalAdvertisingOpen);
   };
 
+  const handleThemeToggle = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
-    <nav className='flex justify-between items-center z-[99999] bg-white md:pt-6 md:pb-[22px] md:px-[76px] px-4 py-3 border-b-[1px] border-[#F56E0F] sticky top-0 left-0 right-0 w-full'>
+    <nav className='flex justify-between items-center z-[99999] bg-white dark:bg-gray-900 md:pt-6 md:pb-[22px] md:px-[76px] px-4 py-3 border-b-[1px] border-[#F56E0F] sticky top-0 left-0 right-0 w-full'>
       {/* Left Side: Logo and Brand */}
       <Link href='/'>
         <div className='flex items-center'>
@@ -137,7 +151,7 @@ const Navbar = () => {
             className='mr-2 w-[35px] h-[35px]'
           />
           <span
-            className={`${clashDisplay.className} text-black text-[26px] sm:text-[30px] md:text-[32px] lg:text-[26px]`}
+            className={`${clashDisplay.className} text-black dark:text-white text-[26px] sm:text-[30px] md:text-[32px] lg:text-[26px]`}
             style={{ fontWeight: 500 }}>
             Kulmi Digital
           </span>
@@ -146,28 +160,28 @@ const Navbar = () => {
 
       {/* Right Side: Desktop Links */}
       <div
-        className={`${plusJakartaSans.className} hidden md:flex font-bold space-x-6 text-[14px] text-gray-700`}>
+        className={`${plusJakartaSans.className} hidden md:flex font-bold space-x-6 text-[14px] text-gray-700 dark:text-gray-200 items-center`}>
         <Link href='/'>Home</Link>
         <Link href='/about'>About</Link>
         <HoverCard>
           <HoverCardTrigger className='cursor-pointer'>
             Services
           </HoverCardTrigger>
-          <HoverCardContent className='w-96 p-0 bg-white rounded-xl shadow-xl max-h-[90vh] overflow-y-auto'>
+          <HoverCardContent className='w-96 p-0 bg-white dark:bg-gray-900 rounded-xl shadow-xl max-h-[90vh] overflow-y-auto dark:border-gray-800'>
             <div className='grid grid-cols-1 gap-2 p-4'>
-              {mainServices.map((service) => (
+              {mainServices.map((service) =>
                 service.subServices ? (
-                  <div key={service.name} className="w-full">
+                  <div key={service.name} className='w-full'>
                     <button
                       onClick={toggleDigitalAdvertising}
-                      className={`${clashDisplay.className} flex items-center justify-between w-full p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200 group sticky top-0 bg-white z-10`}
-                    >
-                      <span className='font-medium text-sm group-hover:text-[#F56E0F]'>{service.name}</span>
+                      className={`${clashDisplay.className} flex items-center justify-between w-full p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 group sticky top-0 bg-white dark:bg-gray-900 z-10`}>
+                      <span className='font-medium text-sm group-hover:text-[#F56E0F] dark:text-gray-200'>
+                        {service.name}
+                      </span>
                       <motion.div
                         animate={{ rotate: isDigitalAdvertisingOpen ? 180 : 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <ChevronDown className='w-4 h-4' />
+                        transition={{ duration: 0.3 }}>
+                        <ChevronDown className='w-4 h-4 dark:text-gray-200' />
                       </motion.div>
                     </button>
                     <AnimatePresence>
@@ -177,19 +191,18 @@ const Navbar = () => {
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.3, ease: "easeInOut" }}
-                          style={{ overflow: "hidden" }}
-                        >
-                          <div className="pl-4 space-y-2">
+                          style={{ overflow: "hidden" }}>
+                          <div className='pl-4 space-y-2'>
                             {service.subServices.map((subService) => (
                               <Link
                                 key={subService.name}
                                 href={subService.href}
-                                className={`${clashDisplay.className} flex items-center p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200 group`}
-                              >
+                                className={`${clashDisplay.className} flex items-center p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 group`}>
                                 <div
                                   className='flex items-center justify-center w-10 h-10 rounded-full mr-3'
-                                  style={{ backgroundColor: subService.color + "20" }}
-                                >
+                                  style={{
+                                    backgroundColor: subService.color + "20",
+                                  }}>
                                   {subService.customIcon ? (
                                     <Image
                                       src={subService.customIcon}
@@ -207,11 +220,12 @@ const Navbar = () => {
                                   )}
                                 </div>
                                 <div>
-                                  <span className='font-medium text-sm group-hover:text-[#F56E0F]'>
+                                  <span className='font-medium text-sm group-hover:text-[#F56E0F] dark:text-gray-200'>
                                     {subService.name}
                                   </span>
-                                  <p className='text-xs text-gray-500 mt-1'>
-                                    Boost your {subService.name.split(" ")[0]} presence
+                                  <p className='text-xs text-gray-500 dark:text-gray-400 mt-1'>
+                                    Boost your {subService.name.split(" ")[0]}{" "}
+                                    presence
                                   </p>
                                 </div>
                               </Link>
@@ -225,12 +239,13 @@ const Navbar = () => {
                   <Link
                     key={service.name}
                     href={service.href}
-                    className={`${clashDisplay.className} flex items-center p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200 group`}
-                  >
-                    <span className='font-medium text-sm group-hover:text-[#F56E0F]'>{service.name}</span>
+                    className={`${clashDisplay.className} flex items-center p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 group`}>
+                    <span className='font-medium text-sm group-hover:text-[#F56E0F] dark:text-gray-200'>
+                      {service.name}
+                    </span>
                   </Link>
                 )
-              ))}
+              )}
             </div>
           </HoverCardContent>
         </HoverCard>
@@ -238,6 +253,17 @@ const Navbar = () => {
         <Link href='/contact'>Contact</Link>
         <Link href='tel:+254735101001'>+254 735101001</Link>
         <Link href='mailto:info@kulmi.digital'>info@kulmi.digital</Link>
+        <div className='flex items-center space-x-2'>
+          <Sun className='h-4 w-4' />
+          {mounted && (
+            <Switch
+              checked={theme === "dark"}
+              onCheckedChange={handleThemeToggle}
+              className='data-[state=checked]:bg-[#F56E0F]'
+            />
+          )}
+          <Moon className='h-4 w-4' />
+        </div>
       </div>
 
       {/* Hamburger Menu: Mobile View */}
@@ -245,12 +271,12 @@ const Navbar = () => {
         <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger asChild>
             <button>
-              <Menu className='w-8 h-8' />
+              <Menu className='w-8 h-8 dark:text-white' />
             </button>
           </SheetTrigger>
           <SheetContent
             side='top'
-            className='bg-white px-6 py-4 border-b-[1px] border-[#F56E0F]'>
+            className='bg-white dark:bg-gray-900 px-6 py-4 border-b-[1px] border-[#F56E0F]'>
             {/* Logo and Flags */}
             <div className='flex justify-between items-center mb-6'>
               {/* Left Side: Logo */}
@@ -299,25 +325,25 @@ const Navbar = () => {
             <div className='flex flex-col items-start space-y-4'>
               <Link
                 href='/'
-                className='text-lg font-bold'
+                className='text-lg font-bold text-gray-900 dark:text-gray-100 hover:text-[#F56E0F] dark:hover:text-[#FF7A1F] transition-colors'
                 onClick={handleLinkClick}>
                 Home
               </Link>
               <Link
                 href='/about'
-                className='text-lg font-bold'
+                className='text-lg font-bold text-gray-900 dark:text-gray-100 hover:text-[#F56E0F] dark:hover:text-[#FF7A1F] transition-colors'
                 onClick={handleLinkClick}>
                 About
               </Link>
               <div className='w-full'>
                 <button
                   onClick={toggleServices}
-                  className='text-lg font-bold flex items-center justify-between w-full py-2'>
+                  className='text-lg font-bold flex items-center justify-between w-full py-2 text-gray-900 dark:text-gray-100'>
                   Services
                   <motion.div
                     animate={{ rotate: isServicesOpen ? 180 : 0 }}
                     transition={{ duration: 0.3 }}>
-                    <ChevronDown className='ml-1 h-4 w-4' />
+                    <ChevronDown className='ml-1 h-4 w-4 dark:text-gray-100' />
                   </motion.div>
                 </button>
                 <AnimatePresence>
@@ -335,14 +361,14 @@ const Navbar = () => {
                             <div key={service.name} className='w-full'>
                               <button
                                 onClick={toggleDigitalAdvertising}
-                                className='flex items-center justify-between w-full py-2 pl-4'>
+                                className='flex items-center justify-between w-full py-2 pl-4 text-gray-900 dark:text-gray-100'>
                                 <span>{service.name}</span>
                                 <motion.div
                                   animate={{
                                     rotate: isDigitalAdvertisingOpen ? 180 : 0,
                                   }}
                                   transition={{ duration: 0.3 }}>
-                                  <ChevronDown className='ml-1 h-4 w-4' />
+                                  <ChevronDown className='ml-1 h-4 w-4 dark:text-gray-100' />
                                 </motion.div>
                               </button>
                               <AnimatePresence>
@@ -361,7 +387,7 @@ const Navbar = () => {
                                         <Link
                                           key={subService.name}
                                           href={subService.href}
-                                          className='flex items-center py-2'
+                                          className='flex items-center py-2 text-gray-900 dark:text-gray-100 hover:text-[#F56E0F] dark:hover:text-[#FF7A1F] transition-colors'
                                           onClick={handleLinkClick}>
                                           {subService.customIcon ? (
                                             <Image
@@ -393,7 +419,7 @@ const Navbar = () => {
                             <Link
                               key={service.name}
                               href={service.href}
-                              className='block py-2 pl-4'
+                              className='block py-2 pl-4 text-gray-900 dark:text-gray-100 hover:text-[#F56E0F] dark:hover:text-[#FF7A1F] transition-colors'
                               onClick={handleLinkClick}>
                               {service.name}
                             </Link>
@@ -406,28 +432,39 @@ const Navbar = () => {
               </div>
               <Link
                 href='/our-work'
-                className='text-lg font-bold'
+                className='text-lg font-bold text-gray-900 dark:text-gray-100 hover:text-[#F56E0F] dark:hover:text-[#FF7A1F] transition-colors'
                 onClick={handleLinkClick}>
                 Our Work
               </Link>
               <Link
                 href='/contact'
-                className='text-lg font-bold'
+                className='text-lg font-bold text-gray-900 dark:text-gray-100 hover:text-[#F56E0F] dark:hover:text-[#FF7A1F] transition-colors'
                 onClick={handleLinkClick}>
                 Contact
               </Link>
               <Link
                 href='tel:+254735101001'
-                className='text-lg font-bold'
+                className='text-lg font-bold text-gray-900 dark:text-gray-100 hover:text-[#F56E0F] dark:hover:text-[#FF7A1F] transition-colors'
                 onClick={handleLinkClick}>
                 +254 735101001
               </Link>
               <Link
                 href='mailto:info@kulmi.digital'
-                className='text-lg font-bold'
+                className='text-lg font-bold text-gray-900 dark:text-gray-100 hover:text-[#F56E0F] dark:hover:text-[#FF7A1F] transition-colors'
                 onClick={handleLinkClick}>
                 info@kulmi.digital
               </Link>
+              <div className='flex items-center space-x-2 mt-4'>
+                <Sun className='h-4 w-4 dark:text-white' />
+                {mounted && (
+                  <Switch
+                    checked={theme === "dark"}
+                    onCheckedChange={handleThemeToggle}
+                    className='data-[state=checked]:bg-[#F56E0F]'
+                  />
+                )}
+                <Moon className='h-4 w-4 dark:text-white' />
+              </div>
             </div>
           </SheetContent>
         </Sheet>

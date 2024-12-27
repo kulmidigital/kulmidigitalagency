@@ -24,12 +24,6 @@ export const services = [
       "Brand Audits, Brand Naming, Strategy, Concept Design & Development, and Brand Campaigns that resonate with audiences.",
   },
   {
-    iconSrc: "/icons/rocket.svg",
-    title: "Digital Advertising (PPC & SEM)",
-    description:
-      "Ads across platforms including Google Search Ads, YouTube, LinkedIn, META, and more to drive traffic and conversions.",
-  },
-  {
     iconSrc: "/icons/media.svg",
     title: "Influencer Marketing",
     description:
@@ -58,6 +52,12 @@ export const services = [
     title: "Audience Monitoring",
     description:
       "Tracking and analyzing audience behavior to provide insights and optimize campaigns for higher engagement.",
+  },
+  {
+    iconSrc: "/icons/rocket.svg",
+    title: "Digital Advertising (PPC & SEM)",
+    description:
+      "Ads across platforms including Google Search Ads, YouTube, LinkedIn, META, and more to drive traffic and conversions.",
   },
   {
     title: "Web Development",

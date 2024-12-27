@@ -84,25 +84,25 @@ export default function FinePrints() {
   return (
     <div>
       <Card
-        className={`${clashDisplay.className} mt-4 mb-16 mx-2 md:mx-8 shadow-xl rounded-[5px] md:rounded-[15px]`}>
+        className={`${clashDisplay.className} mt-4 mb-16 mx-2 md:mx-8 shadow-xl rounded-[5px] md:rounded-[15px] dark:bg-gray-800 dark:border-gray-700`}>
         <CardHeader>
           <CardTitle className='text-2xl font-bold text-[#F56E0F]'>
             FINE PRINTS
           </CardTitle>
-          <CardDescription>
+          <CardDescription className='dark:text-gray-400'>
             Important information about our website packages
           </CardDescription>
         </CardHeader>
         <CardContent>
           <ol className='list-disc pl-5 space-y-2'>
             {finePrints.map((print, index) => (
-              <li key={index} className='text-sm'>
+              <li key={index} className='text-sm dark:text-gray-300'>
                 {print}
               </li>
             ))}
-                  </ol>
-            
-                  <h1 className="text-3xl mt-4">Trusted by</h1>
+          </ol>
+
+          <h1 className='text-3xl mt-4 dark:text-gray-100'>Trusted by</h1>
 
           <div
             className='overflow-hidden relative px-4 sm:px-8 lg:px-12'
@@ -110,22 +110,21 @@ export default function FinePrints() {
             <motion.div
               ref={carouselRef}
               className='flex'
-              style={{ gap: "1rem" }} 
-            >
+              style={{ gap: "1rem" }}>
               {[...logos, ...logos].map((logo, index) => (
                 <div
                   key={index}
                   className='flex items-center justify-center bg-center bg-no-repeat'
                   style={{
-                    minWidth: "120px", 
-                    minHeight: "80px", 
+                    minWidth: "120px",
+                    minHeight: "80px",
                     backgroundImage: `url(/logos/${logo})`,
                     backgroundSize: "contain",
                   }}></div>
               ))}
             </motion.div>
-            <div className='pointer-events-none absolute inset-y-0 left-0 w-[15%] sm:w-[10%] bg-gradient-to-r from-white'></div>
-            <div className='pointer-events-none absolute inset-y-0 right-0 w-[15%] sm:w-[10%] bg-gradient-to-l from-white'></div>
+            <div className='pointer-events-none absolute inset-y-0 left-0 w-[15%] sm:w-[10%] bg-gradient-to-r from-white dark:from-gray-800'></div>
+            <div className='pointer-events-none absolute inset-y-0 right-0 w-[15%] sm:w-[10%] bg-gradient-to-l from-white dark:from-gray-800'></div>
           </div>
         </CardContent>
       </Card>

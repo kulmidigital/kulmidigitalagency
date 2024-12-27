@@ -19,7 +19,7 @@ const clashDisplay = localFont({
 
 const Hero = () => {
   return (
-    <div className={`${clashDisplay.className} relative`}>
+    <div className={`${clashDisplay.className} relative dark:bg-gray-900`}>
       <div className="relative w-full min-h-[90vh] bg-[url('/images/estatebax-hero.png')] px-0 md:px-10 bg-cover bg-center">
         <div className='absolute inset-0 bg-black/90'></div>
 

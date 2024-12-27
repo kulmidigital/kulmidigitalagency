@@ -259,199 +259,126 @@ export default function EditBlogPost({ params }: { params: { slug: string } }) {
     }
   };
 
-  if (!isAuthenticated || isLoadingPost) {
-    return (
-      <div className='min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-white'>
-        <Loader />
-      </div>
-    );
-  }
-
   return (
-    <div className='min-h-screen bg-gradient-to-br from-gray-50 to-white py-8 px-4'>
-      <div className={`${clashDisplay.className} max-w-6xl mx-auto`}>
-        <div className='bg-white rounded-3xl shadow-xl border border-gray-100 p-8'>
-          {/* Header */}
-          <div className='flex justify-between items-center mb-12'>
-            <div>
-              <h1 className='text-4xl font-light mb-2'>
-                Edit <span className='text-[#F56E0F]'>Blog Post</span>
-              </h1>
-              <p className='text-gray-500'>Update your blog post</p>
-            </div>
-            <div className='flex items-center gap-4'>
-              <button
-                onClick={handleLogout}
-                className='p-2 hover:bg-gray-100 rounded-xl transition duration-200'
-                title='Logout'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  className='h-6 w-6 text-gray-600'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'>
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1'
-                  />
-                </svg>
-              </button>
-              <button
-                onClick={() => router.push("/blog")}
-                className='p-2 hover:bg-gray-100 rounded-xl transition duration-200'
-                title='Back to Blog'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  className='h-6 w-6 text-gray-600'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'>
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M6 18L18 6M6 6l12 12'
-                  />
-                </svg>
-              </button>
-            </div>
+    <div
+      className={`${clashDisplay.className} min-h-screen bg-white dark:bg-gray-900 p-4 md:p-8`}>
+      {!isAuthenticated ? (
+        <div className='flex items-center justify-center min-h-screen'>
+          <p className='text-gray-500 dark:text-gray-400'>
+            Redirecting to login...
+          </p>
+        </div>
+      ) : isLoadingPost ? (
+        <div className='flex items-center justify-center min-h-screen'>
+          <Loader />
+        </div>
+      ) : (
+        <div className='max-w-4xl mx-auto'>
+          <div className='flex justify-between items-center mb-8'>
+            <h1 className='text-3xl font-bold text-gray-900 dark:text-gray-100'>
+              Edit Blog Post
+            </h1>
+            <button
+              onClick={handleLogout}
+              className='p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='h-6 w-6'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke='currentColor'>
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth={2}
+                  d='M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1'
+                />
+              </svg>
+            </button>
           </div>
 
-          {/* Form */}
-          <form onSubmit={handleSubmit} className='space-y-8'>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-              {/* Left Column */}
-              <div className='space-y-5'>
-                <div>
-                  <label className='block text-gray-700 text-sm font-medium mb-3'>
-                    Post Title
-                  </label>
-                  <input
-                    type='text'
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    className='w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-2 focus:ring-[#F56E0F] focus:border-transparent transition duration-200'
-                    placeholder='Enter post title'
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className='block text-gray-700 text-sm font-medium mb-3'>
-                    Category
-                  </label>
-                  <CustomSelect
-                    categories={categories}
-                    selectedCategory={selectedCategory}
-                    onSelect={setSelectedCategory}
-                  />
-                </div>
-              </div>
-
-              {/* Right Column */}
-              <div>
-                <label className='block text-gray-700 text-sm font-medium mb-3'>
-                  Featured Image
-                </label>
-                <div className='relative'>
-                  <input
-                    type='file'
-                    accept='image/*'
-                    onChange={(e) => {
-                      const file = e.target.files?.[0];
-                      if (file) handleImageUpload(file);
-                    }}
-                    className='w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-2 focus:ring-[#F56E0F] focus:border-transparent transition duration-200'
-                  />
-                  {uploadingImage && (
-                    <div className='absolute right-4 top-1/2 -translate-y-1/2'>
-                      <div className='animate-spin rounded-full h-5 w-5 border-b-2 border-[#F56E0F]'></div>
-                    </div>
-                  )}
-                </div>
-                {imageUrl && (
-                  <div className='mt-4 relative w-full h-48 rounded-2xl overflow-hidden'>
-                    <Image
-                      src={imageUrl}
-                      alt='Preview'
-                      fill
-                      className='object-cover'
-                      sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                      unoptimized
-                    />
-                  </div>
-                )}
-                {uploadError && (
-                  <div className='mt-4 p-4 bg-red-50 text-red-600 rounded-2xl border border-red-100'>
-                    <p className='text-sm'>
-                      Failed to upload image: {uploadError}
-                    </p>
-                  </div>
-                )}
-              </div>
+          <form onSubmit={handleSubmit} className='space-y-6'>
+            <div>
+              <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1'>
+                Title
+              </label>
+              <input
+                type='text'
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                className='w-full p-4 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-[#F56E0F] focus:border-transparent dark:text-gray-100'
+                required
+              />
             </div>
 
-            {/* Content Editor */}
             <div>
-              <label className='block text-gray-700 text-sm font-medium mb-3'>
+              <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1'>
+                Category
+              </label>
+              <CustomSelect
+                categories={categories}
+                selectedCategory={selectedCategory}
+                onSelect={setSelectedCategory}
+              />
+            </div>
+
+            <div>
+              <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1'>
                 Content
               </label>
-              <div
-                data-color-mode='light'
-                className='rounded-2xl overflow-hidden border border-gray-100'>
+              <div data-color-mode='dark'>
                 <MDEditor
                   value={content}
-                  onChange={(val) => setContent(val || "")}
-                  height={500}
-                  preview='live'
-                  hideToolbar={false}
-                  enableScroll={true}
-                  highlightEnable={true}
-                  textareaProps={{
-                    placeholder: "Write your blog post here...",
-                  }}
-                  className='!border-0'
+                  onChange={(value) => setContent(value || "")}
+                  className='dark:bg-gray-800'
+                  height={400}
                 />
               </div>
             </div>
 
-            {/* Submit Button */}
-            <div className='flex justify-end pt-6'>
+            <div>
+              <label className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1'>
+                Featured Image
+              </label>
+              <div className='space-y-4'>
+                <input
+                  type='file'
+                  accept='image/*'
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (file) {
+                      handleImageUpload(file);
+                    }
+                  }}
+                  className='w-full p-4 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-[#F56E0F] focus:border-transparent dark:text-gray-100'
+                />
+                {uploadError && (
+                  <p className='text-red-500 text-sm'>{uploadError}</p>
+                )}
+                {imageUrl && (
+                  <div className='relative w-full h-48'>
+                    <Image
+                      src={imageUrl}
+                      alt='Featured image'
+                      fill
+                      className='rounded-2xl object-cover'
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className='flex justify-end'>
               <button
                 type='submit'
-                disabled={loading}
-                className='inline-flex items-center px-8 py-4 bg-[#F56E0F] text-white rounded-2xl hover:bg-[#E55D0E] transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed font-medium'>
-                {loading ? (
-                  <>
-                    <svg
-                      className='animate-spin -ml-1 mr-3 h-5 w-5 text-white'
-                      xmlns='http://www.w3.org/2000/svg'
-                      fill='none'
-                      viewBox='0 0 24 24'>
-                      <circle
-                        className='opacity-25'
-                        cx='12'
-                        cy='12'
-                        r='10'
-                        stroke='currentColor'
-                        strokeWidth='4'></circle>
-                      <path
-                        className='opacity-75'
-                        fill='currentColor'
-                        d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'></path>
-                    </svg>
-                    Updating...
-                  </>
-                ) : (
-                  "Update Post"
-                )}
+                disabled={loading || uploadingImage}
+                className='bg-[#F56E0F] text-white px-8 py-4 rounded-2xl hover:bg-[#E55D00] transition duration-200 disabled:opacity-50'>
+                {loading ? "Saving..." : "Save Changes"}
               </button>
             </div>
           </form>
         </div>
-      </div>
+      )}
     </div>
   );
 }

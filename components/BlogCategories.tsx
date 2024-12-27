@@ -1,28 +1,30 @@
-'use client';
-import { useQuery } from '@tanstack/react-query';
-import { getCategories, Category } from '@/lib/blogService';
+"use client";
+import { useQuery } from "@tanstack/react-query";
+import { getCategories, Category } from "@/lib/blogService";
 
 interface BlogCategoriesProps {
   selectedCategory: string;
   onCategoryChange: (categoryId: string) => void;
 }
 
-export default function BlogCategories({ selectedCategory, onCategoryChange }: BlogCategoriesProps) {
+export default function BlogCategories({
+  selectedCategory,
+  onCategoryChange,
+}: BlogCategoriesProps) {
   const { data: categories = [] } = useQuery({
-    queryKey: ['categories'],
+    queryKey: ["categories"],
     queryFn: getCategories,
   });
 
   return (
-    <div className="flex flex-wrap gap-2 mb-8">
+    <div className='flex flex-wrap gap-2 mb-8'>
       <button
-        onClick={() => onCategoryChange('')}
+        onClick={() => onCategoryChange("")}
         className={`px-4 py-2 rounded-full text-sm transition-colors duration-200 ${
-          selectedCategory === ''
-            ? 'bg-[#F56E0F] text-white'
-            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-        }`}
-      >
+          selectedCategory === ""
+            ? "bg-[#F56E0F] text-white"
+            : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+        }`}>
         All
       </button>
       {categories.map((category: Category) => (
@@ -31,13 +33,12 @@ export default function BlogCategories({ selectedCategory, onCategoryChange }: B
           onClick={() => onCategoryChange(category.id)}
           className={`px-4 py-2 rounded-full text-sm transition-colors duration-200 ${
             selectedCategory === category.id
-              ? 'bg-[#F56E0F] text-white'
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-          }`}
-        >
+              ? "bg-[#F56E0F] text-white"
+              : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+          }`}>
           {category.name}
         </button>
       ))}
     </div>
   );
-} 
+}

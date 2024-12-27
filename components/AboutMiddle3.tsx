@@ -88,17 +88,20 @@ const AboutMiddle3: React.FC = () => {
   }, [startIndex]);
 
   return (
-    <section className='bg-white mt-[80px] py-[80px] px-6 md:px-12'>
+    <section className='bg-white dark:bg-gray-900 mt-[80px] py-[80px] px-6 md:px-12'>
       <div className='flex flex-col md:flex-row justify-between items-start md:items-center'>
         <div className='w-full md:w-[30%] mb-8 md:mb-0'>
           <SlideReveal direction='left' duration={0.7}>
             <div className='-mt-[100px]'>
               <h2
-                className={`${clashDisplay.className} text-left text-5xl font-bold text-black mb-4`}>
-                Our <span className='text-[#F56E0F]'>leadership</span>
+                className={`${clashDisplay.className} text-left text-5xl font-bold text-black dark:text-white mb-4`}>
+                Our{" "}
+                <span className='text-[#F56E0F] dark:text-[#FF7A1F]'>
+                  leadership
+                </span>
               </h2>
               <p
-                className={`${plusJakartaSans.className} text-gray-600 mb-6 text-[18px]`}>
+                className={`${plusJakartaSans.className} text-gray-600 dark:text-gray-300 mb-6 text-[18px]`}>
                 We are led by seasoned digital, business and tech minds with
                 years of experience.
                 <br />
@@ -113,7 +116,7 @@ const AboutMiddle3: React.FC = () => {
             <div>
               <Link href='/team'>
                 <button
-                  className={`${plusJakartaSans.className} inline-flex items-center px-6 py-4 border border-black text-black rounded-full hover:bg-white hover:text-[#F56E0F] hover:border-[#F56E0F] transition-colors duration-200`}>
+                  className={`${plusJakartaSans.className} inline-flex items-center px-6 py-4 border border-black dark:border-white text-black dark:text-white rounded-full hover:bg-white hover:text-[#F56E0F] dark:hover:text-[#FF7A1F] hover:border-[#F56E0F] dark:hover:border-[#FF7A1F] transition-colors duration-200`}>
                   See full team
                   <svg
                     className='w-4 h-4 ml-2'
@@ -166,7 +169,7 @@ const AboutMiddle3: React.FC = () => {
                             (!isMobile && index === 2)) &&
                             startIndex <
                               teamMembers.length - (isMobile ? 1 : 3) && (
-                              <div className='absolute top-0 right-0 bottom-0 w-1/2 bg-gradient-to-r from-transparent to-white' />
+                              <div className='absolute top-0 right-0 bottom-0 w-1/2 bg-gradient-to-r from-transparent to-white dark:to-gray-900' />
                             )}
                           {!isMobile && index === 0 && startIndex > 0 && (
                             <div className='absolute top-0 left-0 bottom-0 w-1/2 bg-gradient-to-l from-transparent to-white' />

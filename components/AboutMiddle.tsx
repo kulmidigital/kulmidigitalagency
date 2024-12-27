@@ -16,16 +16,16 @@ const clashDisplay_light = localFont({
 
 const AboutMiddle = () => {
   return (
-    <section className='flex flex-col lg:flex-row px-4 sm:px-6 lg:px-10 justify-between gap-6 lg:gap-10 py-10'>
+    <section className='flex flex-col lg:flex-row px-4 sm:px-6 lg:px-10 justify-between gap-6 lg:gap-10 py-10 bg-white dark:bg-gray-900'>
       {/* First Image */}
       <SlideReveal direction='left' duration={0.7}>
-        <div className="bg-[url('/images/billboard.jpg')] bg-cover bg-center w-full lg:w-[500px] h-[350px] sm:h-[450px] lg:h-[550px] rounded-3xl"></div>
+        <div className="bg-[url('/images/billboard.jpg')] bg-cover bg-center w-full lg:w-[500px] h-[350px] sm:h-[450px] lg:h-[550px] rounded-3xl dark:brightness-90"></div>
       </SlideReveal>
 
       <div className='flex flex-col w-full lg:w-[60%] gap-6'>
         {/* Second Image */}
         <SlideReveal direction='up' duration={0.7}>
-          <div className="bg-[url('/images/insta_one.jpg')] bg-cover bg-center w-full h-[250px] sm:h-[300px] lg:h-[400px] rounded-3xl"></div>
+          <div className="bg-[url('/images/insta_one.jpg')] bg-cover bg-center w-full h-[250px] sm:h-[300px] lg:h-[400px] rounded-3xl dark:brightness-90"></div>
         </SlideReveal>
 
         {/* Statistics Section */}
@@ -33,31 +33,31 @@ const AboutMiddle = () => {
           <div
             className={`${clashDisplay_light.className} flex flex-col sm:flex-row justify-between gap-6 mt-6`}>
             {/* Card 1 */}
-            <div className='flex flex-col items-center bg-slate-50 border border-slate-400 py-5 px-6 sm:px-8 rounded-3xl shadow-lg'>
-              <h3 className='text-4xl sm:text-5xl font-bold text-[#F56E0F] mb-2'>
+            <div className='flex flex-col items-center bg-slate-50 dark:bg-gray-800 border border-slate-400 dark:border-gray-700 py-5 px-6 sm:px-8 rounded-3xl shadow-lg'>
+              <h3 className='text-4xl sm:text-5xl font-bold text-[#F56E0F] dark:text-[#FF7A1F] mb-2'>
                 20+
               </h3>
-              <p className='text-gray-600 text-base sm:text-lg'>
+              <p className='text-gray-600 dark:text-gray-300 text-base sm:text-lg'>
                 Digital Specialists
               </p>
             </div>
 
             {/* Card 2 */}
-            <div className='flex flex-col items-center bg-slate-50 border border-slate-400 py-5 px-6 sm:px-8 rounded-3xl shadow-lg'>
-              <h3 className='text-4xl sm:text-5xl font-bold text-[#F56E0F] mb-2'>
+            <div className='flex flex-col items-center bg-slate-50 dark:bg-gray-800 border border-slate-400 dark:border-gray-700 py-5 px-6 sm:px-8 rounded-3xl shadow-lg'>
+              <h3 className='text-4xl sm:text-5xl font-bold text-[#F56E0F] dark:text-[#FF7A1F] mb-2'>
                 1000+
               </h3>
-              <p className='text-gray-600 text-base sm:text-lg'>
+              <p className='text-gray-600 dark:text-gray-300 text-base sm:text-lg'>
                 Complete Projects
               </p>
             </div>
 
             {/* Card 3 */}
-            <div className='flex flex-col items-center bg-slate-50 border border-slate-400 py-5 px-6 sm:px-8 rounded-3xl shadow-lg'>
-              <h3 className='text-4xl sm:text-5xl font-bold text-[#F56E0F] mb-2'>
+            <div className='flex flex-col items-center bg-slate-50 dark:bg-gray-800 border border-slate-400 dark:border-gray-700 py-5 px-6 sm:px-8 rounded-3xl shadow-lg'>
+              <h3 className='text-4xl sm:text-5xl font-bold text-[#F56E0F] dark:text-[#FF7A1F] mb-2'>
                 5+
               </h3>
-              <p className='text-gray-600 text-base sm:text-lg'>
+              <p className='text-gray-600 dark:text-gray-300 text-base sm:text-lg'>
                 Years in Service
               </p>
             </div>
