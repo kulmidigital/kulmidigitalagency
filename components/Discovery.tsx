@@ -83,11 +83,11 @@ const Discovery = () => {
       <div className='w-full lg:w-[48%] p-4 sm:p-6'>
         <SlideReveal direction='left' duration={0.7}>
           <div className={`${clashDisplay.className} text-left`}>
-            <h1 className='text-[28px] sm:text-[36px] lg:text-[45px] text-[#F56E0F] dark:text-[#FF7A1F]'>
+            <h2 className='text-[28px] sm:text-[36px] lg:text-[45px] text-[#F56E0F] dark:text-[#FF7A1F]'>
               Discovery{" "}
               <span className='text-black dark:text-white'>through</span>{" "}
               Digital
-            </h1>
+            </h2>
             <p
               className={`${clashDisplay.className} text-gray-600 dark:text-gray-300 text-[14px] sm:text-[16px] lg:text-[18px] leading-relaxed`}>
               Digital marketing is integral to running a sustainable business.

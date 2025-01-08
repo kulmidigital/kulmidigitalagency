@@ -24,16 +24,11 @@ const TopDeckFooter = () => {
       <div className='flex flex-col space-y-8 lg:space-y-[150px] w-full lg:w-auto'>
         {/* Start Section */}
         <div>
-          <SlideReveal direction='left' duration={0.7}>
-            <h1 className='text-3xl sm:text-4xl lg:text-5xl text-slate-500 dark:text-gray-400'>
-              Start
-            </h1>
-          </SlideReveal>
           <SlideReveal direction='left' duration={0.9}>
             <h1 className='text-3xl sm:text-4xl lg:text-5xl text-black dark:text-white hover:text-[#F56E0F] dark:hover:text-[#FF7A1F]'>
               <Link href='/contact'>
                 <span className='inline-flex items-center'>
-                  Here
+                  Contact Us
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='30'

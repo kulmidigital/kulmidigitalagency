@@ -281,15 +281,18 @@ const Navbar = () => {
           info@kulmi.digital
         </Link>
         <div className='flex items-center space-x-2'>
-          <Sun className='h-4 w-4' />
+          <Sun className='h-4 w-4' aria-hidden='true' />
           {mounted && (
             <Switch
               checked={resolvedTheme === "dark"}
               onCheckedChange={handleThemeToggle}
               className='data-[state=checked]:bg-[#F56E0F]'
+              aria-label={`Switch to ${
+                resolvedTheme === "dark" ? "light" : "dark"
+              } mode`}
             />
           )}
-          <Moon className='h-4 w-4' />
+          <Moon className='h-4 w-4' aria-hidden='true' />
         </div>
       </div>
 
@@ -500,15 +503,18 @@ const Navbar = () => {
                 info@kulmi.digital
               </Link>
               <div className='flex items-center space-x-2 mt-4'>
-                <Sun className='h-4 w-4 dark:text-white' />
+                <Sun className='h-4 w-4 dark:text-white' aria-hidden='true' />
                 {mounted && (
                   <Switch
                     checked={resolvedTheme === "dark"}
                     onCheckedChange={handleThemeToggle}
                     className='data-[state=checked]:bg-[#F56E0F]'
+                    aria-label={`Switch to ${
+                      resolvedTheme === "dark" ? "light" : "dark"
+                    } mode`}
                   />
                 )}
-                <Moon className='h-4 w-4 dark:text-white' />
+                <Moon className='h-4 w-4 dark:text-white' aria-hidden='true' />
               </div>
             </div>
           </SheetContent>

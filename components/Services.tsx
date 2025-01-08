@@ -31,7 +31,7 @@ const Services: React.FC = () => {
         {" "}
         {/* Ensure content is above gradient */}
         <SlideReveal direction='left' duration={0.7}>
-          <h1
+          <h2
             className={`${clashDisplay.className} text-[28px] md:w-[60%] sm:text-[36px] md:text-[45px] font-bold text-left text-black dark:text-white pl-2 sm:pl-4 py-8 sm:py-12 drop-shadow-sm`}>
             Boost Your Business with our Strategic{" "}
             <span className='text-[#F56E0F] dark:text-[#FF7A1F] drop-shadow-sm'>
@@ -42,7 +42,7 @@ const Services: React.FC = () => {
               Digital
             </span>{" "}
             <span className='dark:text-gray-100'>Services</span>
-          </h1>
+          </h2>
         </SlideReveal>
         <div className='max-w-7xl mx-auto'>
           <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>

@@ -137,7 +137,7 @@ const HomeAbout = () => {
                     <Link href='/about'>
                       <span
                         className={`${plusJakartaSans.className} inline-flex items-center border-black dark:border-white border-b-[1px] text-[16px] sm:text-[18px] dark:text-white`}>
-                        Learn More
+                        More About Kulmi
                         <Image
                           src='/icons/up.svg'
                           alt='Arrow Right'

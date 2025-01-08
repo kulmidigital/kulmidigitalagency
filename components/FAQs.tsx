@@ -111,7 +111,7 @@ const FAQs = () => {
                 More <br /> Questions? <br /> Reach out to <br /> us
               </h3>
               <Link
-                className='mt-8 text-sm sm:text-[18px] lg:text-[20px] text-center min-w-[200px] min-h-[48px] p-6 rounded-[40px] flex items-center justify-center space-x-3 bg-[#F56E0F] dark:bg-[#FF7A1F] text-white hover:bg-[#E55D00] dark:hover:bg-[#E55D00] border border-[#F56E0F] dark:border-[#FF7A1F] hover:border-[#E55D00] dark:hover:border-[#E55D00] transition-all duration-300'
+                className='mt-8 text-sm sm:text-[18px] lg:text-[20px] text-center min-w-[200px] min-h-[48px] p-6 rounded-[40px] flex items-center justify-center space-x-3 bg-[#D85600] dark:bg-[#D85600] text-white hover:bg-[#B84800] dark:hover:bg-[#B84800] border border-[#D85600] dark:border-[#D85600] hover:border-[#B84800] dark:hover:border-[#B84800] transition-all duration-300'
                 href='/contact'
                 aria-label='Contact us to get started with our services'
                 onMouseEnter={() => setIsHovered(true)}
