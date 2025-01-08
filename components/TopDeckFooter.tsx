@@ -114,16 +114,7 @@ const TopDeckFooter = () => {
       </div>
 
       {/* Right Section: Image */}
-      <div className='relative w-full mt-4 h-[400px] sm:h-[300px] lg:w-[600px] lg:h-[400px] rounded-3xl overflow-hidden'>
-        <Image
-          src='/images/office_layout.webp'
-          alt='Kulmi Digital Office Layout'
-          fill
-          sizes='(max-width: 1024px) 100vw, 600px'
-          className='object-cover dark:brightness-90'
-          loading='lazy'
-        />
-      </div>
+      <div className="bg-[url('/images/office_layout.webp')] bg-cover bg-center w-full mt-4 h-[400px] sm:h-[300px] lg:w-[600px] lg:h-[400px] rounded-3xl dark:brightness-90"></div>
     </section>
   );
 };

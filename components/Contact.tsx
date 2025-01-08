@@ -6,11 +6,42 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
+import localFont from "next/font/local";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import emailjs from "@emailjs/browser";
 import SlideReveal from "@/components/ui/slidereveal";
 import { useToast } from "@/hooks/use-toast";
 import { ToastAction } from "@/components/ui/toast";
-import { plusJakartaSans, clashDisplay, clashDisplay2 } from "@/app/fonts";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-plus-jakarta",
+});
+
+const clashDisplay = localFont({
+  src: [
+    {
+      path: "../app/fonts/ClashDisplay-Medium.woff",
+      weight: "500",
+      style: "normal",
+    },
+  ],
+  variable: "--font-clash-display",
+  display: "swap",
+});
+
+const clashDisplay2 = localFont({
+  src: [
+    {
+      path: "../app/fonts/ClashDisplay-Regular.woff",
+      weight: "500",
+      style: "normal",
+    },
+  ],
+  variable: "--font-clash-display",
+  display: "swap",
+});
 
 // Contact Option Component
 interface ContactOptionProps {

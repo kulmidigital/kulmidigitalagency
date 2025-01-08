@@ -1,10 +1,29 @@
 "use client";
 import React, { useState } from "react";
+import localFont from "next/font/local";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import SlideReveal from "@/components/ui/slidereveal";
 import Image from "next/image";
 import Link from "next/link";
 import "../styles/blog.css";
-import { plusJakartaSans, clashDisplay } from "@/app/fonts";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-plus-jakarta",
+});
+
+const clashDisplay = localFont({
+  src: [
+    {
+      path: "../app/fonts/ClashDisplay-Medium.woff",
+      weight: "100",
+      style: "normal",
+    },
+  ],
+  variable: "--font-clash-display",
+  display: "swap",
+});
 
 interface Post {
   id: string;

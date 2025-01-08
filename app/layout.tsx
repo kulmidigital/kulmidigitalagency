@@ -1,4 +1,4 @@
-import { plusJakartaSans } from "./fonts";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import dynamic from "next/dynamic";
@@ -10,6 +10,16 @@ import {
   websiteStructuredData,
   organizationStructuredData,
 } from "@/lib/structuredData";
+
+// Google Font: Plus Jakarta Sans
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-plus-jakarta",
+  display: "swap",
+  preload: true,
+  adjustFontFallback: true,
+});
 
 export const viewport = {
   width: "device-width",
@@ -30,7 +40,6 @@ export const metadata = {
   manifest: "/manifest.json",
 };
 
-// Dynamically import components
 const WhatsAppButton = dynamic(() => import("@/components/WhatsAppButton"), {
   loading: () => null,
   ssr: false,
@@ -39,10 +48,6 @@ const WhatsAppButton = dynamic(() => import("@/components/WhatsAppButton"), {
 const Footer = dynamic(() => import("@/components/Footer"), {
   loading: () => null,
 });
-
-// Force static generation with revalidation
-export const generateStaticParams = () => [];
-export const revalidate = 3600; // revalidate every hour
 
 export default function RootLayout({
   children,
@@ -53,6 +58,7 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <head>
         <meta name='theme-color' content='#F56E0F' />
+
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link
           rel='preconnect'
@@ -74,7 +80,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${plusJakartaSans.className} w-[100%] dark:bg-gray-900`}
+        className={`${plusJakartaSans.variable} w-[100%] dark:bg-gray-900`}
         suppressHydrationWarning>
         <Providers>
           <Navbar />

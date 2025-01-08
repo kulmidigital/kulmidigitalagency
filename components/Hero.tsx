@@ -31,34 +31,32 @@ const Hero = () => {
           alt='Kulmi Digital Agency Background'
           fill
           priority
-          fetchPriority='high'
-          quality={75}
+          quality={90}
           className='object-cover'
-          sizes='100vw'
+          placeholder='blur'
+          blurDataURL='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRseHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/2wBDAR0XFw8NDxoPDw8eHRUdHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k='
         />
       </div>
 
       {/* Dark mode overlay */}
       <div className='absolute inset-0 bg-black/0 dark:bg-black/40 transition-colors duration-300 z-10' />
 
-      {/* Main Content - Prioritized */}
+      {/* Glassy Text Section */}
       <div className='relative z-20 bg-white/10 dark:bg-black/30 backdrop-blur-lg border border-white/30 dark:border-white/10 rounded-[20px] px-[20px] py-[20px] w-[90%] mt-[50px] ml-4 md:w-[75%] md:py-[40px] md:px-[35px] md:mt-[100px] md:ml-8 lg:w-[55%] lg:mt-[150px] lg:ml-16 xl:w-[45%] shadow-lg'>
-        <div>
-          <h1
-            className={`${clashDisplay.className} text-[28px] font-bold text-white mb-4 sm:text-[40px] lg:text-[50px] drop-shadow-md`}>
-            We&apos;re a digital agency <br /> with a{" "}
-            <span className='text-[#F56E0F] dark:text-[#FF7A1F] drop-shadow-sm'>
-              strategic focus
-            </span>
-          </h1>
-          <p
-            className={`${clashDisplay.className} text-[16px] text-white/90 dark:text-white/80 mb-8 sm:text-[18px] lg:text-[19px] drop-shadow-sm`}>
-            With consumers spending more time online than ever before, having a
-            strong digital presence is essential for businesses to succeed.
-          </p>
-
-          {/* Buttons wrapped in SlideReveal for animation after main content loads */}
-          <SlideReveal direction='up' duration={0.7}>
+        <SlideReveal direction='up' duration={0.7}>
+          <div>
+            <h1
+              className={`${clashDisplay.className} text-[28px] font-bold text-white mb-4 sm:text-[40px] lg:text-[50px] drop-shadow-md`}>
+              We&apos;re a digital agency <br /> with a{" "}
+              <span className='text-[#F56E0F] dark:text-[#FF7A1F] drop-shadow-sm'>
+                strategic focus
+              </span>
+            </h1>
+            <p
+              className={`${clashDisplay.className} text-[16px] text-white/90 dark:text-white/80 mb-8 sm:text-[18px] lg:text-[19px] drop-shadow-sm`}>
+              With consumers spending more time online than ever before, having
+              a strong digital presence is essential for businesses to succeed.
+            </p>
             <div className='flex flex-col sm:flex-row gap-4'>
               <Link href='/contact'>
                 <Button
@@ -93,8 +91,8 @@ const Hero = () => {
                   shadow-lg dark:shadow-xl dark:shadow-black/20`}
               />
             </div>
-          </SlideReveal>
-        </div>
+          </div>
+        </SlideReveal>
       </div>
     </section>
   );

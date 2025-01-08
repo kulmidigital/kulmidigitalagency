@@ -11,37 +11,12 @@ const nextConfig = {
         pathname: "/**",
       },
     ],
-    formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 60,
   },
-  async headers() {
-    return [
-      {
-        source: "/:all*(svg|jpg|png|webp)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
-      {
-        source: "/",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=3600, must-revalidate",
-          },
-        ],
-      },
-    ];
-  },
-  poweredByHeader: false,
-  compress: true,
 };
 
 export default withPWA({
   dest: "public",
+  // disable: process.env.NODE_ENV === 'development',
   register: true,
   skipWaiting: true,
 })(nextConfig);

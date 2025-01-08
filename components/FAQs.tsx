@@ -44,14 +44,14 @@ const FAQs = () => {
         <section
           className={`${clashDisplay.className} flex flex-col pt-10 px-6 sm:px-8 lg:pt-[80px] lg:px-12`}>
           <div className='flex flex-col items-center text-left'>
-            <h2 className='text-[28px] sm:text-4xl lg:text-5xl text-black dark:text-white'>
+            <h1 className='text-[28px] sm:text-4xl lg:text-5xl text-black dark:text-white'>
               Questions People Ask Us
-            </h2>
-            <p
+            </h1>
+            <h4
               className={`${clashDisplay2.className} text-sm sm:text-lg lg:text-xl mt-4 text-gray-800 dark:text-gray-300 w-full sm:w-[80%] lg:w-[60%]`}>
               We know your time is precious, so we&apos;ve collected answers to
               some key questions you may have about working with us.
-            </p>
+            </h4>
           </div>
 
           <div className='mt-8 sm:mt-12 flex flex-col sm:flex-row sm:justify-between'>
@@ -106,24 +106,22 @@ const FAQs = () => {
             </div>
 
             {/* Contact section */}
-            <div className='w-full sm:w-[20%] flex flex-col items-center bg-[#dddddd] dark:bg-gray-800 py-6 sm:py-8 lg:py-12 rounded-[20px] mb-8 sm:mb-0 mt-8 sm:mt-0'>
-              <h3 className='text-2xl sm:text-3xl lg:text-4xl text-black dark:text-white text-center'>
+            <div className='w-full sm:w-[20%] flex flex-col items-center bg-[#dddddd] dark:bg-gray-800 py-6 sm:py-8 lg:py-12 rounded-[20px] mb-8 sm:mb-0'>
+              <h1 className='text-2xl sm:text-3xl lg:text-4xl text-black dark:text-white text-center'>
                 More <br /> Questions? <br /> Reach out to <br /> us
-              </h3>
+              </h1>
               <Link
-                className='mt-8 text-sm sm:text-[18px] lg:text-[20px] text-center min-w-[200px] min-h-[48px] p-6 rounded-[40px] flex items-center justify-center space-x-3 bg-[#F56E0F] dark:bg-[#FF7A1F] text-white hover:bg-[#E55D00] dark:hover:bg-[#E55D00] border border-[#F56E0F] dark:border-[#FF7A1F] hover:border-[#E55D00] dark:hover:border-[#E55D00] transition-all duration-300'
+                className='mt-6 text-sm sm:text-[18px] lg:text-[20px] text-center w-[70%] p-4 rounded-[40px] flex items-center justify-center space-x-2 bg-[#F56E0F] dark:bg-[#FF7A1F] text-white hover:bg-transparent border border-[#F56E0F] dark:border-[#FF7A1F] hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white'
                 href='/contact'
-                aria-label='Contact us to get started with our services'
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}>
-                <span className='text-center'>Get Started</span>
+                <span>Get Started</span>
                 {isHovered ? (
                   <svg
                     viewBox='0 0 24 24'
                     fill='none'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6'
-                    aria-hidden='true'>
+                    className='w-5 h-5'>
                     <path
                       d='M6 12H18M18 12L13 7M18 12L13 17'
                       stroke='currentColor'
@@ -137,8 +135,7 @@ const FAQs = () => {
                     viewBox='0 0 1024 1024'
                     xmlns='http://www.w3.org/2000/svg'
                     fill='currentColor'
-                    className='w-6 h-6'
-                    aria-hidden='true'>
+                    className='w-5 h-5'>
                     <path d='M768 256H353.6a32 32 0 1 1 0-64H800a32 32 0 0 1 32 32v448a32 32 0 0 1-64 0V256z'></path>
                     <path d='M777.344 201.344a32 32 0 0 1 45.312 45.312l-544 544a32 32 0 0 1-45.312-45.312l544-544z'></path>
                   </svg>

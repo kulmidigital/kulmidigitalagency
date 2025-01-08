@@ -40,10 +40,10 @@ const ServiceCard = ({ iconSrc, title, description }: ServiceCardProps) => {
             height={60}
             className='sm:w-70 sm:h-70 dark:invert-[0.15] transition-transform duration-300 group-hover:scale-110'
           />
-          <h2
+          <h3
             className={`${clashDisplay.className} text-[24px] sm:text-[26px] font-bold text-black dark:text-white mb-2`}>
             {title}
-          </h2>
+          </h3>
           <p
             className={`${plusJakartaSans.className} text-gray-600 dark:text-gray-300 text-[16px] sm:text-[18px] leading-relaxed`}>
             {description}

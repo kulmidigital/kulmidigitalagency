@@ -42,11 +42,7 @@ const SeoCard = () => {
           </div>
 
           <div className='mt-auto'>
-            <button
-              onClick={() => (window.location.href = "/seo")}
-              type='button'
-              aria-label='Learn more about our SEO services'
-              className='text-left my-2'>
+            <Link href='/seo'>
               <Badge
                 variant='outline'
                 className={`${clashDisplay.className} text-[12px] sm:text-[12px] w-[140px] 
@@ -58,7 +54,7 @@ const SeoCard = () => {
                 hover:scale-105 dark:hover:scale-105`}>
                 See about SEO
               </Badge>
-            </button>
+            </Link>
           </div>
         </div>
         <div className='absolute inset-0 bg-gradient-to-br from-purple-100/0 to-purple-100/0 dark:from-purple-500/0 dark:to-purple-500/0 rounded-2xl transition-all duration-300 group-hover:from-purple-100/10 group-hover:to-purple-100/30 dark:group-hover:from-purple-500/5 dark:group-hover:to-purple-500/10'></div>

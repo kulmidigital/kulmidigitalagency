@@ -67,17 +67,8 @@ const Discovery = () => {
 
   return (
     <section className='flex flex-col-reverse lg:flex-row justify-between px-6 sm:px-8 lg:px-12 mt-[60px] lg:mt-[100px] dark:bg-gray-900'>
-      {/* Image Section */}
-      <div className='relative w-full lg:w-[48%] h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl mb-8 lg:mb-0 overflow-hidden'>
-        <Image
-          src='/images/choose2.webp'
-          alt='Digital Marketing Discovery Process'
-          fill
-          sizes='(max-width: 1024px) 100vw, 48vw'
-          className='object-cover dark:brightness-90'
-          loading='lazy'
-        />
-      </div>
+      {/* Image Section - Changed to background image approach */}
+      <div className="w-full lg:w-[48%] h-[300px] sm:h-[400px] lg:h-[500px] bg-[url('/images/choose2.webp')] bg-contain bg-center rounded-3xl mb-8 lg:mb-0 dark:brightness-90"></div>
 
       {/* Text Content Section */}
       <div className='w-full lg:w-[48%] p-4 sm:p-6'>
@@ -88,12 +79,18 @@ const Discovery = () => {
               <span className='text-black dark:text-white'>through</span>{" "}
               Digital
             </h1>
-            <p
-              className={`${clashDisplay.className} text-gray-600 dark:text-gray-300 text-[14px] sm:text-[16px] lg:text-[18px] leading-relaxed`}>
+            <h3
+              className={`${plusJakartaSans.className} text-gray-600 dark:text-gray-300 text-[14px] sm:text-[16px] lg:text-[18px] mb-6`}>
               Digital marketing is integral to running a sustainable business.
-              From planning to execution, we help you navigate the digital
-              landscape effectively.
-            </p>
+              From <b className='dark:text-gray-200'>planning your campaigns</b>
+              , to optimizing your{" "}
+              <b className='dark:text-gray-200'>digital strategy </b> and
+              managing your social media, we{" "}
+              <b className='dark:text-gray-200'>
+                maximize your return on investment
+              </b>{" "}
+              so you can meet your goals with our digital marketing services.
+            </h3>
           </div>
         </SlideReveal>
 

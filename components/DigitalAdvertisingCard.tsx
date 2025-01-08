@@ -79,8 +79,16 @@ const services = [
 
 const DigitalAdvertisingCard = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const popoverRef = React.useRef<HTMLDivElement>(null);
   const [origin, setOrigin] = React.useState({ x: 0, y: 0 });
   const { theme } = useTheme();
+
+  React.useEffect(() => {
+    if (popoverRef.current) {
+      const rect = popoverRef.current.getBoundingClientRect();
+      setOrigin({ x: rect.left, y: rect.top });
+    }
+  }, [isOpen]);
 
   return (
     <SlideReveal direction='up' duration={0.7}>
@@ -106,15 +114,7 @@ const DigitalAdvertisingCard = () => {
           <div className='mt-auto'>
             <Popover open={isOpen} onOpenChange={setIsOpen}>
               <PopoverTrigger asChild>
-                <button
-                  onClick={(e) => {
-                    const rect = e.currentTarget.getBoundingClientRect();
-                    setOrigin({ x: rect.left, y: rect.top });
-                  }}
-                  type='button'
-                  aria-label='View digital advertising services'
-                  aria-expanded={isOpen}
-                  className='text-left my-2 '>
+                <div ref={popoverRef}>
                   <Badge
                     variant='outline'
                     className={`${clashDisplay.className} text-[12px] sm:text-[12px] w-[140px] 
@@ -126,7 +126,7 @@ const DigitalAdvertisingCard = () => {
                     hover:scale-105 dark:hover:scale-105`}>
                     See digital services
                   </Badge>
-                </button>
+                </div>
               </PopoverTrigger>
               <AnimatePresence>
                 {isOpen && (
