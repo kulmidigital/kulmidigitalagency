@@ -27,7 +27,7 @@ const Hero = () => {
       {/* Background Image with Next/Image for optimization */}
       <div className='absolute inset-0 z-0'>
         <Image
-          src='/images/kulmidigital.webp'
+          src='https://res.cloudinary.com/dtwyxgcb2/image/upload/v1736337511/kulmidigital_zs6dkf.webp'
           alt='Kulmi Digital Agency Background'
           fill
           priority

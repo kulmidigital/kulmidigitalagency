@@ -111,18 +111,18 @@ const FAQs = () => {
                 More <br /> Questions? <br /> Reach out to <br /> us
               </h3>
               <Link
-                className='mt-8 text-sm sm:text-[18px] lg:text-[20px] text-center min-w-[200px] min-h-[48px] p-6 rounded-[40px] flex items-center justify-center space-x-3 bg-[#D85600] dark:bg-[#D85600] text-white hover:bg-[#B84800] dark:hover:bg-[#B84800] border border-[#D85600] dark:border-[#D85600] hover:border-[#B84800] dark:hover:border-[#B84800] transition-all duration-300'
+                className='mt-8 text-base sm:text-[18px] lg:text-[20px] text-center min-w-[200px] min-h-[48px] p-8 rounded-[40px] flex items-center justify-center space-x-4 bg-[#C84C00] dark:bg-[#C84C00] text-white hover:bg-[#A33D00] dark:hover:bg-[#A33D00] border border-[#C84C00] dark:border-[#C84C00] hover:border-[#A33D00] dark:hover:border-[#A33D00] transition-all duration-300'
                 href='/contact'
                 aria-label='Contact us to get started with our services'
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}>
-                <span className='text-center'>Get Started</span>
+                <span className='text-center font-medium'>Get Started</span>
                 {isHovered ? (
                   <svg
                     viewBox='0 0 24 24'
                     fill='none'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6'
+                    className='w-8 h-8'
                     aria-hidden='true'>
                     <path
                       d='M6 12H18M18 12L13 7M18 12L13 17'
@@ -137,7 +137,7 @@ const FAQs = () => {
                     viewBox='0 0 1024 1024'
                     xmlns='http://www.w3.org/2000/svg'
                     fill='currentColor'
-                    className='w-6 h-6'
+                    className='w-8 h-8'
                     aria-hidden='true'>
                     <path d='M768 256H353.6a32 32 0 1 1 0-64H800a32 32 0 0 1 32 32v448a32 32 0 0 1-64 0V256z'></path>
                     <path d='M777.344 201.344a32 32 0 0 1 45.312 45.312l-544 544a32 32 0 0 1-45.312-45.312l544-544z'></path>
