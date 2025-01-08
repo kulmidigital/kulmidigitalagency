@@ -5,7 +5,6 @@ import dynamic from "next/dynamic";
 import { Toaster } from "@/components/ui/toaster";
 import "@/styles/blog.css";
 import Providers from "./providers";
-import GoogleTagManager from "@/components/GoogleTagManager";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import {
   websiteStructuredData,
@@ -59,15 +58,13 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <head>
         <meta name='theme-color' content='#F56E0F' />
-        <link rel='preconnect' href='https://www.googletagmanager.com' />
-        <link rel='dns-prefetch' href='https://www.googletagmanager.com' />
+
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link
           rel='preconnect'
           href='https://fonts.gstatic.com'
           crossOrigin='anonymous'
         />
-        <GoogleTagManager />
         <GoogleAnalytics />
         <script
           type='application/ld+json'
@@ -85,15 +82,6 @@ export default function RootLayout({
       <body
         className={`${plusJakartaSans.variable} w-[100%] dark:bg-gray-900`}
         suppressHydrationWarning>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src='https://www.googletagmanager.com/ns.html?id=GTM-58V89S63'
-            height='0'
-            width='0'
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
         <Providers>
           <Navbar />
           {children}
