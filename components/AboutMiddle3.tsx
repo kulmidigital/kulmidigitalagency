@@ -3,23 +3,10 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import localFont from "next/font/local";
 import TeamCard from "./TeamCard";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import SlideReveal from "@/components/ui/slidereveal";
 import Link from "next/link";
-
-export const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600"],
-});
-
-export const clashDisplay = localFont({
-  src: "../app/fonts/ClashDisplay-Medium.woff",
-  display: "swap",
-  variable: "--font-clash-display",
-});
+import { plusJakartaSans, clashDisplay } from "@/app/fonts";
 
 interface TeamMember {
   name: string;

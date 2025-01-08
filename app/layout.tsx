@@ -1,4 +1,4 @@
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { plusJakartaSans } from "./fonts";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import dynamic from "next/dynamic";
@@ -10,15 +10,6 @@ import {
   websiteStructuredData,
   organizationStructuredData,
 } from "@/lib/structuredData";
-
-// Google Font: Plus Jakarta Sans
-export const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  display: "swap",
-  preload: false,
-  variable: "--font-plus-jakarta",
-});
 
 export const viewport = {
   width: "device-width",
@@ -83,7 +74,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${plusJakartaSans.variable} w-[100%] dark:bg-gray-900`}
+        className={`${plusJakartaSans.className} w-[100%] dark:bg-gray-900`}
         suppressHydrationWarning>
         <Providers>
           <Navbar />

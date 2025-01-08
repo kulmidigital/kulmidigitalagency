@@ -1,7 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Plus_Jakarta_Sans } from "next/font/google";
-import localFont from "next/font/local";
 import SlideReveal from "@/components/ui/slidereveal";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,18 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getSortedPostsData } from "@/lib/blogService";
 import { slugify } from "@/lib/utils";
 import { Loader } from "@/components/ui/loader";
-
-export const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600"],
-});
-
-export const clashDisplay = localFont({
-  src: "../app/fonts/ClashDisplay-Medium.woff",
-  display: "swap",
-  variable: "--font-clash-display",
-});
+import { plusJakartaSans, clashDisplay } from "@/app/fonts";
 
 const ITEMS_PER_PAGE = 6;
 
