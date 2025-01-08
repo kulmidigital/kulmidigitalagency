@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import CalendlyButton from "@/components/CalendlyButton";
+import Image from "next/image";
 
 // Import Clash Display Font
 const clashDisplay = localFont({
@@ -22,12 +23,26 @@ const clashDisplay = localFont({
 
 const Hero = () => {
   return (
-    <section className="relative bg-[url('/images/kulmidigital.webp')] bg-cover bg-center h-[100vh] w-full flex items-center justify-start">
+    <section className='relative h-[100vh] w-full flex items-center justify-start overflow-hidden'>
+      {/* Background Image with Next/Image for optimization */}
+      <div className='absolute inset-0 z-0'>
+        <Image
+          src='/images/kulmidigital.webp'
+          alt='Kulmi Digital Agency Background'
+          fill
+          priority
+          quality={90}
+          className='object-cover'
+          placeholder='blur'
+          blurDataURL='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRseHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/2wBDAR0XFw8NDxoPDw8eHRUdHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k='
+        />
+      </div>
+
       {/* Dark mode overlay */}
-      <div className='absolute inset-0 bg-black/0 dark:bg-black/40 transition-colors duration-300' />
+      <div className='absolute inset-0 bg-black/0 dark:bg-black/40 transition-colors duration-300 z-10' />
 
       {/* Glassy Text Section */}
-      <div className='relative bg-white/10 dark:bg-black/30 backdrop-blur-lg border border-white/30 dark:border-white/10 rounded-[20px] px-[20px] py-[20px] w-[90%] mt-[50px] ml-4 md:w-[75%] md:py-[40px] md:px-[35px] md:mt-[100px] md:ml-8 lg:w-[55%] lg:mt-[150px] lg:ml-16 xl:w-[45%] shadow-lg'>
+      <div className='relative z-20 bg-white/10 dark:bg-black/30 backdrop-blur-lg border border-white/30 dark:border-white/10 rounded-[20px] px-[20px] py-[20px] w-[90%] mt-[50px] ml-4 md:w-[75%] md:py-[40px] md:px-[35px] md:mt-[100px] md:ml-8 lg:w-[55%] lg:mt-[150px] lg:ml-16 xl:w-[45%] shadow-lg'>
         <SlideReveal direction='up' duration={0.7}>
           <div>
             <h1
@@ -45,6 +60,7 @@ const Hero = () => {
             <div className='flex flex-col sm:flex-row gap-4'>
               <Link href='/contact'>
                 <Button
+                  aria-label='Get started with our digital services'
                   className={`${clashDisplay.className} w-full sm:w-auto bg-[#F56E0F] dark:bg-[#FF7A1F] text-white px-6 sm:px-10 py-5 sm:py-7 rounded-full text-base sm:text-lg 
                     hover:bg-[#E55D00] dark:hover:bg-[#E55D00] 
                     transition-all duration-300 
@@ -53,11 +69,15 @@ const Hero = () => {
                     dark:shadow-xl dark:shadow-black/20
                     group`}>
                   Get Started
-                  <ArrowRight className='ml-2 group-hover:translate-x-1 transition-transform' />
+                  <ArrowRight
+                    className='ml-2 group-hover:translate-x-1 transition-transform'
+                    aria-hidden='true'
+                  />
                 </Button>
               </Link>
 
               <CalendlyButton
+                aria-label='Schedule a consultation'
                 className={`${clashDisplay.className} w-full sm:w-auto 
                   bg-white/10 dark:bg-white/5 
                   backdrop-blur-sm 

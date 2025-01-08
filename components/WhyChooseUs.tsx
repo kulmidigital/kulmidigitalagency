@@ -64,9 +64,9 @@ const WhyChooseUs = () => {
       <div className='w-full lg:w-[48%] p-4 sm:p-6'>
         <SlideReveal direction='left' duration={0.7}>
           <div className={`${clashDisplay.className} text-left`}>
-            <h1 className='text-[28px] sm:text-[36px] lg:text-[45px] mb-4 sm:mb-6 dark:text-white'>
+            <h2 className='text-[28px] sm:text-[36px] lg:text-[45px] mb-4 sm:mb-6 dark:text-white'>
               So why us?
-            </h1>
+            </h2>
             <h3
               className={`${clashDisplay2.className} text-gray-600 dark:text-gray-300 text-[16px] sm:text-[18px] mb-4 sm:mb-6`}>
               We founded Kulmi Digital with a focus on making brands succeed
@@ -77,35 +77,50 @@ const WhyChooseUs = () => {
         </SlideReveal>
         <div className={`${clashDisplay.className}`}>
           <SlideReveal direction='left' duration={0.7}>
-            <h2 className='text-xl sm:text-2xl mb-4 text-[#F56E0F] dark:text-[#FF7A1F]'>
+            <h3 className='text-xl sm:text-2xl mb-4 text-[#F56E0F] dark:text-[#FF7A1F] font-semibold'>
               Our promise
-            </h2>
+            </h3>
           </SlideReveal>
           <div className='border-b border-gray-200 dark:border-gray-700 w-full sm:w-[90%] mb-4'></div>
 
-          <div className={`${clashDisplay2.className} space-y-3`}>
+          <div className={`${clashDisplay2.className} space-y-3`} role='list'>
             {/* Reusable H3WithIcon Component Instances */}
-            <H3WithIcon
-              iconSrc='/icons/star.svg'
-              altText='star icon'
-              text='Your business will never be a second thought.'
-            />
-            <H3WithIcon
-              iconSrc='/icons/star.svg'
-              altText='star icon'
-              text='Your brand will always stay relevant and competitive.'
-            />
-            <H3WithIcon
-              iconSrc='/icons/star.svg'
-              altText='star icon'
-              text='You will better navigate the fast-paced digital world.'
-            />
+            <div role='listitem'>
+              <H3WithIcon
+                iconSrc='/icons/star.svg'
+                altText='star icon'
+                text='Your business will never be a second thought.'
+              />
+            </div>
+            <div role='listitem'>
+              <H3WithIcon
+                iconSrc='/icons/star.svg'
+                altText='star icon'
+                text='Your brand will always stay relevant and competitive.'
+              />
+            </div>
+            <div role='listitem'>
+              <H3WithIcon
+                iconSrc='/icons/star.svg'
+                altText='star icon'
+                text='You will better navigate the fast-paced digital world.'
+              />
+            </div>
           </div>
         </div>
       </div>
 
       {/* Image on the right side */}
-      <div className="w-full lg:w-[48%] h-[300px] sm:h-[400px] lg:h-[500px] bg-[url('/images/choose.webp')] bg-contain bg-center rounded-3xl mb-8 lg:mb-0 dark:brightness-90"></div>
+      <div className='relative w-full lg:w-[48%] h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl mb-8 lg:mb-0 overflow-hidden'>
+        <Image
+          src='/images/choose.webp'
+          alt='Why Choose Kulmi Digital'
+          fill
+          sizes='(max-width: 1024px) 100vw, 48vw'
+          className='object-contain dark:brightness-90 rounded-3xl'
+          loading='lazy'
+        />
+      </div>
     </section>
   );
 };
