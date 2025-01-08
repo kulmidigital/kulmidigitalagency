@@ -169,7 +169,7 @@ const Navbar = () => {
           Home
         </Link>
         <Link href='/about' aria-label='Learn about Kulmi Digital'>
-          About
+          About Kulmi Digital
         </Link>
         <HoverCard>
           <HoverCardTrigger asChild>
@@ -267,10 +267,10 @@ const Navbar = () => {
           </HoverCardContent>
         </HoverCard>
         <Link href='/our-work' aria-label='View our portfolio and case studies'>
-          Our Work
+          Success Stories
         </Link>
         <Link href='/contact' aria-label='Contact Kulmi Digital'>
-          Contact
+          Get in Touch
         </Link>
         <Link href='tel:+254735101001' aria-label='Call us at +254 735101001'>
           +254 735101001
