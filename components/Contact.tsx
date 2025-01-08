@@ -6,41 +6,29 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import localFont from "next/font/local";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import emailjs from "@emailjs/browser";
 import SlideReveal from "@/components/ui/slidereveal";
 import { useToast } from "@/hooks/use-toast";
 import { ToastAction } from "@/components/ui/toast";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+export const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
+  display: "swap",
   weight: ["400", "500", "600"],
-  variable: "--font-plus-jakarta",
 });
 
-const clashDisplay = localFont({
-  src: [
-    {
-      path: "../app/fonts/ClashDisplay-Medium.woff",
-      weight: "500",
-      style: "normal",
-    },
-  ],
-  variable: "--font-clash-display",
+export const clashDisplay = localFont({
+  src: "../app/fonts/ClashDisplay-Medium.woff",
   display: "swap",
+  variable: "--font-clash-display",
 });
 
-const clashDisplay2 = localFont({
-  src: [
-    {
-      path: "../app/fonts/ClashDisplay-Regular.woff",
-      weight: "500",
-      style: "normal",
-    },
-  ],
-  variable: "--font-clash-display",
+export const clashDisplay2 = localFont({
+  src: "../app/fonts/ClashDisplay-Regular.woff",
   display: "swap",
+  variable: "--font-clash-display-2",
 });
 
 // Contact Option Component

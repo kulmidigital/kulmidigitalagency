@@ -12,13 +12,12 @@ import {
 } from "@/lib/structuredData";
 
 // Google Font: Plus Jakarta Sans
-const plusJakartaSans = Plus_Jakarta_Sans({
+export const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
-  variable: "--font-plus-jakarta",
   display: "swap",
-  preload: true,
-  adjustFontFallback: true,
+  preload: false,
+  variable: "--font-plus-jakarta",
 });
 
 export const viewport = {
