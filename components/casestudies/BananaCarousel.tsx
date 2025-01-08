@@ -11,10 +11,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { type CarouselApi } from "@/components/ui/carousel";
 
 const images: string[] = [
-  "/bananapay/slide1.jpeg",
-  "/bananapay/slide2.jpeg",
-  "/bananapay/slide3.jpeg",
-  "/bananapay/slide4.jpeg",
+  "/bananapay/slide1.webp",
+  "/bananapay/slide2.webp",
+  "/bananapay/slide3.webp",
+  "/bananapay/slide4.webp",
 ];
 
 export default function BananaPayCarousel(): JSX.Element {

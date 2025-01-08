@@ -19,13 +19,13 @@ const AboutMiddle = () => {
     <section className='flex flex-col lg:flex-row px-4 sm:px-6 lg:px-10 justify-between gap-6 lg:gap-10 py-10 bg-white dark:bg-gray-900'>
       {/* First Image */}
       <SlideReveal direction='left' duration={0.7}>
-        <div className="bg-[url('/images/billboard.jpg')] bg-cover bg-center w-full lg:w-[500px] h-[350px] sm:h-[450px] lg:h-[550px] rounded-3xl dark:brightness-90"></div>
+        <div className="bg-[url('/images/billboard.webp')] bg-cover bg-center w-full lg:w-[500px] h-[350px] sm:h-[450px] lg:h-[550px] rounded-3xl dark:brightness-90"></div>
       </SlideReveal>
 
       <div className='flex flex-col w-full lg:w-[60%] gap-6'>
         {/* Second Image */}
         <SlideReveal direction='up' duration={0.7}>
-          <div className="bg-[url('/images/insta_one.jpg')] bg-cover bg-center w-full h-[250px] sm:h-[300px] lg:h-[400px] rounded-3xl dark:brightness-90"></div>
+          <div className="bg-[url('/images/insta_one.webp')] bg-cover bg-center w-full h-[250px] sm:h-[300px] lg:h-[400px] rounded-3xl dark:brightness-90"></div>
         </SlideReveal>
 
         {/* Statistics Section */}

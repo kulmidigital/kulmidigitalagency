@@ -17,7 +17,7 @@ const clashDisplay = localFont({
 export default function WebsitePackages() {
   return (
     <div className={`${clashDisplay.className}`}>
-      <div className="relative w-full h-[30vh] sm:h-[40vh] md:h-[50vh] bg-[url('/images/wp.jpg')] bg-cover bg-center flex items-end">
+      <div className="relative w-full h-[30vh] sm:h-[40vh] md:h-[50vh] bg-[url('/images/wp.webp')] bg-cover bg-center flex items-end">
         {/* Background overlay */}
         <div className='absolute inset-0 bg-black/50 z-0'></div>
 

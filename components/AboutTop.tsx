@@ -108,11 +108,11 @@ const AboutTop = () => {
               <SlideReveal direction='left' duration={0.7}>
                 <div className='grid grid-cols-3 gap-4 sm:grid-cols-3 lg:flex lg:space-x-4'>
                   {[
-                    { name: "Kenya", flag: "/flags/kenya.png" },
-                    { name: "Somalia", flag: "/flags/somalia.png" },
-                    { name: "Ethiopia", flag: "/flags/ethiopia.png" },
-                    { name: "Uganda", flag: "/flags/uganda.png" },
-                    { name: "Tanzania", flag: "/flags/tanzania.png" },
+                    { name: "Kenya", flag: "/flags/kenya.webp" },
+                    { name: "Somalia", flag: "/flags/somalia.webp" },
+                    { name: "Ethiopia", flag: "/flags/ethiopia.webp" },
+                    { name: "Uganda", flag: "/flags/uganda.webp" },
+                    { name: "Tanzania", flag: "/flags/tanzania.webp" },
                   ].map((location) => (
                     <div className='flex items-center' key={location.name}>
                       <Image

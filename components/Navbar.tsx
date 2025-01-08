@@ -165,11 +165,21 @@ const Navbar = () => {
       {/* Right Side: Desktop Links */}
       <div
         className={`${plusJakartaSans.className} hidden md:flex font-bold space-x-6 text-[14px] text-gray-700 dark:text-gray-200 items-center`}>
-        <Link href='/'>Home</Link>
-        <Link href='/about'>About</Link>
+        <Link href='/' aria-label='Go to Kulmi Digital home page'>
+          Home
+        </Link>
+        <Link href='/about' aria-label='Learn about Kulmi Digital'>
+          About
+        </Link>
         <HoverCard>
-          <HoverCardTrigger className='cursor-pointer'>
-            Services
+          <HoverCardTrigger asChild>
+            <button
+              className='cursor-pointer'
+              aria-label='View our digital services'
+              aria-haspopup='true'
+              aria-expanded={isServicesOpen}>
+              Services
+            </button>
           </HoverCardTrigger>
           <HoverCardContent className='w-96 p-0 bg-white dark:bg-gray-900 rounded-xl shadow-xl max-h-[90vh] overflow-y-auto dark:border-gray-800'>
             <div className='grid grid-cols-1 gap-2 p-4'>
@@ -178,7 +188,10 @@ const Navbar = () => {
                   <div key={service.name} className='w-full'>
                     <button
                       onClick={toggleDigitalAdvertising}
-                      className={`${clashDisplay.className} flex items-center justify-between w-full p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 group sticky top-0 bg-white dark:bg-gray-900 z-10`}>
+                      className={`${clashDisplay.className} flex items-center justify-between w-full p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 group sticky top-0 bg-white dark:bg-gray-900 z-10`}
+                      aria-label={`Explore our ${service.name.toLowerCase()} services`}
+                      aria-expanded={isDigitalAdvertisingOpen}
+                      aria-haspopup='true'>
                       <span className='font-medium text-sm group-hover:text-[#F56E0F] dark:text-gray-200'>
                         {service.name}
                       </span>
@@ -253,10 +266,20 @@ const Navbar = () => {
             </div>
           </HoverCardContent>
         </HoverCard>
-        <Link href='/our-work'>Our Work</Link>
-        <Link href='/contact'>Contact</Link>
-        <Link href='tel:+254735101001'>+254 735101001</Link>
-        <Link href='mailto:info@kulmi.digital'>info@kulmi.digital</Link>
+        <Link href='/our-work' aria-label='View our portfolio and case studies'>
+          Our Work
+        </Link>
+        <Link href='/contact' aria-label='Contact Kulmi Digital'>
+          Contact
+        </Link>
+        <Link href='tel:+254735101001' aria-label='Call us at +254 735101001'>
+          +254 735101001
+        </Link>
+        <Link
+          href='mailto:info@kulmi.digital'
+          aria-label='Email us at info@kulmi.digital'>
+          info@kulmi.digital
+        </Link>
         <div className='flex items-center space-x-2'>
           <Sun className='h-4 w-4' />
           {mounted && (
@@ -274,7 +297,7 @@ const Navbar = () => {
       <div className='md:hidden'>
         <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger asChild>
-            <button>
+            <button aria-label='Open navigation menu'>
               <Menu className='w-8 h-8 dark:text-white' />
             </button>
           </SheetTrigger>
@@ -284,40 +307,48 @@ const Navbar = () => {
             {/* Logo and Flags */}
             <div className='flex justify-between items-center mb-6'>
               {/* Left Side: Logo */}
-              <Link href='/' onClick={handleLinkClick}>
+              <Link
+                href='/'
+                onClick={handleLinkClick}
+                aria-label='Go to Kulmi Digital home page'>
                 <div className='flex items-center'>
-                  <Image src='/logo.svg' alt='Logo' width={40} height={40} />
+                  <Image
+                    src='/logo.svg'
+                    alt='Kulmi Digital Logo'
+                    width={40}
+                    height={40}
+                  />
                 </div>
               </Link>
 
               {/* Flags */}
               <div className='flex space-x-6 mr-12'>
                 <Image
-                  src='/flags/kenya.png'
+                  src='/flags/kenya.webp'
                   alt='Kenya'
                   width={30}
                   height={30}
                 />
                 <Image
-                  src='/flags/somalia.png'
+                  src='/flags/somalia.webp'
                   alt='Somalia'
                   width={30}
                   height={30}
                 />
                 <Image
-                  src='/flags/ethiopia.png'
+                  src='/flags/ethiopia.webp'
                   alt='Ethiopia'
                   width={30}
                   height={30}
                 />
                 <Image
-                  src='/flags/tanzania.png'
+                  src='/flags/tanzania.webp'
                   alt='Tanzania'
                   width={30}
                   height={30}
                 />
                 <Image
-                  src='/flags/uganda.png'
+                  src='/flags/uganda.webp'
                   alt='Uganda'
                   width={30}
                   height={30}
@@ -330,19 +361,24 @@ const Navbar = () => {
               <Link
                 href='/'
                 className='text-lg font-bold text-gray-900 dark:text-gray-100 hover:text-[#F56E0F] dark:hover:text-[#FF7A1F] transition-colors'
-                onClick={handleLinkClick}>
+                onClick={handleLinkClick}
+                aria-label='Go to Kulmi Digital home page'>
                 Home
               </Link>
               <Link
                 href='/about'
                 className='text-lg font-bold text-gray-900 dark:text-gray-100 hover:text-[#F56E0F] dark:hover:text-[#FF7A1F] transition-colors'
-                onClick={handleLinkClick}>
+                onClick={handleLinkClick}
+                aria-label='Learn about Kulmi Digital'>
                 About
               </Link>
               <div className='w-full'>
                 <button
+                  className='text-lg font-bold flex items-center justify-between w-full py-2 text-gray-900 dark:text-gray-100'
                   onClick={toggleServices}
-                  className='text-lg font-bold flex items-center justify-between w-full py-2 text-gray-900 dark:text-gray-100'>
+                  aria-label='View our digital services'
+                  aria-expanded={isServicesOpen}
+                  aria-haspopup='true'>
                   Services
                   <motion.div
                     animate={{ rotate: isServicesOpen ? 180 : 0 }}
@@ -363,9 +399,10 @@ const Navbar = () => {
                         {mainServices.map((service) =>
                           service.subServices ? (
                             <div key={service.name} className='w-full'>
-                              <button
-                                onClick={toggleDigitalAdvertising}
-                                className='flex items-center justify-between w-full py-2 pl-4 text-gray-900 dark:text-gray-100'>
+                              <Link
+                                href='/digital-advertising'
+                                className={`${clashDisplay.className} flex items-center justify-between w-full py-2 pl-4 text-gray-900 dark:text-gray-100`}
+                                aria-label='Explore our digital advertising services'>
                                 <span>{service.name}</span>
                                 <motion.div
                                   animate={{
@@ -374,7 +411,7 @@ const Navbar = () => {
                                   transition={{ duration: 0.3 }}>
                                   <ChevronDown className='ml-1 h-4 w-4 dark:text-gray-100' />
                                 </motion.div>
-                              </button>
+                              </Link>
                               <AnimatePresence>
                                 {isDigitalAdvertisingOpen && (
                                   <motion.div
@@ -437,25 +474,29 @@ const Navbar = () => {
               <Link
                 href='/our-work'
                 className='text-lg font-bold text-gray-900 dark:text-gray-100 hover:text-[#F56E0F] dark:hover:text-[#FF7A1F] transition-colors'
-                onClick={handleLinkClick}>
+                onClick={handleLinkClick}
+                aria-label='View our portfolio and case studies'>
                 Our Work
               </Link>
               <Link
                 href='/contact'
                 className='text-lg font-bold text-gray-900 dark:text-gray-100 hover:text-[#F56E0F] dark:hover:text-[#FF7A1F] transition-colors'
-                onClick={handleLinkClick}>
+                onClick={handleLinkClick}
+                aria-label='Contact Kulmi Digital'>
                 Contact
               </Link>
               <Link
                 href='tel:+254735101001'
                 className='text-lg font-bold text-gray-900 dark:text-gray-100 hover:text-[#F56E0F] dark:hover:text-[#FF7A1F] transition-colors'
-                onClick={handleLinkClick}>
+                onClick={handleLinkClick}
+                aria-label='Call us at +254 735101001'>
                 +254 735101001
               </Link>
               <Link
                 href='mailto:info@kulmi.digital'
                 className='text-lg font-bold text-gray-900 dark:text-gray-100 hover:text-[#F56E0F] dark:hover:text-[#FF7A1F] transition-colors'
-                onClick={handleLinkClick}>
+                onClick={handleLinkClick}
+                aria-label='Email us at info@kulmi.digital'>
                 info@kulmi.digital
               </Link>
               <div className='flex items-center space-x-2 mt-4'>

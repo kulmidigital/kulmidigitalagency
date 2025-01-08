@@ -20,11 +20,7 @@ const ClientCalendlyButton: React.FC<ClientCalendlyButtonProps> = ({ className }
   const [isOpen, setIsOpen] = React.useState(false);
 
   useCalendlyEventListener({
-    onProfilePageViewed: () => console.log("onProfilePageViewed"),
-    onDateAndTimeSelected: () => console.log("onDateAndTimeSelected"),
-    onEventTypeViewed: () => console.log("onEventTypeViewed"),
     onEventScheduled: (e) => {
-      console.log(e.data.payload);
       setIsOpen(false);
     },
   });

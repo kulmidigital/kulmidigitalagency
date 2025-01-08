@@ -105,7 +105,7 @@ const WhyChooseUs = () => {
       </div>
 
       {/* Image on the right side */}
-      <div className="w-full lg:w-[48%] h-[300px] sm:h-[400px] lg:h-[500px] bg-[url('/images/choose.png')] bg-contain bg-center rounded-3xl mb-8 lg:mb-0 dark:brightness-90"></div>
+      <div className="w-full lg:w-[48%] h-[300px] sm:h-[400px] lg:h-[500px] bg-[url('/images/choose.webp')] bg-contain bg-center rounded-3xl mb-8 lg:mb-0 dark:brightness-90"></div>
     </section>
   );
 };

@@ -68,7 +68,7 @@ const Discovery = () => {
   return (
     <section className='flex flex-col-reverse lg:flex-row justify-between px-6 sm:px-8 lg:px-12 mt-[60px] lg:mt-[100px] dark:bg-gray-900'>
       {/* Image Section - Changed to background image approach */}
-      <div className="w-full lg:w-[48%] h-[300px] sm:h-[400px] lg:h-[500px] bg-[url('/images/choose2.png')] bg-contain bg-center rounded-3xl mb-8 lg:mb-0 dark:brightness-90"></div>
+      <div className="w-full lg:w-[48%] h-[300px] sm:h-[400px] lg:h-[500px] bg-[url('/images/choose2.webp')] bg-contain bg-center rounded-3xl mb-8 lg:mb-0 dark:brightness-90"></div>
 
       {/* Text Content Section */}
       <div className='w-full lg:w-[48%] p-4 sm:p-6'>

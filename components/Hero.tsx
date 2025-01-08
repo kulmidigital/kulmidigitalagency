@@ -22,7 +22,7 @@ const clashDisplay = localFont({
 
 const Hero = () => {
   return (
-    <section className="relative bg-[url('/images/kulmidigital.jpeg')] bg-cover bg-center h-[100vh] w-full flex items-center justify-start">
+    <section className="relative bg-[url('/images/kulmidigital.webp')] bg-cover bg-center h-[100vh] w-full flex items-center justify-start">
       {/* Dark mode overlay */}
       <div className='absolute inset-0 bg-black/0 dark:bg-black/40 transition-colors duration-300' />
 

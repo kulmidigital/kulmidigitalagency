@@ -14,7 +14,7 @@ export const projects: ProjectData[] = [
     title: "BananaPay Full Marketing Management",
     description:
       "BananaPay is an international money transfer technology firm based in the United States of America enabling USA citizens send money affordably to over 14 countries globally.",
-    image: "/images/case_banana.jpg",
+    image: "/images/case_banana.webp",
     caseStudyLink: "/casestudies/bananapay",
   },
   {
@@ -49,7 +49,7 @@ export const projects: ProjectData[] = [
     category: "Design & Print",
     title: "Haier Kenya Out of Home Assets Design & Print ",
     description: " ",
-    image: "/images/case_haeir.jpg",
+    image: "/images/case_haeir.webp",
     // caseStudyLink: "#",
   },
   {
@@ -57,7 +57,7 @@ export const projects: ProjectData[] = [
     category: "Design & Print",
     title: "Jehana Food Products Design & Print",
     description: " ",
-    image: "/images/case_jehana.jpg",
+    image: "/images/case_jehana.webp",
     // caseStudyLink: "#",
   },
   {

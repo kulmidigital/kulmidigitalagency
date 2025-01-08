@@ -41,22 +41,22 @@ const AboutMiddle3: React.FC = () => {
     {
       name: "Yussuf Omar Dakane",
       title: "Managing Director",
-      imageSrc: "/images/yussuf.jpg",
+      imageSrc: "/images/yussuf.webp",
     },
     {
       name: "Abdilatif Bashir",
       title: "Tech Lead",
-      imageSrc: "/images/abdilatif.jpg",
+      imageSrc: "/images/abdilatif.webp",
     },
     {
       name: "Magdalene Wanja",
       title: "PR and Comms Lead",
-      imageSrc: "/images/magdalene.jpg",
+      imageSrc: "/images/magdalene.webp",
     },
     {
       name: "Asimba Edward",
       title: "Brand & Creative Partner",
-      imageSrc: "/images/asimba.jpg",
+      imageSrc: "/images/asimba.webp",
     },
   ];
 
