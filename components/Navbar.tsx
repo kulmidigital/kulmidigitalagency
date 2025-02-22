@@ -23,12 +23,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
 import { Switch } from "@/components/ui/switch";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-plus-jakarta",
-});
-
 const clashDisplay = localFont({
   src: [
     {
@@ -164,7 +158,7 @@ const Navbar = () => {
 
       {/* Right Side: Desktop Links */}
       <div
-        className={`${plusJakartaSans.className} hidden md:flex font-bold space-x-6 text-[14px] text-gray-700 dark:text-gray-200 items-center`}>
+        className={`${clashDisplay.className} hidden md:flex font-bold space-x-6 text-[14px] text-gray-700 dark:text-gray-200 items-center`}>
         <Link href='/' aria-label='Go to Kulmi Digital home page'>
           Home
         </Link>
