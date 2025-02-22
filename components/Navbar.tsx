@@ -402,8 +402,8 @@ const Navbar = () => {
                         {mainServices.map((service) =>
                           service.subServices ? (
                             <div key={service.name} className='w-full'>
-                              <Link
-                                href='/digital-advertising'
+                              <button
+                                onClick={toggleDigitalAdvertising}
                                 className={`${clashDisplay.className} flex items-center justify-between w-full py-2 pl-4 text-gray-900 dark:text-gray-100`}
                                 aria-label='Explore our digital advertising services'>
                                 <span>{service.name}</span>
@@ -414,7 +414,7 @@ const Navbar = () => {
                                   transition={{ duration: 0.3 }}>
                                   <ChevronDown className='ml-1 h-4 w-4 dark:text-gray-100' />
                                 </motion.div>
-                              </Link>
+                              </button>
                               <AnimatePresence>
                                 {isDigitalAdvertisingOpen && (
                                   <motion.div
